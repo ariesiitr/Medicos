@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 import Doctor.urls as docurls 
+import clinic.urls as clinicurls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctor/', include(docurls)),
+    path('clinic/', include(clinicurls)),
 ]
