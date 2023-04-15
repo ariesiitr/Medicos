@@ -46,6 +46,7 @@
 }
 
 // login page
+
 .loginContainer {
   width: 100vw;
   height: auto;
@@ -55,7 +56,84 @@
 }
 .loginDesignContainer {
   width: 50%;
+  background-color: #089996;
 }
 .loginFormContainer {
-  width: 50%;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #cdcdcd;
+  gap: 1rem;
+}
+.greet {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  color: #000000;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  display: flex;
+  align-items: center;
+}
+input {
+  width: 40vw;
+  max-width: 30.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #737e87;
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 23px;
+  padding-left: 1rem;
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+.inputLabel {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+button {
+  max-width: 30.5rem;
+  width: 40vw;
+  height: 3.7rem;
+  border-radius: 4px;
+  background: #ffffff;
+  font-family: "THICCCBOI";
+  color: #061b2d;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+input[type ="checkbox"] {
+  width: 20px;
+  height: 21px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.checkboxContainer{
+  width: 40vw;
+  max-width: 30.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 0.8rem;
+  padding-left: 5px;
 }
