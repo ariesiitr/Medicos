@@ -1,0 +1,61 @@
+// login Design page
+.loginDesign {
+  width: 50vw;
+  height: auto;
+  min-height: 100vh;
+  background-color: #089996;
+  display: flex;
+  flex-direction: column;
+}
+.iconsContainerTop {
+  width: 100%;
+  min-height: 33vh;
+  display: flex;
+  flex-direction: row;
+}
+.headingContainer {
+  width: 100%;
+  min-height: 33vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.medicos {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 6rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.medicoseSubtitle {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.3rem;
+  color: #ffffff;
+}
+.iconsContainerBottom {
+  width: 100%;
+  min-height: 33vh;
+}
+
+// login page
+.loginContainer {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+.loginDesignContainer {
+  width: 50%;
+}
+.loginFormContainer {
+  width: 50%;
+}
