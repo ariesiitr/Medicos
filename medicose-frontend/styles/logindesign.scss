@@ -1,25 +1,33 @@
 // login Design page
 .loginDesign {
   width: 50vw;
+  min-height: 145vh;
   height: auto;
-  min-height: 100vh;
   background-color: #089996;
   display: flex;
   flex-direction: column;
 }
 .iconsContainerTop {
   width: 100%;
-  min-height: 33vh;
+  height: 46vh;
   display: flex;
   flex-direction: row;
 }
 .headingContainer {
   width: 100%;
-  min-height: 33vh;
+  height: 46vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.iconsContainerBottom {
+  height: 48vh;
+  display: flex;
+  justify-content: flex-end;
+  background-image: url(/icons.png);
+  background-size: 50vw 48vh;
+  background-repeat: no-repeat;
 }
 .medicos {
   font-family: "THICCCBOI";
@@ -65,7 +73,7 @@
   justify-content: center;
   align-items: center;
   background: #cdcdcd;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 .greet {
   font-family: "THICCCBOI";
@@ -122,13 +130,13 @@ button {
   border: none;
   cursor: pointer;
 }
-input[type ="checkbox"] {
+input[type="checkbox"] {
   width: 20px;
   height: 21px;
   background-color: #ffffff;
   cursor: pointer;
 }
-.checkboxContainer{
+.checkboxContainer {
   width: 40vw;
   max-width: 30.5rem;
   display: flex;

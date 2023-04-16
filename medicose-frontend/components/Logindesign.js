@@ -50,7 +50,8 @@ export default function Logindesign() {
         </div>
         <div className="medicoseSubtitle">Effortlessly manage your health</div>
       </div>
-      <div className="iconsContainerBottom"></div>
+      <div className="iconsContainerBottom">
+      </div>
     </div>
   );
 }
