@@ -3,13 +3,18 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import Error
+from .models import Doctor
+from patient.models import Patient
 
 @api_view(('GET','POST'))
 def Signup(request):
      if request.method =='POST':
-        data={}
+      data={}
+      contactNo = request.data.get('contactNo')
+      if Doctor.objects.filter(contactNo=contactNo).exists() or Patient.objects.filter(contactNo=contactNo).exists() :
+          return Response({"contactNo": "contactNo already registered"}, status=status.HTTP_400_BAD_REQUEST)
        
-        try: 
+      try: 
        
           data = {"doctorName" : request.data.get("doctorName"),"availableDays" : request.data.get("availableDays"),"clinicName": request.data.get(
             "clinicName"), "license": request.data.get("license"), "speciality" : request.data.get("speciality"), "address" : request.data.get("address")
@@ -23,10 +28,9 @@ def Signup(request):
           db_entry.save()
           return Response(data={"success":"data submitted"}, status=status.HTTP_200_OK) 
         
-        except Error as e:
+      except Error as e:
          print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
         
 
-         # except Error as e:
-        #  print(e.message)
+       
