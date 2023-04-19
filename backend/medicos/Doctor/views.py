@@ -16,7 +16,7 @@ def Signup(request):
             , "appointmentstartTime" : request.data.get("appointmentstartTime"), "appointmentendTime" : request.data.get("appointmentendTime"), "fees" : request.data.get("fees"),
               "upiId" : request.data.get("upiId"),"password" : request.data.get("password"), "confirmPassword" : request.data.get("confirmPassword"),
             "contactNo": request.data.get("contactNo")}
-        
+         
           db_entry = DoctorSerializer(data=data)          
           db_entry.is_valid(raise_exception=True)
       
