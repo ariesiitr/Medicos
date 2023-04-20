@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path,include
 import Doctor.urls as docurls 
 import clinic.urls as clinicurls
+import patient.urls as paturls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctor/', include(docurls)),
     path('clinic/', include(clinicurls)),
+    path('patient/', include(paturls)),
 ]
