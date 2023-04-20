@@ -1,23 +1,23 @@
-from .serializer import DoctorSerializer
+from .serializer import ClinicSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import Error
+from .serializer import ClinicSerializer
 
 @api_view(('GET','POST'))
-def Signup(request):
+def SignupClinic(request):
      if request.method =='POST':
         data={}
        
         try: 
        
-          data = {"doctorName" : request.data.get("doctorName"),"availableDays" : request.data.get("availableDays"),"clinicName": request.data.get(
-            "clinicName"), "license": request.data.get("license"), "speciality" : request.data.get("speciality"), "address" : request.data.get("address")
-            , "appointmentstartTime" : request.data.get("appointmentstartTime"), "appointmentendTime" : request.data.get("appointmentendTime"), "fees" : request.data.get("fees"),
+          data = {"chemistName": request.data.get(
+            "chemistName"), "license": request.data.get("license"), "shopAddress" : request.data.get("shopAddress"),
               "upiId" : request.data.get("upiId"),"password" : request.data.get("password"), "confirmPassword" : request.data.get("confirmPassword"),
-            "contactNo": request.data.get("contactNo")}
-         
-          db_entry = DoctorSerializer(data=data)          
+            }
+        
+          db_entry = ClinicSerializer(data=data)          
           db_entry.is_valid(raise_exception=True)
       
           db_entry.save()
