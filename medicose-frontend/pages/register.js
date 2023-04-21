@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Logindesign from "../components/Logindesign";
 import Image from "next/image";
-import Loginform from "../components/Forms";
+import { Signupform, Otpform } from "../components/Forms";
 
+function register() {
+  const [renderId, setrenderId] = useState(0);
+  function NavigateToOtpform () {
+    setrenderId(1)
+  }
 
-function login() {
   return (
     <div className="loginContainer">
       <div className="loginDesignContainer">
@@ -14,10 +18,13 @@ function login() {
         <div className="okGestureIcon">
           <Image src="/healthy.png" width={95} height={111} />
         </div>
-        <Loginform/>
+        {renderId == 0 && <Signupform 
+        NavigateToOtpform={NavigateToOtpform}
+        />}
+        {renderId == 1 && <Otpform />}
       </div>
     </div>
   );
 }
 
-export default login;
+export default register;

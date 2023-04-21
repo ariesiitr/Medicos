@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Loginform(props) {
   return (
@@ -61,14 +62,15 @@ export default function Loginform(props) {
       <div>
         <text> Don’t have an account?</text>
         <span
-          onClick={props.NavigateToSignup}
           style={{
             cursor: "pointer",
             color: "#089996",
             marginLeft: "10px",
           }}
         >
+          <Link href="/register">
           Create Account
+          </Link>
         </span>
       </div>
     </>
