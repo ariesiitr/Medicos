@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Loginform(props) {
+export default function Loginform() {
   return (
     <>
       <div className="greet">Hello ! Welcome Back</div>
@@ -58,7 +58,6 @@ export default function Loginform(props) {
         />
         Login with Google
       </button>
-      <hr />
       <div>
         <text> Don’t have an account?</text>
         <span
@@ -68,9 +67,7 @@ export default function Loginform(props) {
             marginLeft: "10px",
           }}
         >
-          <Link href="/register">
-          Create Account
-          </Link>
+          <Link href="/register">Create Account</Link>
         </span>
       </div>
     </>
@@ -97,20 +94,50 @@ function Signupform(props) {
         <div className="inputLabel">Confirm Password</div>
         <input type="password" placeholder="Confirm password" />
       </div>
-      <button onClick={props.NavigateToOtpform}>Signup</button>
+      <button onClick={props.NavigateToOtpform} style={{
+        marginTop: '2.5rem'
+      }}>Signup</button>
     </>
   );
 }
 
 function Otpform() {
+  const [isVerified, setisVerified] = useState(true);
+  function Verify () {
+    setisVerified(false)
+  }
   return (
     <>
       <div className="greet">Create your account</div>
       <div>
         <div className="inputLabel">OTP</div>
-        <input type="number" placeholder="Enter One Time Password" />
+        {isVerified ? (
+          <>
+            {" "}
+            <input type="text" placeholder="Enter One Time Password" />
+            <button onClick={Verify} style={{
+              marginTop: "2.5rem"
+            }}>Verify</button>
+          </>
+        ) : (
+          <>
+            {" "}
+            <div className="invalidOtp">
+              <input type="text" placeholder="Enter One Time Password" />
+              <img
+                src="/vector.png"
+                width={20}
+                height={20}
+                style={{
+                  marginLeft: "-2rem",
+                }}
+              />
+            </div>
+            <div className="invalidOtpMessage">Invalid OTP</div>
+            <button>Resend OTP</button>
+          </>
+        )}
       </div>
-      <button>Verify</button>
     </>
   );
 }
