@@ -1,0 +1,17 @@
+.navbarContainer{
+    width: 100vw;
+    height: 4rem;
+    background-color: #089996;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 24px;
+    position: fixed;
+}
+@media  screen and (min-width: 701px) {
+    .navbarContainer{
+        display: none;
+    }
+}
