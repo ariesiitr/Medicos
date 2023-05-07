@@ -36,6 +36,7 @@ export default function Loginform() {
       </div>
 
       <button
+      className="btn"
         style={{
           backgroundColor: "#089996",
           color: "#FFFFFF",
@@ -45,6 +46,7 @@ export default function Loginform() {
       </button>
       <hr />
       <button
+      className="btn"
         style={{
           backgroundColor: "#FFFFFF",
           color: "black",
@@ -94,7 +96,7 @@ function Signupform(props) {
         <div className="inputLabel">Confirm Password</div>
         <input type="password" placeholder="Confirm password" />
       </div>
-      <button onClick={props.NavigateToOtpform} style={{
+      <button className="btn" onClick={props.NavigateToOtpform} style={{
         marginTop: '2.5rem'
       }}>Signup</button>
     </>
@@ -115,7 +117,7 @@ function Otpform() {
           <>
             {" "}
             <input type="text" placeholder="Enter One Time Password" />
-            <button onClick={Verify} style={{
+            <button className="btn" onClick={Verify} style={{
               marginTop: "2.5rem"
             }}>Verify</button>
           </>
@@ -134,7 +136,7 @@ function Otpform() {
               />
             </div>
             <div className="invalidOtpMessage">Invalid OTP</div>
-            <button>Resend OTP</button>
+            <button className="btn">Resend OTP</button>
           </>
         )}
       </div>

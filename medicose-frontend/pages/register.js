@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Logindesign from "../components/Logindesign";
 import Image from "next/image";
 import { Signupform, Otpform } from "../components/Forms";
+import Navbar from "../components/navbar/Navbar"
 
 function register() {
   const [renderId, setrenderId] = useState(0);
@@ -14,6 +15,7 @@ function register() {
       <div className="loginDesignContainer">
         <Logindesign />
       </div>
+      <Navbar />
       <div className="loginFormContainer">
         <div className="okGestureIcon">
           <Image src="/healthy.png" width={95} height={111} />

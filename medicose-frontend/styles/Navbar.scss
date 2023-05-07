@@ -8,7 +8,8 @@
     justify-content: space-between;
     padding-left: 20px;
     padding-right: 24px;
-    position: fixed;
+    position: sticky;
+    top: 0px;
 }
 @media  screen and (min-width: 701px) {
     .navbarContainer{

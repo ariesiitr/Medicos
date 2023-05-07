@@ -8,7 +8,7 @@
   flex-direction: column;
 }
 .iconsContainerTop {
-  width: 100%;
+  width: 46vh;
   height: 46vh;
   display: flex;
   flex-direction: row;
@@ -25,7 +25,7 @@
   height: 48vh;
   display: flex;
   justify-content: flex-end;
-  background-image: url(/icons.png);
+  background-image: url(/iconbottom.png);
   background-size: 50vw 48vh;
   background-repeat: no-repeat;
 }
@@ -69,11 +69,15 @@
 .loginFormContainer {
   width: 50vw;
   display: flex;
+  min-height: 100vh;
+  height: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #cdcdcd;
   gap: 2rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 .greet {
   font-family: "THICCCBOI";
@@ -88,7 +92,6 @@
 input {
   width: 40vw;
   max-width: 30.5rem;
-  // min-width: 20rem;
   height: 3.5rem;
   display: flex;
   align-items: center;
@@ -113,9 +116,8 @@ input {
   color: #000000;
   margin-bottom: 0.5rem;
 }
-button {
+.btn {
   max-width: 30.5rem;
-  // min-width: 20rem;
   width: 40vw;
   height: 3.7rem;
   border-radius: 4px;
@@ -176,30 +178,33 @@ input[type="checkbox"] {
 }
 //mobile view
 @media screen and (max-width: 700px) {
-  .loginDesignContainer{
+  .loginDesignContainer {
     display: none;
   }
-  .loginContainer{
+  .loginContainer {
     flex-direction: column;
   }
-  .loginFormContainer{
+  .loginFormContainer {
     width: 100vw;
-    padding-top: 6rem;
   }
   input {
     width: 87vw;
     max-width: none;
   }
-  button{
+  .btn {
     width: 87vw;
     max-width: none;
   }
-  .checkboxContainer{
+  .checkboxContainer {
     width: 87vw;
     max-width: none;
   }
   hr {
     width: 87vw;
+    max-width: none;
+  }
+  .invalidOtp {
+    width: auto;
     max-width: none;
   }
 }
