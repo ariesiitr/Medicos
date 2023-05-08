@@ -1,0 +1,92 @@
+.chatContainer {
+  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 0rem 0rem 1rem;
+}
+.clientChatDetails {
+  width: 29vw;
+  height: auto;
+  min-height: 100vh;
+  background: #ffffff;
+  border-radius: 8px 0px 0px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.chatBox {
+  width: 61vw;
+  height: auto;
+  min-height: 100vh;
+}
+.chatTextContainer {
+  width: 88%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatsContainer {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.searchBox {
+  width: 88%;
+  background: #ffffff;
+  height: 39px;
+  border: 1px solid rgba(115, 126, 135, 0.4);
+  border-radius: 8px;
+  padding-left: 0.75rem;
+}
+.profileContainer {
+  width: 88%;
+  height: 53px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  background: #f3f3f8;
+}
+.patientName {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.12rem;
+  line-height: 1.5rem;
+}
+.lastChat {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.12rem;
+  color: #737e87;
+}
+.chatBoxContainer {
+  width: 61vw;
+  display: flex;
+  flex-direction: column;
+}
+.profileContainer2 {
+  width: 88%;
+  height: 53px;
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+  padding-left: 1.12rem;
+  background: #ffffff;
+  border-radius: 0px 8px 0px 0px;
+}
+.chatbox {
+  width: 100%;
+  min-height: 100vh;
+  background: #f3f3f8;
+  border: 1px solid rgba(115, 126, 135, 0.4);
+  border-radius: 0px 0px 8px 0px;
+}

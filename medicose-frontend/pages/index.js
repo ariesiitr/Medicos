@@ -1,9 +1,10 @@
-import Navbar from "../components/navbar/Navbar"
+import React from "react"
+import Chatpage from "../components/dashboard/Chatpage"
 
 export default function Home() {
   return (
     <div>
-   <Navbar/>
+   <Chatpage />
     </div>
   )
 }
