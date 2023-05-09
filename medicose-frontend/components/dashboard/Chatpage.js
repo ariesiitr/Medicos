@@ -32,7 +32,7 @@ function Chatpage() {
             <Image src="/plusign.png" width={35} height={36} />
             <div className="inputTextContainer">
               <input type="text" className="typeYourTextHere" placeholder="Message" />
-              <Image src="/SendIcon.png" width={24} height={24} className="sendIcon" style={{
+              <Image src="/SendIcon.png" width={24} height={24} style={{
                 marginLeft: "-2rem"
               }} />
             </div>
