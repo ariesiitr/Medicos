@@ -28,7 +28,16 @@ function Chatpage() {
           </div>
         </div>
         <div className="chatbox">
-
+          <div className="typeHere">
+            <Image src="/plusign.png" width={35} height={36} />
+            <div className="inputTextContainer">
+              <input type="text" className="typeYourTextHere" placeholder="Message" />
+              <Image src="/SendIcon.png" width={24} height={24} className="sendIcon" style={{
+                marginLeft: "-2rem"
+              }} />
+            </div>
+            <Image src="/mic.png" width={32} height={32} />
+          </div>
         </div>
       </div>
     </div>
