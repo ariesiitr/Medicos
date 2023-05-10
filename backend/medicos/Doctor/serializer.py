@@ -4,4 +4,4 @@ from .models import Doctor
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta :
         model = Doctor
-        exclude = ['created', 'updated','uniqueId']
+        exclude = ['created', 'updated','uniqueId','authToken']
