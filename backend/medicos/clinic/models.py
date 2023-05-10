@@ -30,7 +30,7 @@ class   Clinic(models.Model):
 
        self.updated = timezone.now()
 
-       self.authToken = jwt.encode({"email": self.email, "password": self.password,
+       self.authToken = jwt.encode({"contactNo": self.contactNo, "password": self.password,
                                     "updated": str(self.updated)}, self.jwt_secret, algorithm=self.jwt_algorithm)
        return super(Clinic, self).save(*args, **kwargs)
 

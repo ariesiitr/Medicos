@@ -1,4 +1,4 @@
-from .serializer import DoctorSerializer
+from .serializer import DoctorSerializer, DocAppointmentsSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
@@ -32,5 +32,21 @@ def Signup(request):
          print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
         
-
+@api_view(('GET','POST'))
+def appointmentsByPatient(request):
+      if request.method =='POST':
+         data={}
        
+      try: 
+       
+          data = {"uniqueId" : request.data.get("uniqueId"),"appointmentTime" : request.data.get("appointmentTime"),"appointmentDate": request.data.get(
+            "appointmentDate"), "DocUniqueId": request.data.get("DocUniqueId")}
+         
+          db_entry = DocAppointmentsSerializer(data=data)          
+          db_entry.is_valid(raise_exception=True)
+      
+          db_entry.save()
+          return Response(data={"success":"data submitted"}, status=status.HTTP_200_OK) 
+      except Error as e:
+         print(e)
+         return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)

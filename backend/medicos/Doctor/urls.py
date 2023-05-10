@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import Signup
+from .views import Signup , appointmentsByPatient
 
 urlpatterns = [
-    path('doctorlogin', Signup)
+    path('doctorlogin', Signup),
+    path('bookAppointments', appointmentsByPatient)
 ]
