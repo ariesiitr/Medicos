@@ -4,9 +4,11 @@ from .models import Doctor, DocAppointments
 class DoctorSerializer(serializers.ModelSerializer):
     class Meta :
         model = Doctor
-        exclude = ['created', 'updated','uniqueId','authToken']
+        exclude = ['created', 'updated','docUniqueId','authToken']
 
 class DocAppointmentsSerializer(serializers.ModelSerializer):
+    appointmentTime = serializers.CharField()
     class Meta :
         model = DocAppointments
-        exclude = ['created', 'updated',]
+        fields=['uniqueId','DocUniqueId','appointmentTime','appointmentDate',]
+        

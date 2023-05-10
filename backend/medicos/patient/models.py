@@ -29,6 +29,7 @@ class Patient(models.Model):
 
     def save(self,*args, **kwargs):
        
+       self.docUniqueId = "PaTt" +  str(self.contactNo)  
 
        self.updated = timezone.now()
 

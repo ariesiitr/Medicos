@@ -36,11 +36,12 @@ class Doctor(models.Model):
     
     def save(self,*args, **kwargs):
        
-       
+       self.docUniqueId = "DoCr" +  str(self.contactNo)  
        self.updated = timezone.now()
 
        self.authToken = jwt.encode({"contactNo": self.contactNo, "password": self.password,
                                     "updated": str(self.updated)}, self.jwt_secret, algorithm=self.jwt_algorithm)
+       print(self.authToken)
        return super(Doctor, self).save(*args, **kwargs)
     
     class Meta:
@@ -49,12 +50,14 @@ class Doctor(models.Model):
         """
         verbose_name_plural = "Doctor"
 
+
+
 class DocAppointments(models.Model):
-   uniqueId= models.CharField(max_length=50, default='')
-   appointmentTime = models.TimeField()
-   appointmentDate= models.DateField()
-   DocUniqueId = models.CharField(max_length=50, default='')
-   created = models.DateTimeField(default=timezone.now)
+   uniqueId= models.CharField(max_length=50, default='',verbose_name='uniqueId')
+   DocUniqueId = models.CharField(max_length=50, default='',verbose_name='DocUniqueId')
+   appointmentTime = models.CharField(verbose_name='appointmentTime', max_length=30)
+   appointmentDate= models.CharField(verbose_name='appointmentDate',max_length=30)
+   created = models.DateTimeField(default=timezone.now )
    updated = models.DateTimeField(auto_now=True)
  
 

@@ -3,8 +3,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import Error
-from .models import Doctor
+from .models import Doctor, DocAppointments
 from patient.models import Patient
+from utils.auth import auth
 
 @api_view(('GET','POST'))
 def Signup(request):
@@ -50,3 +51,33 @@ def appointmentsByPatient(request):
       except Error as e:
          print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
+      
+@api_view(('GET','POST'))
+def DocappointmentsDetails(request):
+      if request.method =='GET':
+          AuthToken = request.headers['Authorization']
+          # .split('')[1]
+          user = auth(AuthToken) 
+          print(AuthToken)
+          if user == None:
+           return Response({"error": "Invalid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)    
+
+          else :
+              appointmentsDetails= DocAppointments.objects.all().filter(DocUniqueId=user.docUniqueId)
+              print(user)
+              print(appointmentsDetails)
+              serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
+              data = serializer.data
+              return Response({"data": data}, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+              # print(user.docUniqueId)
+              # docAppointDetails= user.docUniqueId
+              # leaderboard= DocAppointments.objects.filter(DocUniqueId=docAppointDetails)
+              # print(leaderboard.data)
+              # return Response({"error": "valid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)
+
+   
