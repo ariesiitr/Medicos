@@ -27,6 +27,7 @@ class   Clinic(models.Model):
      return self.chemistName
     def save(self,*args, **kwargs):
        
+       self.docUniqueId = "ClIc" +  str(self.contactNo)  
 
        self.updated = timezone.now()
 
