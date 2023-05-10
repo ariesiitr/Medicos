@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.hashers import check_password as auth_check_password
 
 
 # Create your models here.
@@ -15,5 +16,9 @@ class Patient(models.Model):
 
     def __str__(self):
      return self.patientName
+
+    def check_password(self, password):
+        # Use the auth_check_password method to check the password
+     return auth_check_password(password, self.password)
 
 
