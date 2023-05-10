@@ -11,7 +11,7 @@ if os.environ.get('ENVIRONMENT') == 'production':
     SECRET_KEY = settings.SECRET_KEY
 
 class Doctor(models.Model):
-    uniqueId= models.CharField(max_length=50, default='')
+    docUniqueId= models.CharField(max_length=50, default='')
     doctorName = models.CharField(max_length=50)
     clinicName= models.CharField(max_length=50)
     contactNo = models.CharField(max_length=50, default="")
@@ -36,7 +36,7 @@ class Doctor(models.Model):
     
     def save(self,*args, **kwargs):
        
-
+       
        self.updated = timezone.now()
 
        self.authToken = jwt.encode({"contactNo": self.contactNo, "password": self.password,
@@ -48,3 +48,21 @@ class Doctor(models.Model):
         Meta class for Doctor
         """
         verbose_name_plural = "Doctor"
+
+class DocAppointments(models.Model):
+   uniqueId= models.CharField(max_length=50, default='')
+   appointmentTime = models.TimeField()
+   appointmentDate= models.DateField()
+   DocUniqueId = models.CharField(max_length=50, default='')
+   created = models.DateTimeField(default=timezone.now)
+   updated = models.DateTimeField(auto_now=True)
+ 
+
+   def __str__(self):
+     return self.DocUniqueId
+   
+   class Meta:
+        """
+        Meta class for DocAppointments
+        """
+        verbose_name_plural = "DocAppointments"
