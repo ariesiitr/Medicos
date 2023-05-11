@@ -58,26 +58,13 @@ def DocappointmentsDetails(request):
           AuthToken = request.headers['Authorization']
           # .split('')[1]
           user = auth(AuthToken) 
-          print(AuthToken)
           if user == None:
            return Response({"error": "Invalid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)    
 
           else :
               appointmentsDetails= DocAppointments.objects.all().filter(DocUniqueId=user.docUniqueId)
-              print(user)
-              print(appointmentsDetails)
               serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
               data = serializer.data
               return Response({"data": data}, status=status.HTTP_400_BAD_REQUEST)
 
-
-
-
-
-              # print(user.docUniqueId)
-              # docAppointDetails= user.docUniqueId
-              # leaderboard= DocAppointments.objects.filter(DocUniqueId=docAppointDetails)
-              # print(leaderboard.data)
-              # return Response({"error": "valid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)
-
-   
+              

@@ -3,6 +3,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.db import Error
+from utils.auth import auth
+from Doctor.models import DocAppointments
+from Doctor.serializer import DocAppointmentsSerializer
 
 
 # Create your views here.
@@ -26,3 +29,20 @@ def Signup(request):
          print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
         
+@api_view(('GET','POST'))
+def appointmentsOfPatient(request):
+    if request.method =='GET':
+          AuthToken = request.headers['Authorization'].split(' ')[0]
+          user = auth(AuthToken) 
+          print(AuthToken)
+          print(user)
+          if user == None:
+           return Response({"error": "Invalid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)    
+
+          else :
+              print(user)
+              appointmentsDetails= DocAppointments.objects.all().filter(uniqueId=user.uniqueId)
+              serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
+              data = serializer.data
+              return Response({"data": data}, status=status.HTTP_400_BAD_REQUEST)
+              

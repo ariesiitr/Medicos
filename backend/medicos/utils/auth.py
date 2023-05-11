@@ -3,7 +3,7 @@ from Doctor.models import Doctor
 from patient.models import Patient
 from clinic.models import Clinic
 import environ
-
+from django.db import Error
 env = environ.Env()
 environ.Env.read_env()
 
@@ -12,15 +12,16 @@ def auth(token):
     try:
 
         decoded = jwt.decode(token, secret, algorithms=['HS256'])
-        
         contactNo = decoded['contactNo']
-        password = decoded['contactNo']
+        password = decoded['password']
+
+        print(Clinic.objects.filter(contactNo=contactNo).exists())
         if Doctor.objects.filter(contactNo=contactNo ).exists():
             return Doctor.objects.get(contactNo=contactNo )
         elif Clinic.objects.filter(contactNo=contactNo).exists():
             return Clinic.objects.get(contactNo=contactNo)
         elif Patient.objects.filter(contactNo=contactNo).exists():
-            return Patient.objects.get(contactNo=contactNo )
+            return Patient.objects.get(contactNo=contactNo)
 
     except:
-        return None
+         return None

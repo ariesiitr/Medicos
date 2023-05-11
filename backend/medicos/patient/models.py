@@ -16,7 +16,6 @@ class Patient(models.Model):
     dob = models.DateField()
     contactNo = models.CharField(max_length=50, default="")
     password= models.CharField(max_length=30)
-    confirmPassword = models.CharField(max_length=30)
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
     jwt_secret = SECRET_KEY
@@ -25,14 +24,16 @@ class Patient(models.Model):
 
 
     def __str__(self):
-     return self.patientName
+     return self.contactNo
 
     def save(self,*args, **kwargs):
+      
        
-       self.docUniqueId = "PaTt" +  str(self.contactNo)  
-
+       self.uniqueId = "PaTt" +  str(self.contactNo)  
+       
        self.updated = timezone.now()
 
        self.authToken = jwt.encode({"contactNo": self.contactNo, "password": self.password,
                                     "updated": str(self.updated)}, self.jwt_secret, algorithm=self.jwt_algorithm)
+       print(self.authToken)
        return super(Patient, self).save(*args, **kwargs)
