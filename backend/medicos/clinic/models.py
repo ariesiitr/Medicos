@@ -16,7 +16,7 @@ class   Clinic(models.Model):
     license= models.ImageField
     upiId = models.CharField(max_length=50)
     password= models.CharField(max_length=30)
-    confirmPassword = models.CharField(max_length=30)
+    contactNo= models.CharField(max_length=15, default='')
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
     jwt_secret = SECRET_KEY

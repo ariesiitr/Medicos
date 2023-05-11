@@ -24,7 +24,6 @@ class Doctor(models.Model):
     appointmentFees = models.IntegerField(default=0, verbose_name="fee")
     upiId = models.CharField(max_length=50)
     password= models.CharField(max_length=30)
-    confirmPassword = models.CharField(max_length=30)
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
     jwt_secret = SECRET_KEY
