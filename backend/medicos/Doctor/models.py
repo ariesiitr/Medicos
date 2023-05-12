@@ -23,7 +23,7 @@ class Doctor(models.Model):
 
     def check_password(self, password):
         # Use the auth_check_password method to check the password
-        return auth_check_password(password, self.password)
+        return password==self.password
 
     def __str__(self):
      return self.doctorName

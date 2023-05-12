@@ -8,7 +8,6 @@ from patient.models import Patient
 
 @api_view(['POST'])
 def Login(request):
-    if request.method == 'POST':
         # Retrieve username and password from request data
         username = request.data.get('username')
         password = request.data.get('password')
@@ -22,10 +21,10 @@ def Login(request):
         if chemist_user and chemist_user.check_password(password):
             return Response({'success': 'Chemist login successful'}, status=status.HTTP_200_OK)
         
-        if doctor_user and doctor_user.check_password(password):
+        elif doctor_user and doctor_user.check_password(password):
             return Response({'success': 'Doctor login successful'}, status=status.HTTP_200_OK)
         
-        if patient_user and patient_user.check_password(password):
+        elif patient_user and patient_user.check_password(password):
             return Response({'success': 'Patient login successful'}, status=status.HTTP_200_OK)
         
         # Invalid credentials

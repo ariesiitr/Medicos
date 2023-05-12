@@ -25,5 +25,5 @@ urlpatterns = [
     path('doctor/', include(docurls)),
     path('clinic/', include(clinicurls)),
     path('patient/', include(paturls)),
-    path('login',include(logurls))
+    path('login/',include(logurls))
 ]
