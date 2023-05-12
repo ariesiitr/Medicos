@@ -11,11 +11,14 @@ if os.environ.get('ENVIRONMENT') == 'production':
 
 class   Clinic(models.Model):
     uniqueId= models.CharField(max_length=50, default='')
-    chemistName = models.CharField(max_length=50)
-    shopAddress= models.CharField(max_length=100)
+    chemistName = models.CharField(max_length=50,default="")
+    shopAddress= models.CharField(max_length=100,default="")
     license= models.ImageField
-    upiId = models.CharField(max_length=50)
-    password= models.CharField(max_length=30)
+    storeName=  models.CharField(max_length=100,default="")
+    openingTime=models.CharField(max_length=100,default="")
+    closingTime= models.CharField(max_length=100,default="")
+    upiId = models.CharField(max_length=50,default="")
+    password= models.CharField(max_length=30,default="")
     contactNo= models.CharField(max_length=15, default='')
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
