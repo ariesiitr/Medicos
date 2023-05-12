@@ -12,18 +12,18 @@ if os.environ.get('ENVIRONMENT') == 'production':
 
 class Doctor(models.Model):
     docUniqueId= models.CharField(max_length=50, default='')
-    doctorName = models.CharField(max_length=50)
-    clinicName= models.CharField(max_length=50)
+    doctorName = models.CharField(max_length=50,default="")
+    clinicName= models.CharField(max_length=50,default="")
     contactNo = models.CharField(max_length=50, default="")
     license= models.ImageField
-    speciality = models.CharField(max_length=50)
-    address= models.CharField(max_length=250)
+    speciality = models.CharField(max_length=50,default="")
+    address= models.CharField(max_length=250,default="")
     appointmentstartTime= models.TimeField(auto_now=False, auto_now_add=False)
     appointmentendTime = models.TimeField(auto_now=False, auto_now_add=False)
-    availableDays= models.CharField(max_length=50)
+    availableDays= models.CharField(max_length=50,default="")
     appointmentFees = models.IntegerField(default=0, verbose_name="fee")
-    upiId = models.CharField(max_length=50)
-    password= models.CharField(max_length=30)
+    upiId = models.CharField(max_length=50,default="")
+    password= models.CharField(max_length=30,default="")
     created = models.DateTimeField(default=timezone.now)
     updated = models.DateTimeField(auto_now=True)
     jwt_secret = SECRET_KEY
