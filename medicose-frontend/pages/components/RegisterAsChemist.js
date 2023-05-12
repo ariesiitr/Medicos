@@ -1,7 +1,62 @@
 import React from 'react'
 import Navbar from './Navbar'
+import axios from 'axios';
 
 const RegisterAsChemist = () => {
+
+  const FetchApi = (method, url, params, TokenValue) => {
+    return new Promise((resolve, reject) => {
+      if (TokenValue) {
+        axios({
+          method: method,
+          url: url,
+          data: params,
+          headers: {
+            Authorization: 'Token ' + TokenValue,
+          },
+          responseType: 'json',
+        })
+          .then((res) => resolve(res))
+          .catch((err) => reject(err));
+      } else {
+        axios({
+          method: method,
+          url: url,
+          data: params,
+          responseType: 'json',
+        })
+          .then((res) => resolve(res))
+          .catch((err) => reject(err));
+      }
+    });
+  };
+
+
+const Chemist_API="http://127.0.0.1:8000/clinic/chemistlogin";
+
+  function submit() {
+    if (Password.length > 7) {
+      FetchApi(
+        'POST',
+        Chemist_API,
+        {
+          esummit_id: email,
+          password: Password,
+
+        },
+        null
+      )
+        .catch((err) => {
+          toast.error(err.response.data.error_msg);
+          console.log(err.response)
+        });
+    }
+
+
+  }
+
+
+
   return (
     <div>
         <div className="upper">
@@ -49,7 +104,9 @@ const RegisterAsChemist = () => {
               <label htmlFor="license">Upload your license:</label>
               <input type='file' id='license'></input>
 
-              <button className='btn-submit' type='submit'>Submit</button>
+              <button className='btn-submit' type='submit'
+              
+              >Submit</button>
               </form>
 
 
