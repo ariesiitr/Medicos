@@ -18,10 +18,12 @@ from django.urls import path,include
 import Doctor.urls as docurls 
 import clinic.urls as clinicurls
 import patient.urls as paturls
+import order.urls as orderurls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctor/', include(docurls)),
     path('clinic/', include(clinicurls)),
     path('patient/', include(paturls)),
+    path('order/', include(orderurls))
 ]

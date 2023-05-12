@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import Navbar from '../Navbar/Navbar'
 import MultiSelectDropdown from './MultiSelectDropdown'
-import Axios from 'axios';
-// import axios from 'axios'
+// import Axios from 'axios';
+import axios from 'axios'
 
 const RegisterAsDoctor = () => {
   const url="http://127.0.0.1:8000/doctor/doctorlogin";
@@ -15,12 +15,12 @@ const RegisterAsDoctor = () => {
         appointmentendTime:"",
         appointmentstartTime:"",
         appointmentFees:"",
-        license:""
+        license:"",
+        upiId:"",
+        doctorName:"",
+        password:""
   })
-
-  function submit(e){
-    e.preventDefault();
-    Axios.post(url,{
+  const newData= {
         speciality: data.speciality,
         clinicName: data.clinicName,
         contactNo: data.contactNo,
@@ -29,12 +29,27 @@ const RegisterAsDoctor = () => {
         appointmentendTime: data.appointmentendTime,
         appointmentstartTime: data.appointmentstartTime,
         appointmentFees: data.appointmentFees,
-        license: data.license
-    })
-      .then((res) =>{
-        console.log(res.data)
-      })
+        license: data.license,
+        upiId: data.upiId,
+        doctorName:data.doctorName,
+        password: data.password
   }
+
+  async function submit(e){
+    e.preventDefault();
+    try{
+      const res = await axios.post(url,
+          JSON.stringify(newData),{
+            headers: {
+              'Content-Type' : 'application/json',
+              "Accept":"application/json"
+            }
+          }
+      );
+
+    }catch(error){
+  }  
+}
   function handle(e){
     const newdata={...data}
     newdata[e.target.id]=e.target.value
@@ -54,11 +69,14 @@ const RegisterAsDoctor = () => {
          
             <div className="column1">
 
-            <form onSubmit={(e)=>submit(e)} >
+            <form method='post' onSubmit={(e)=>submit(e)} >
             
 
-              {/* <label htmlFor="qualification">Qualification</label>
-              <input type="text" id='qualification' placeholder='Enter your qualification' required /> */}
+              <label htmlFor="doctorName">Doctor Name</label>
+              <input type="text" id='doctorName' onChange={(e) => handle(e)} value={data.doctorName} placeholder='Enter your name' required />
+
+              <label htmlFor="password">Password</label>
+              <input type="text" id='password' onChange={(e) => handle(e)} value={data.password} placeholder='Enter your password' required />
 
               <label htmlFor="speciality">Field</label>
               <input type="text" id='speciality' onChange={(e) => handle(e)} value={data.speciality} placeholder='Enter your field' required />
@@ -73,13 +91,14 @@ const RegisterAsDoctor = () => {
               <input type="address" id='address' onChange={(e) => handle(e)} value={data.address} placeholder='Enter your address' required />
 
               <label htmlFor="availableDays">Availibility</label>
-              <MultiSelectDropdown id='availableDays' onChange={(e) => handle(e)} value={data.availableDays}/>
+              <input type='text' id='availableDays' onChange={(e) => handle(e)} value={data.availableDays}/>
+              {/* <MultiSelectDropdown id='availableDays' onChange={(e) => handle(e)} value={data.availableDays}/> */}
             </form>
               
             </div>
 
             <div className="column2">
-              <form onSubmit={(e)=>submit(e)}>
+              <form method='post' onSubmit={(e)=>submit(e)}>
               {/* <form> */}
 
               <label htmlFor="appointmentstartTime">Opens at</label>
@@ -97,7 +116,7 @@ const RegisterAsDoctor = () => {
               <label htmlFor="license">Upload your license:</label>
               <input type='file' id='license' onChange={(e) => handle(e)} value={data.license}></input>
 
-              <button className='btn-submit' type='submit'>Submit</button>
+              <button className='btn-submit' type='submit' onClick={handle}>Submit</button>
               </form>
 
 

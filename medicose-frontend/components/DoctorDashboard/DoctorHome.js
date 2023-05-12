@@ -61,7 +61,7 @@ const DoctorHome = () => {
 
   async function GetData(){
     let Response = await axios.get(
-      "........................................................."
+      "http://127.0.0.1:8000/doctor/doctorAppointDetails"
     );
     return Response;
   }
@@ -137,14 +137,14 @@ const DoctorHome = () => {
 
             
             {/* {Data &&
-              Data.map(({appointment_date,appointment_month,appointment_day,appointment_time,appointment_patientName,appointment_patientId,appoitment_patient_basic_info}) => {
+              Data.map(({appointmentDate,appointment_month,appointment_day,appointmentTime,appointment_patientName,uniqueId,appoitment_patient_basic_info}) => {
               return ( */}
                   <>
                   <div className="briefInfo">
 
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
-                          {/* <div>{appointment_date}</div> */}
+                          {/* <div>{appointmentDate}</div> */}
                           <div className="appointment_date">
                           <div>23</div>
 
@@ -159,7 +159,7 @@ const DoctorHome = () => {
 
                       </div>
                       <div className="appointment_time">
-                        {/* <div>{appointment_time}</div> */}
+                        {/* <div>{appointmentTime}</div> */}
                         <div>9:00 pm- 10:00 pm</div>
 
                       </div>
@@ -173,7 +173,7 @@ const DoctorHome = () => {
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
-                            {/* <div>{appointment_patientId}</div> */}
+                            {/* <div>{uniqueId}</div> */}
                             {/* <div>{appoitment_patient_basic_info}</div> */}
                             <div style={{color:"#737E87"}}>#089996</div>
                             <div style={{color:'#5D9EE3'}}>Monthly checkup</div>
