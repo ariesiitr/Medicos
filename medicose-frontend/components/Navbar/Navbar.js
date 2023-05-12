@@ -3,12 +3,14 @@ import Link from 'next/link'
 import NavItem from './NavItem'
 import NavbarDashboard from './NavbarDashboard'
 import Image from 'next/image'
+import DoctorHome from '../DoctorDashboard/DoctorHome'
+
 
 
 const MENU_LIST=[
     {
         text: "Dashboard",
-        href: "/components/DoctorHome"
+        href: "/DoctorHome"
     },
     {
         text: "Appointments",
@@ -90,7 +92,7 @@ const Navbar = () => {
                     <a>
 
                         <div className="user-logo">
-                            <img src="/profile 1.png" alt="" />
+                            <img src="/User_logo.png" alt="" />
                             
                         </div>
                     </a>

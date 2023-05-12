@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import DoctorHome from '../DoctorDashboard/DoctorHome'
 
 const VerticalNavbarDashboard = () => {
   return (
@@ -7,7 +8,7 @@ const VerticalNavbarDashboard = () => {
         <div className="d_main-left">
           
                   <nav className="d_vnav">
-                      <Link  legacyBehavior href="/components/DoctorHome">
+                      <Link  legacyBehavior href="../DoctorDashboard/DoctorHome">
                       <div className="block">
                       <img src="/Home.png" alt="" />
                       <p>Home</p>
