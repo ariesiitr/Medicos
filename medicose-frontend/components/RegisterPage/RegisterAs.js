@@ -1,9 +1,9 @@
 
 import React,{useState} from 'react'
-import Navbar from './Navbar'
+import Navbar from '../Navbar/Navbar'
 import Link from 'next/link';
-
-
+import RegisterAsPatient from './RegisterAsPatient';
+import RegisterAsDoctor from './RegisterAsDoctor'
 
 if(typeof window !== "undefined"){
     
@@ -64,11 +64,12 @@ if(container3){
 
 
 
-const RegisterAs = () => {
+const RegisterAs = (props) => {
   return (
     <div>
     <div className="upper">
     <Navbar/>
+    
 
     </div>
 
@@ -81,7 +82,7 @@ const RegisterAs = () => {
 
         <div className="containers">
             
-            <Link legacyBehavior href='/components/RegisterAsPatient'> 
+            <Link legacyBehavior href='./RegisterAsPatient'> 
             
 
             <div className="container" id="container1">
@@ -90,10 +91,9 @@ const RegisterAs = () => {
             </div>
             
             </Link>
-            <Link legacyBehavior href='/components/RegisterAsDoctor'>
-              
 
-            <div className="container" id="container2">
+            <Link legacyBehavior href='/components/RegisterPage/RegisterAsDoctor'>
+              <div className="container" id="container2" >
                 <img src="/Doctor.png" id="doctor" alt="" />
                 <p id="para2">As a Doctor</p>
             </div>

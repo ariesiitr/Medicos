@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'Doctor.apps.DoctorConfig',
     'clinic.apps.ClinicConfig',
     'patient.apps.PatientConfig',
+    'corsheaders',
     'order.apps.OrderConfig',
+
 
 ]
 
@@ -59,6 +61,23 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
+]
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
+
+CORS_ALLOWED_HEADERS = [
+    'Authorization',
+    'Content-Type',
+]
+
+CORS_ALLOWED_METHODS = [
+    'GET',
+    'POST'
 ]
 
 ROOT_URLCONF = 'medicos.urls'

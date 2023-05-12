@@ -18,8 +18,8 @@ class Doctor(models.Model):
     license= models.ImageField
     speciality = models.CharField(max_length=50,default="")
     address= models.CharField(max_length=250,default="")
-    appointmentstartTime= models.TimeField(auto_now=False, auto_now_add=False)
-    appointmentendTime = models.TimeField(auto_now=False, auto_now_add=False)
+    appointmentstartTime= models.CharField(max_length=250,default="")
+    appointmentendTime = models.CharField(max_length=250,default="")
     availableDays= models.CharField(max_length=50,default="")
     appointmentFees = models.IntegerField(default=0, verbose_name="fee")
     upiId = models.CharField(max_length=50,default="")

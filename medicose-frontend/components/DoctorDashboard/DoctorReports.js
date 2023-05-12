@@ -15,12 +15,12 @@ const DoctorHome = () => {
         <VerticalNavbarDashboard/>
       </div>
     <div className="d_main-right">
-      <div className="heading">
+      {/* <div className="heading">
         
         <h1>Reports</h1>
       </div>
       <input  id='search' placeholder='Enter Patient name or Patient Id' 
-       />
+       /> */}
     </div>
     </div>
     </>
