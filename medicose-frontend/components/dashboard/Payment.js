@@ -4,35 +4,28 @@ import Image from "next/image";
 function Payment() {
   return (
     <div className="reportsContainer">
-      <div className="reportHeadingContainer">
-        <div className="reportsHeading">Payments</div>
-        <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
-          <div className="filterContainer">
-            <span>Filter</span>
-            <Image
-              src="/filterIcon.png"
-              width={20}
-              height={20}
-              alt="filter Icon"
-            />
-          </div>
-          <div className="filterContainer">
-            <span>Sort by</span>
-            <Image
-              src="/sortbyIcon.png"
-              width={20}
-              height={20}
-              alt="sortby Icon"
-            />
-          </div>
-        </div>
-      </div>
+      <div className="reportsHeading">Payments</div>
       <div className="paymentContainerBottom">
         <div className="paymentsRecievedToday">
           <div className="paymentDay">Today</div>
+          <table>
+            <tr>
+              <th colSpan={1}>Name</th>
+              <th colSpan={1}>Date</th>
+              <th colSpan={1}>Amount</th>
+              <th colSpan={1}>Status</th>
+            </tr>
+            <tr>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+            <td>hello</td>
+            </tr>
+          </table>
         </div>
-        <div className="pastPayments">
-          <div>Past Payment</div>
+
+        <div className="previousPayments">
+          <div className="pastPaymentText">Past Payment</div>
         </div>
       </div>
     </div>
