@@ -14,7 +14,8 @@ def SignupClinic(request):
        
           data = {"chemistName": request.data.get(
             "chemistName"), "license": request.data.get("license"), "shopAddress" : request.data.get("shopAddress"),
-              "upiId" : request.data.get("upiId"),"password" : request.data.get("password"), "confirmPassword" : request.data.get("confirmPassword"),
+              "upiId" : request.data.get("upiId"),"password" : request.data.get("password"), "storeName" : request.data.get("storeName"),
+              "openingTime" : request.data.get("openingTime"),"closingTime" : request.data.get("closingTime"),
             }
         
           db_entry = ClinicSerializer(data=data)          
