@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
-// import { Console } from "console";
 
 export default function Loginform() {
 
@@ -12,7 +11,7 @@ export default function Loginform() {
   const [pass_error, setpass_error] = useState('');
   const [pass_error_bool, setpass_error_bool] = useState(false);
 
- const LOGIN_API = `http://127.0.0.1:8000//user/login`;
+ const LOGIN_API = `http://127.0.0.1:8000/login/`;
 
   const passValidate = () => {
     setTimeout(function () {
@@ -52,8 +51,8 @@ export default function Loginform() {
     });
   };
 
-console.log(Password);
-console.log(userName);
+// console.log(Password);
+// console.log(userName);
 
   function submit() {
     if (Password.length > 7) {
@@ -97,7 +96,7 @@ console.log(userName);
             height: "18px",
           }}
         >
-          <input type="checkbox" />
+          <input type="checkbox" className="Input" />
           <label>Remember me</label>
         </div>
         <div
@@ -160,19 +159,19 @@ function Signupform(props) {
       <div className="greet">Create your account</div>
       <div>
         <div className="inputLabel">Username</div>
-        <input type="text" placeholder="Enter your Name" />
+        <input type="text" placeholder="Enter your Name" className="Input" />
       </div>
       <div>
         <div className="inputLabel">Email</div>
-        <input type="email" placeholder="Enter your Email" />
+        <input type="email" placeholder="Enter your Email" className="Input" />
       </div>
       <div>
         <div className="inputLabel">Password</div>
-        <input type="password" placeholder="Enter your Password" />
+        <input type="password" placeholder="Enter your Password" className="Input" />
       </div>
       <div>
         <div className="inputLabel">Confirm Password</div>
-        <input type="password" placeholder="Confirm password" />
+        <input type="password" placeholder="Confirm password" className="Input" />
       </div>
       <button className="btn" onClick={props.NavigateToOtpform} style={{
         marginTop: '2.5rem'
@@ -194,7 +193,7 @@ function Otpform() {
         {isVerified ? (
           <>
             {" "}
-            <input type="text" placeholder="Enter One Time Password" />
+            <input type="text" placeholder="Enter One Time Password" className="Input" />
             <button className="btn" onClick={Verify} style={{
               marginTop: "2.5rem"
             }}>Verify</button>
@@ -203,7 +202,7 @@ function Otpform() {
           <>
             {" "}
             <div className="invalidOtp">
-              <input type="text" placeholder="Enter One Time Password" />
+              <input type="text" placeholder="Enter One Time Password" className="Input" />
               <img
                 src="/vector.png"
                 width={20}

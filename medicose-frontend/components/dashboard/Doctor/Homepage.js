@@ -1,6 +1,6 @@
 import React, {useEffect, useState}from 'react'
-import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNavbarDashboard'
+import NavbarDashboard from '../../navbar/NavDashboard'
+import VerticalNavbarDashboard from '../../navbar/VerticalNav'
 import Link from 'next/link'
 import axios from 'axios'
 
@@ -35,6 +35,22 @@ if(typeof window !== "undefined"){
 }
 
 
+const url = 'http://127.0.0.1:8000/doctor/bookAppointments';
+const authToken = 'authToken';
+
+axios.get(url, {
+  headers: {
+    Authorization: authToken
+  }
+})
+  .then(response => {
+    // Handle successful response
+    console.log(response.data);
+  })
+  .catch(error => {
+    // Handle error
+    console.error(error);
+  });
 
 
 const DoctorHome = () => {
@@ -48,6 +64,7 @@ const DoctorHome = () => {
   
   
  
+
   return (
     <>
     <div className="d_upper">
@@ -121,8 +138,15 @@ const DoctorHome = () => {
 
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
+<<<<<<< HEAD:medicose-frontend/components/DoctorDashboard/DoctorHome.js
                       <div className="appointment_date">
                           <div>23</div>
+=======
+                          <div className="appointment_date">
+                          {/* <div>{appointmentDate}</div> */}
+                          {/* <div>23</div> */}
+
+>>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d:medicose-frontend/components/dashboard/Doctor/Homepage.js
                           </div>
                           <div className="appointment_month_day">
                           
@@ -134,8 +158,13 @@ const DoctorHome = () => {
                         </div>
                       
                       <div className="appointment_time">
+<<<<<<< HEAD:medicose-frontend/components/DoctorDashboard/DoctorHome.js
                         
                         <div>9:00 pm- 10:00 pm</div>
+=======
+                        {/* <div>{appointmentTime}</div> */}
+                        {/* <div>9:00 pm- 10:00 pm</div> */}
+>>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d:medicose-frontend/components/dashboard/Doctor/Homepage.js
 
                       </div>
                         
@@ -148,9 +177,17 @@ const DoctorHome = () => {
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
+<<<<<<< HEAD:medicose-frontend/components/DoctorDashboard/DoctorHome.js
                            
                             <div style={{color:"#737E87"}}>#089996</div>
                             <div style={{color:'#5D9EE3'}}>Monthly checkup</div>
+=======
+                            {/* <div style={{color:"#737E87"}}>{uniqueId}</div>
+                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
+                            {/* <div>{appoitment_patient_basic_info}</div> */}
+                            {/* <div style={{color:"#737E87"}}>#089996</div> */}
+                            {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
+>>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d:medicose-frontend/components/dashboard/Doctor/Homepage.js
 
                           </div>
                       </div>
@@ -176,9 +213,15 @@ const DoctorHome = () => {
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
                           <div className="appointment_date">
+<<<<<<< HEAD:medicose-frontend/components/DoctorDashboard/DoctorHome.js
                           
                           {/*<div>{appointmentDate}</div> */}
                           <div>23</div>
+=======
+                          {/* <div>{appointmentDate}</div> */}
+                          {/* <div>23</div> */}
+
+>>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d:medicose-frontend/components/dashboard/Doctor/Homepage.js
                           </div>
                           <div className="appointment_month_day">
                             {/* <div>{appointment_month},</div> */}
@@ -190,9 +233,15 @@ const DoctorHome = () => {
 
                       </div>
                       <div className="appointment_time">
+<<<<<<< HEAD:medicose-frontend/components/DoctorDashboard/DoctorHome.js
                         
                         {/* <div>{appointmentTime}</div> */}
                         <div>9:00 pm- 10:00 pm</div>
+=======
+                        {/* <div>{appointmentTime}</div> */}
+                        {/* <div>9:00 pm- 10:00 pm</div> */}
+
+>>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d:medicose-frontend/components/dashboard/Doctor/Homepage.js
                       </div>
                         
                       </div>
@@ -204,12 +253,19 @@ const DoctorHome = () => {
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
+<<<<<<< HEAD:medicose-frontend/components/DoctorDashboard/DoctorHome.js
                             
                            
                             {/*<div style={{color:"#737E87"}}>{uniqueId}</div> */}
                             {/* <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
                             <div style={{color:"#737E87"}}>#089996</div>
                             <div style={{color:'#5D9EE3'}}>Monthly checkup</div>
+=======
+                            {/* <div style={{color:"#737E87"}}>{uniqueId}</div>
+                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
+                            {/* <div style={{color:"#737E87"}}>#089996</div> */}
+                            {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
+>>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d:medicose-frontend/components/dashboard/Doctor/Homepage.js
 
                           </div>
                       </div>
