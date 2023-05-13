@@ -3,7 +3,7 @@ import Link from 'next/link'
 import NavItem from './NavItem'
 import NavbarDashboard from './NavbarDashboard'
 import Image from 'next/image'
-import DoctorHome from '../DoctorDashboard/DoctorHome'
+import DoctorHome from '../dashboard/Doctor/DoctorHome'
 
 
 
