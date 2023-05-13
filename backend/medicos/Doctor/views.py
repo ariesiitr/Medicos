@@ -19,7 +19,7 @@ def Signup(request):
        
           data = {"doctorName" : request.data.get("doctorName"),"availableDays" : request.data.get("availableDays"),"clinicName": request.data.get(
             "clinicName"), "license": request.data.get("license"), "speciality" : request.data.get("speciality"), "address" : request.data.get("address")
-            , "appointmentstartTime" : request.data.get("appointmentstartTime"), "appointmentendTime" : request.data.get("appointmentendTime"), "fees" : request.data.get("fees"),
+            , "appointmentstartTime" : request.data.get("appointmentstartTime"), "appointmentendTime" : request.data.get("appointmentendTime"), "appointmentFees" : request.data.get("appointmentFees"),
               "upiId" : request.data.get("upiId"),"password" : request.data.get("password"), "confirmPassword" : request.data.get("confirmPassword"),
             "contactNo": request.data.get("contactNo")}
          

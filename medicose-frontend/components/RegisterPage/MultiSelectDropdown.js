@@ -22,10 +22,11 @@ const MultiSelectDropdown = () => {
   return (
     <div>
       <Select
+      
         options={options}
         isMulti
         onChange={handleMultiSelectChange}
-        value={selectedOptions}
+        value={selectedOptions} 
       />
     </div>
   );
