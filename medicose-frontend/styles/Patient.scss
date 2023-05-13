@@ -17,6 +17,10 @@
 	background: #ffffff;
 	border-radius: 8px;
 	padding: 28px 24px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 .patientProfileDetails {
 	display: flex;
@@ -67,6 +71,17 @@
 	line-height: 1.75rem;
 	color: #737e87;
 }
-#noAppointment{
-    margin: 1rem;
+#noAppointment {
+	margin: 1rem;
+}
+.appointmentBtn {
+	width: 93px;
+	height: 43px;
+	background: #ffffff;
+	border: 1px solid rgba(115, 126, 135, 0.4);
+	border-radius: 4px;
+	font-size: 1.5rem;
+	font-family: 'THICCCBOI';
+	font-style: normal;
+	font-weight: 500;
 }
