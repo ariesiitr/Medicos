@@ -22,4 +22,3 @@ class  Order(models.Model):
         Meta class for Doctor
         """
         verbose_name_plural = "Order"
-

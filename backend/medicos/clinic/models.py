@@ -16,8 +16,8 @@ class   Clinic(models.Model):
     shopAddress= models.CharField(max_length=100,default="")
     license= models.ImageField
     storeName=  models.CharField(max_length=100,default="")
-    openingTime=models.DateTimeField(null=True, blank=True) 
-    closingTime= models.DateTimeField(null=True, blank=True) 
+    openingTime=models.CharField(max_length=10,default="") 
+    closingTime= models.CharField(max_length=10,default="") 
     upiId = models.CharField(max_length=50,default="")
     password= models.CharField(max_length=30,default="")
     contactNo= models.CharField(max_length=15, default='')
@@ -38,6 +38,10 @@ class   Clinic(models.Model):
        self.authToken = jwt.encode({"contactNo": self.contactNo, "password": self.password,
                                     "updated": str(self.updated)}, self.jwt_secret, algorithm=self.jwt_algorithm)
        return super(Clinic, self).save(*args, **kwargs)
+
+    
+    def check_password(self, password):
+        return self.password==password
 
     class Meta:
         """

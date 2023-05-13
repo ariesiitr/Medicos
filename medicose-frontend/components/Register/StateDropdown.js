@@ -47,7 +47,7 @@ const StateDropdown = () => {
   return (
     
       
-      <select id="state" value={selectedState} onChange={handleStateChange}>
+      <select id="state" value={selectedState} onChange={ handleStateChange} >
         <option value="">Choose your state</option>
         {stateOptions.map((state) => (
           <option key={state} value={state}>

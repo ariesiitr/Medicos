@@ -25,13 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '5^g03()ijecgt#)lsoqsybt65y=o((h9_utl8zen)a24b*0g_t'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'Doctor.apps.DoctorConfig',
     'clinic.apps.ClinicConfig',
     'patient.apps.PatientConfig',
-    'corsheaders',
     'order.apps.OrderConfig',
-
+    'corsheaders',
+    
 
 ]
 

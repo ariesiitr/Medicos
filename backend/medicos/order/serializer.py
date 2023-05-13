@@ -7,5 +7,3 @@ class OrderSerializer(serializers.ModelSerializer):
         model = Order
         exclude = ['created', 'updated','uniqueId']
 
-
-

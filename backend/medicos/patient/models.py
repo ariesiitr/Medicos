@@ -43,6 +43,11 @@ class Patient(models.Model):
        print(self.authToken)
        return super(Patient, self).save(*args, **kwargs)
 
+    def check_password(self, password):
+        return self.password==password
+
+
+
 
 class PatientDetails(models.Model):
    uniqueId= models.CharField(max_length=50, default='')
@@ -50,6 +55,8 @@ class PatientDetails(models.Model):
    pastPrescription= models.ImageField
    created = models.DateTimeField(default=timezone.now)
    updated = models.DateTimeField(auto_now=True)
+  
+
 
    def __str__(self):
      return self.uniqueId
