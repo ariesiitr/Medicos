@@ -11,9 +11,19 @@ import PatientHomepage from '../components/dashboard/Patient/Homepage';
 />;
 
 export default function Home() {
-	return (
-		<>
-			<PatientHomepage />
-		</>
-	);
+  return (
+    <>
+    
+    {/* <DoctorCalender/>*/} 
+   
+    {/*  <DoctorHome/> */}
+   {/* <RegisterAsDoctor/> */}
+    {/* <RegisterAsPatient/> */}
+    {/* <RegisterAsDoctor/> */}
+    
+    // <RegisterAsChemist/>
+    
+    </>
+  )
+
 }

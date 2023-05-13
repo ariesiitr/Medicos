@@ -1,54 +1,83 @@
 import React,{useState} from 'react'
 import Navbar from '../Navbar/Navbar'
 import axios from 'axios';
+import { Authenticate } from '../utils';
+import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 const RegisterAsChemist = () => {
- const url="http://127.0.0.1:8000/clinic/chemistlogin";
- const [data,setData]=useState({
-  chemistName:"",
-  password:"",
-  shopAddress:"",
-  contactNo:"",
-  upiId:"",
-  license:"",
-  storeName:"",
-  openingTime:"",
-  closingTime:"",
+//  const url="http://127.0.0.1:8000/clinic/chemistlogin";
+const [chemistName, setchemistName] = useState('');
+  const [password, setpassword] = useState('');
+  const [Confirmpassword, setConfirmpassword] = useState('');
+  const [storeName, setstoreName] = useState('');
+  const [shopAddress, setshopAddress] = useState('');
+  const [openingTime, setopeningTime] = useState('');
+  const [closingTime, setclosingTime] = useState('');
+  const [contactNo, setcontactNo] = useState('');
+  const [license, setlicense] = useState('');
+  const [upiId, setupiId]= useState('');
+  const router = useRouter();
 
- })
-const newData={
-  chemistName:data.chemistName,
-  password:data.password,
-  shopAddress: data.shopAddress,
-  contactNo: data.contactNo,
-  upiId: data.upiId,
-  license: data.license,
-  storeName: data.storeName,
-  openingTime: data.openingTime,
-  closingTime: data.closingTime
-}
-async function submit(e){
-  e.preventDefault();
-  try{
-    const res = await axios.post(url,
-        JSON.stringify(newData),{
-          headers: {
-            'Content-Type' : 'application/json',
-            "Accept":"application/json"
-          }
+  const submit = () => {
+    console.log('started')
+    if (chemistName === '') {
+      alert('Please enter Your Name');
+      console.log('CN')
+    } else if (password === '') {
+      toast.warning('Please enter Password ');
+    } else if (Confirmpassword=== '') {
+      toast.warning('Please enter Confirm Password');
+    } else if (storeName=== '') {
+      toast.warning('Please enter your Store Name');
+    } else if (shopAddress === '') {
+      toast.warning('Please enter your Store Address');
+    } else if (openingTime=== '') {
+      toast.warning('Please enter opening Time of your Store');
+    }else if (closingTime=== '') {
+      toast.warning('Please enter closing Time of your Store');
+    }else if (license=== '') {
+      toast.warning('Please upload your license');
+    }else if (upiId=== '') {
+      toast.warning('Please enter your Upi Id');
+    }
+     else {
+      if (password?.length > 7) {
+        if (password === Confirmpassword) {
+          axios.post('http://127.0.0.1:8000/clinic/chemistlogin', {
+          
+              chemistName: chemistName,
+              password: password,
+              openingTime: openingTime,
+              closingTime: closingTime,
+              storeName : storeName,
+              contactNo: contactNo,
+              shopAddress : shopAddress,
+              license: license,
+              upiId: upiId,            
+           
+        })
+            .then((res) => {
+              if (res.status === 200) {
+                console.log(res.data)
+                Authenticate(res.data.n, res.data.e_id, res.data.at);
+                
+              }
+            })
+            .catch((err) => {
+              toast(err.response.data.error);
+            });
+        } else {
+          toast('password doesnot match');
         }
-    );
+      } else {
+        toast('password should have 8 or more characters');
+      }
+    }
 
-  }catch(error){
-}  
-}  
+   };
 
-function handle(e){
-  const newdata={...data}
-  newdata[e.target.id]=e.target.value
-  setData(newdata)
-  console.log(newdata)
-}
+
   return (
     <div>
         <div className="upper">
@@ -61,51 +90,52 @@ function handle(e){
             <div className="column1">
 
         
-            <form method='post' onSubmit={(e)=>submit(e)} >
-
-              <label className='registerform_label' htmlFor="chemistName">Chemist Name</label>
-              <input className='registerform_input' type="text" id='chemistName' onChange={(e) => handle(e)} value={data.chemistName} placeholder='Enter your name' />
+            
+     
+              <span className='registerform_label' >Chemist Name   </span>
+              <input className='chemistName' type="text" 
+               onChange={(e) => setchemistName(e.target.value)} value={chemistName} placeholder='Enter your name' />
               
-              <label className='registerform_label' htmlFor="password">Password</label>
-              <input className='registerform_input' type="text" id='password' onChange={(e) => handle(e)} value={data.password} placeholder='Enter your password' />
-
-              <label className='registerform_label' htmlFor="storeName">Name of Store</label>
-              <input className='registerform_input' type="text" id='storeName' onChange={(e) => handle(e)} value={data.storeName} placeholder='Enter the name of your store' />
+              <span className='registerform_label' >Password</span>
+              <input className='password' type="text" onChange={(e) => setpassword(e.target.value)} value={password} placeholder='Enter your password' />
+              
+              <span className='registerform_label' >Confirm Password</span>
+              <input className='password' type="text" onChange={(e) => setConfirmpassword(e.target.value)} value={Confirmpassword} placeholder='Enter confirm password' />
+             
+              <span className='registerform_label'>Name of Store</span>
+              <input className='storeName' type="text" id='storeName' onChange={(e) => setstoreName(e.target.value)} value={storeName} placeholder='Enter the name of your store' />
               
 
-              <label htmlFor="shopAddress">Address</label>
-              <input type="address" id='shopAddress' onChange={(e) => handle(e)} value={data.shopAddress} placeholder='Enter your address' />
+              <span >Address</span>
+              <input type="address" className='shopAddress' onChange={(e) => setshopAddress(e.target.value)} value={shopAddress} placeholder='Enter your address' />
 
-              <label htmlFor="openingTime">Opens at</label>
-              <input type='time' id='openingTime' onChange={(e) => handle(e)} value={data.openingTime} placeholder='Choose opening time'></input>
+              <span htmlFor="openingTime">Opens at</span>
+              <input type='time' className='openingTime' onChange={(e) => setopeningTime(e.target.value)} value={openingTime} placeholder='Choose opening time'></input>
 
-              <label htmlFor="closingTime">Closes at</label>
-              <input type='time' id='closingTime' onChange={(e) => handle(e)} value={data.closingTime} placeholder='Choose closing time'></input>
+              <span htmlFor="closingTime">Closes at</span>
+              <input type='time' className='closingTime' onChange={(e) => setclosingTime(e.target.value)} value={closingTime} placeholder='Choose closing time'></input>
 
-              <label htmlFor="contactNo">Contact Number</label>
-              <input type="number" id='contactNo' onChange={(e) => handle(e)} value={data.contactNo} placeholder='Enter your contact no.' />
+             
 
               
               
-            </form>
+          
               
             </div>
 
             <div className="column2">
-            <form method='post' onSubmit={(e)=>submit(e)} >
+            
+            <span htmlFor="contactNo">Contact Number</span>
+            <input type="number" className='contactNo' onChange={(e) => setcontactNo(e.target.value)} value={contactNo} placeholder='Enter your contact no.' />
 
+             <span>Enter your UPI ID</span>
+              <input type='text' className='upiId' onChange={(e) => setupiId(e.target.value)} value={upiId} placeholder='UPI Id               @ okhdfcbank'></input>
 
-             <label htmlFor="upiId">Enter your UPI ID</label>
-              <input type='text' id='upiId' onChange={(e) => handle(e)} value={data.upiId} placeholder='UPI Id               @ okhdfcbank'></input>
+              <span>Upload your license:</span>
+              <input type='file' className='license' onChange={(e) => setlicense(e.target.value)} value={license} id='license'></input>
 
-              <label htmlFor="license">Upload your license:</label>
-              <input type='file' onChange={(e) => handle(e)} value={data.license} id='license'></input>
-
-              <button className='btn-submit' type='submit' onClick={handle}>Submit</button>
-              </form>
-
-
-
+              <button className='btn-submit' type='button' onClick={submit}>Submit</button>
+             
             </div>
 
           
@@ -118,6 +148,6 @@ function handle(e){
        
       </div>
   )
-}
+} 
 
 export default RegisterAsChemist
