@@ -35,8 +35,24 @@ if(typeof window !== "undefined"){
 }
 
 
+const url = 'http://127.0.0.1:8000/doctor/bookAppointments';
+const authToken = 'your_auth_token_here';
 
+axios.get(url, {
+  headers: {
+    Authorization: authToken
+  }
+})
+  .then(response => {
+    // Handle successful response
+    console.log(response.data);
+  })
+  .catch(error => {
+    // Handle error
+    console.error(error);
+  });
 
+  
 const DoctorHome = () => {
   
   const [toggleState,setToggleState] = useState(1);
@@ -59,6 +75,7 @@ const DoctorHome = () => {
   //   .catch(error.response.data)
   // });
  
+
   return (
     <>
     <div className="d_upper">

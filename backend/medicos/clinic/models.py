@@ -41,7 +41,7 @@ class   Clinic(models.Model):
 
     
     def check_password(self, password):
-        self.password=password
+        return self.password==password
 
     class Meta:
         """
