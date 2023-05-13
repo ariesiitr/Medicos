@@ -1,6 +1,6 @@
 import React , {useState}from 'react'
-import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNavbarDashboard'
+import NavbarDashboard from '../../Navbar/NavbarDashboard'
+import VerticalNavbarDashboard from '../../navbar/VerticalNav'
 import Link from 'next/link'
 import Calendar from 'react-calendar';
 

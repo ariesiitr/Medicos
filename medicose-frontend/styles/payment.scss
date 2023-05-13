@@ -1,0 +1,33 @@
+.paymentsRecievedToday {
+  width: 100%;
+  min-height: 50vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.pastPayments {
+  width: 100%;
+  min-height: 50vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.paymentDay {
+  width: 78px;
+  height: 20px;
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+}
+.pastPaymentText {
+  font-family: "THICCCBOI";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2rem;
+  color: #737e87;
+}
+
+
