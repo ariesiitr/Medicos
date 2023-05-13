@@ -48,11 +48,9 @@ INSTALLED_APPS = [
     'clinic.apps.ClinicConfig',
     'patient.apps.PatientConfig',
     'order.apps.OrderConfig',
-<<<<<<< HEAD
-=======
     'corsheaders',
+   
     
->>>>>>> 017d938c277b09fcbca30dd2a89cceb9a5a8f90d
 
 ]
 
