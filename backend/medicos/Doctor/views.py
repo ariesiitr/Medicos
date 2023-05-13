@@ -30,7 +30,6 @@ def Signup(request):
           return Response(data={"success":"data submitted"}, status=status.HTTP_200_OK) 
         
       except Error as e:
-         print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
         
 @api_view(('GET','POST'))
