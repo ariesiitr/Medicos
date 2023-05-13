@@ -1,18 +1,92 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import axios from 'axios';
 
 export default function Loginform() {
+
+
+  const [userName, setuserName] = useState('');
+  const [Password, setPassword] = useState('');
+  const [pass_error, setpass_error] = useState('');
+  const [pass_error_bool, setpass_error_bool] = useState(false);
+
+ const LOGIN_API = `http://127.0.0.1:8000//user/login`;
+
+  const passValidate = () => {
+    setTimeout(function () {
+      if (Password.length < 7) {
+        setpass_error_bool(true);
+        setpass_error('Password should be more than 8 letters');
+      } else {
+        setpass_error_bool(false);
+        setpass_error('');
+      }
+    }, 100000);
+  };
+  const FetchApi = (method, url, params, TokenValue) => {
+    return new Promise((resolve, reject) => {
+      if (TokenValue) {
+        axios({
+          method: method,
+          url: url,
+          data: params,
+          headers: {
+            Authorization: 'Token ' + TokenValue,
+          },
+          responseType: 'json',
+        })
+          .then((res) => resolve(res))
+          .catch((err) => reject(err));
+      } else {
+        axios({
+          method: method,
+          url: url,
+          data: params,
+          responseType: 'json',
+        })
+          .then((res) => resolve(res))
+          .catch((err) => reject(err));
+      }
+    });
+  };
+
+console.log(Password);
+console.log(userName);
+
+  function submit() {
+    if (Password.length > 7) {
+      FetchApi(
+        'POST',
+        LOGIN_API,
+        {
+          username: userName,
+          password: Password,
+        },
+        null
+      )
+    }
+  }
+
   return (
     <>
       <div className="greet">Hello ! Welcome Back</div>
       <div>
         <div className="inputLabel">Username</div>
-        <input type="text" placeholder="Enter your username" className="Input" />
+        <input type="text" placeholder="Enter your username" 
+        onChange={(e) => setuserName(e.target.value)}
+
+        />
       </div>
       <div>
         <div className="inputLabel">Password</div>
-        <input type="password" placeholder="Enter your Password" className="Input" />
+        <input type="password" placeholder="Enter your Password" 
+        onChange={(e) => 
+          {setPassword(e.target.value);
+          passValidate();
+          }}
+      
+        />
       </div>
       <div className="checkboxContainer">
         <div
@@ -40,6 +114,9 @@ export default function Loginform() {
         style={{
           backgroundColor: "#089996",
           color: "#FFFFFF",
+        }}
+        onClick={() => {
+          submit();
         }}
       >
         Login
