@@ -36,7 +36,7 @@ if(typeof window !== "undefined"){
 
 
 const url = 'http://127.0.0.1:8000/doctor/bookAppointments';
-const authToken = 'your_auth_token_here';
+const authToken = 'authToken';
 
 axios.get(url, {
   headers: {
@@ -52,7 +52,7 @@ axios.get(url, {
     console.error(error);
   });
 
-  
+
 const DoctorHome = () => {
   
   const [toggleState,setToggleState] = useState(1);

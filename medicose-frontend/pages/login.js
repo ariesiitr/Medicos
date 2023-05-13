@@ -3,7 +3,7 @@ import Logindesign from "../components/Logindesign";
 import Image from "next/image";
 import Loginform from "../components/Forms";
 import Navbar from "../components/navbar/Navbar"
-import DoctorHome from "../components/DoctorDashboard/DoctorHome";
+
 
 
 function login() {
