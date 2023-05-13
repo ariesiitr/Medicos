@@ -1,0 +1,70 @@
+.chemistintro{
+    background-color: white;
+    height: 133px;
+    width: 1276px;
+    margin:32px;
+    // gap: 20px;
+    
+  }
+  
+  .c_intro{
+    display: flex;
+    flex-direction: row;
+    margin: 24px;
+   gap: 50px;
+    
+    
+  }
+  .chemistlogo{
+    margin-top: 28px;
+  }
+  .chemistname{
+    margin-top: 28px;
+  }
+
+  .chemistOrders{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .orders_heading{
+    display: flex;
+    flex-direction: row;
+    margin: 28px;
+    gap: 35px;
+  }
+  .orders_heading h2{
+    font-size: 38px;
+    font-weight: 700;
+    font-family: THICCCOBOI;
+    letter-spacing: 2.5px;
+  }
+
+  .orders{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    margin: 32px;
+     padding: 25px;
+  }
+  .patientName_logo_time{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    
+    font-family: THICCCOBOI;
+  }
+  .reports{
+    margin-right: 50px;
+    
+  }
+  .userName{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+  }
+  

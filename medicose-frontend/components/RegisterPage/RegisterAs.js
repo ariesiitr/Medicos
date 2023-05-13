@@ -1,6 +1,6 @@
 
 import React,{useState} from 'react'
-import Navbar from '../Navbar/Navbar'
+import NavbarRegister from '../Navbar/NavbarRegister'
 import Link from 'next/link';
 import RegisterAsPatient from './RegisterAsPatient';
 import RegisterAsDoctor from './RegisterAsDoctor'
@@ -68,7 +68,7 @@ const RegisterAs = (props) => {
   return (
     <div>
     <div className="upper">
-    <Navbar/>
+    <NavbarRegister/>
     
 
     </div>

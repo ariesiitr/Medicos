@@ -58,31 +58,3 @@ const VerticalNavbarDashboard = () => {
 
 export default VerticalNavbarDashboard
 
-// export const VerticalNavbarDashboard = [
-//   {
-//     name:'Home',
-//     path:'',
-//     icon:"fa-solid fa-house" 
-//   },
-//   {
-//     name:'Calender',
-//     path:'',
-//     icon:"fa-regular fa-calendar-exclamation" 
-//   },
-//   {
-//     name:'Chats',
-//     path:'',
-//     icon:' class="fa-solid fa-messages" style="color: #627ba7'
-//   },
-//   {
-//     name:'Reports',
-//     path:'',
-//     icon:'fa-solid fa-notes-medical'
-//   },
-//   {
-//     name:'Payments',
-//     path:'',
-//     icon:'class="fa-solid fa-circle-dollar" style="color: #627ba7;"'
-//   }
-// ]
-

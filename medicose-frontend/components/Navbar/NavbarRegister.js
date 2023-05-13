@@ -48,7 +48,7 @@ if(typeof window !== "undefined"){
 
 
 
-const Navbar = () => {
+const NavbarRegister = () => {
   return (
   
 
@@ -69,9 +69,9 @@ const Navbar = () => {
             </div>
 
                 <div className='hamburger'>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
     
                 </div>
                 
@@ -113,4 +113,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default NavbarRegister
