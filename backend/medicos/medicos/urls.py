@@ -19,11 +19,15 @@ import Doctor.urls as docurls
 import clinic.urls as clinicurls
 import patient.urls as paturls
 import order.urls as orderurls
+from .views import Login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doctor/', include(docurls)),
     path('clinic/', include(clinicurls)),
     path('patient/', include(paturls)),
-    path('order/', include(orderurls))
+    path('order/', include(orderurls)),
+    path('login/', Login)
+
+
 ]
