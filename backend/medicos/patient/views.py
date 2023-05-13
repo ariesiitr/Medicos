@@ -22,10 +22,15 @@ def Signup(request):
                     "dob" : request.data.get("dob"),"password" : request.data.get("password"), "confirmPassword" : request.data.get("confirmPassword"),
             "contactNo": request.data.get("contactNo")}
 
-            db_entry = PatientSerializer(data=data)          
+          
+            db_entry = PatientSerializer(data=data)  
+                   
             db_entry.is_valid(raise_exception=True)
+            
+            
 
             db_entry.save()
+
             return Response(data={"success":"data submitted"}, status=status.HTTP_200_OK) 
         
         except Error as e:
