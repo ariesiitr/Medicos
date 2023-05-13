@@ -151,7 +151,7 @@ const DoctorHome = () => {
 
                       </div>
                       <div className="appointment_time">
-                        <div>{appointmentTime}</div>
+                        {/* <div>{appointmentTime}</div> */}
                         {/* <div>9:00 pm- 10:00 pm</div> */}
 
                       </div>
@@ -165,8 +165,8 @@ const DoctorHome = () => {
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
-                            <div style={{color:"#737E87"}}>{uniqueId}</div>
-                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
+                            {/* <div style={{color:"#737E87"}}>{uniqueId}</div>
+                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
                             {/* <div>{appoitment_patient_basic_info}</div> */}
                             {/* <div style={{color:"#737E87"}}>#089996</div> */}
                             {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
@@ -212,7 +212,7 @@ const DoctorHome = () => {
 
                       </div>
                       <div className="appointment_time">
-                        <div>{appointmentTime}</div>
+                        {/* <div>{appointmentTime}</div> */}
                         {/* <div>9:00 pm- 10:00 pm</div> */}
 
                       </div>
@@ -226,8 +226,8 @@ const DoctorHome = () => {
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
-                            <div style={{color:"#737E87"}}>{uniqueId}</div>
-                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
+                            {/* <div style={{color:"#737E87"}}>{uniqueId}</div>
+                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
                             {/* <div style={{color:"#737E87"}}>#089996</div> */}
                             {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
 

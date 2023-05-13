@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import NavbarDashboard from "../../navbar/NavDashboard"
 
 function Chatpage() {
   return (
     <div className="chatContainer">
       <div className="clientChatDetails">
+      
         <div className="chatTextContainer">
           <div className="chatsContainer">Chats</div>
           <Image src="/Ellipsis.png" width={36} height={32} />

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import DoctorHome from '../components/dashboard/Doctor/Homepage';
+import Chatpage from '../components/dashboard/Doctor/Chatpage';
 import PatientHomepage from '../components/dashboard/Patient/Homepage';
 <link
 	rel="stylesheet"
