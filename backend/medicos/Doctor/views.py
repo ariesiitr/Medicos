@@ -52,19 +52,11 @@ def appointmentsByPatient(request):
          print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
       
+     
 @api_view(('GET','POST'))
 def DocappointmentsDetails(request):
-      if request.method =='GET':
-          AuthToken = request.headers['Authorization']
-          # .split('')[1]
-          user = auth(AuthToken) 
-          if user == None:
-           return Response({"error": "Invalid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)    
-
-          else :
-              appointmentsDetails= DocAppointments.objects.all().filter(DocUniqueId=user.docUniqueId)
+          if request.method=='GET':
+              appointmentsDetails = DocAppointments.objects.all()
               serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
               data = serializer.data
               return Response({"data": data}, status=status.HTTP_200_OK)
-
-              
