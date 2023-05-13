@@ -39,6 +39,10 @@ class   Clinic(models.Model):
                                     "updated": str(self.updated)}, self.jwt_secret, algorithm=self.jwt_algorithm)
        return super(Clinic, self).save(*args, **kwargs)
 
+    
+    def check_password(self, password):
+        return self.password==password
+
     class Meta:
         """
         Meta class for Doctor

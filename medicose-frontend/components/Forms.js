@@ -12,7 +12,7 @@ export default function Loginform() {
   const [pass_error, setpass_error] = useState('');
   const [pass_error_bool, setpass_error_bool] = useState(false);
 
- const LOGIN_API = `http://127.0.0.1:8000//user/login`;
+ const LOGIN_API = `http://127.0.0.1:8000/login/`;
 
   const passValidate = () => {
     setTimeout(function () {
@@ -52,8 +52,8 @@ export default function Loginform() {
     });
   };
 
-console.log(Password);
-console.log(userName);
+// console.log(Password);
+// console.log(userName);
 
   function submit() {
     if (Password.length > 7) {
