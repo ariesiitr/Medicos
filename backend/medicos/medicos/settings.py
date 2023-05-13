@@ -47,9 +47,7 @@ INSTALLED_APPS = [
     'Doctor.apps.DoctorConfig',
     'clinic.apps.ClinicConfig',
     'patient.apps.PatientConfig',
-    'corsheaders',
-    'order.apps.OrderConfig',
-
+    'order.apps.Orderconfig',
 
 ]
 
