@@ -1,6 +1,6 @@
 import React, {useEffect, useState}from 'react'
-import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNavbarDashboard'
+import NavbarDashboard from '../../navbar/NavDashboard'
+import VerticalNavbarDashboard from '../../navbar/VerticalNav'
 import Link from 'next/link'
 import axios from 'axios'
 

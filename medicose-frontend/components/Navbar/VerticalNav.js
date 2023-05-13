@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import DoctorHome from '../DoctorDashboard/DoctorHome'
+import DoctorHome from '../dashboard/Doctor/DoctorHome'
 
 const VerticalNavbarDashboard = () => {
   return (

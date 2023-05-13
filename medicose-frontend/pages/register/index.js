@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Logindesign from "../components/Logindesign";
 import Image from "next/image";
 import { Signupform, Otpform } from "../components/Forms";
-import Navbar from "../components/navbar/Navbar"
+import Navbar from "../../components/navbar/Navbar"
 
 function register() {
   const [renderId, setrenderId] = useState(0);
