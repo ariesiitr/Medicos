@@ -16,8 +16,8 @@ class   Clinic(models.Model):
     shopAddress= models.CharField(max_length=100,default="")
     license= models.ImageField
     storeName=  models.CharField(max_length=100,default="")
-    openingTime=models.DateTimeField(null=True, blank=True) 
-    closingTime= models.DateTimeField(null=True, blank=True) 
+    openingTime=models.CharField(max_length=10,default="") 
+    closingTime= models.CharField(max_length=10,default="") 
     upiId = models.CharField(max_length=50,default="")
     password= models.CharField(max_length=30,default="")
     contactNo= models.CharField(max_length=15, default='')

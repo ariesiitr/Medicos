@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
 import Navbar from '../Navbar/Navbar'
-import Axios from 'axios';
+import axios from 'axios';
 
 const RegisterAsChemist = () => {
- const url="";
+ const url="http://127.0.0.1:8000/clinic/chemistlogin";
  const [data,setData]=useState({
+  chemistName:"",
+  password:"",
   shopAddress:"",
   contactNo:"",
   upiId:"",
@@ -13,27 +15,35 @@ const RegisterAsChemist = () => {
   openingTime:"",
   closingTime:"",
 
-
-
  })
-
- function submit(e){
+const newData={
+  chemistName:data.chemistName,
+  password:data.password,
+  shopAddress: data.shopAddress,
+  contactNo: data.contactNo,
+  upiId: data.upiId,
+  license: data.license,
+  storeName: data.storeName,
+  openingTime: data.openingTime,
+  closingTime: data.closingTime
+}
+async function submit(e){
   e.preventDefault();
-  Axios.post(url,{
-    shopAddress: data.shopAddress,
-    contactNo: DataTransfer.contactNo,
-    upiId: data.upiId,
-    license: data.license,
-    storeName: data.storeName,
-    openingTime: data.openingTime,
-    closingTime: data.closingTime
+  try{
+    const res = await axios.post(url,
+        JSON.stringify(newData),{
+          headers: {
+            'Content-Type' : 'application/json',
+            "Accept":"application/json"
+          }
+        }
+    );
 
-  })
-    .then((res) =>{
-      console.log(res.data)
-    })
- }
- function handle(e){
+  }catch(error){
+}  
+}  
+
+function handle(e){
   const newdata={...data}
   newdata[e.target.id]=e.target.value
   setData(newdata)
@@ -51,18 +61,25 @@ const RegisterAsChemist = () => {
             <div className="column1">
 
         
-            <form onSubmit={(e)=>submit(e)} >
+            <form method='post' onSubmit={(e)=>submit(e)} >
+
+              <label className='registerform_label' htmlFor="chemistName">Chemist Name</label>
+              <input className='registerform_input' type="text" id='chemistName' onChange={(e) => handle(e)} value={data.chemistName} placeholder='Enter your name' />
+              
+              <label className='registerform_label' htmlFor="password">Password</label>
+              <input className='registerform_input' type="text" id='password' onChange={(e) => handle(e)} value={data.password} placeholder='Enter your password' />
 
               <label className='registerform_label' htmlFor="storeName">Name of Store</label>
               <input className='registerform_input' type="text" id='storeName' onChange={(e) => handle(e)} value={data.storeName} placeholder='Enter the name of your store' />
+              
 
               <label htmlFor="shopAddress">Address</label>
-              <input type="shopAddress" id='shopAddress' onChange={(e) => handle(e)} value={data.shopAddress} placeholder='Enter your address' />
+              <input type="address" id='shopAddress' onChange={(e) => handle(e)} value={data.shopAddress} placeholder='Enter your address' />
 
-              <label htmlFor="open">Opens at</label>
+              <label htmlFor="openingTime">Opens at</label>
               <input type='time' id='openingTime' onChange={(e) => handle(e)} value={data.openingTime} placeholder='Choose opening time'></input>
 
-              <label htmlFor="close">Closes at</label>
+              <label htmlFor="closingTime">Closes at</label>
               <input type='time' id='closingTime' onChange={(e) => handle(e)} value={data.closingTime} placeholder='Choose closing time'></input>
 
               <label htmlFor="contactNo">Contact Number</label>
@@ -75,7 +92,7 @@ const RegisterAsChemist = () => {
             </div>
 
             <div className="column2">
-            <form onSubmit={(e)=>submit(e)} >
+            <form method='post' onSubmit={(e)=>submit(e)} >
 
 
              <label htmlFor="upiId">Enter your UPI ID</label>
@@ -84,7 +101,7 @@ const RegisterAsChemist = () => {
               <label htmlFor="license">Upload your license:</label>
               <input type='file' onChange={(e) => handle(e)} value={data.license} id='license'></input>
 
-              <button className='btn-submit' type='submit'>Submit</button>
+              <button className='btn-submit' type='submit' onClick={handle}>Submit</button>
               </form>
 
 

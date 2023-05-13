@@ -19,10 +19,10 @@ export default function Home() {
     <>
     {/* <RegisterAs/> */}
     {/* <DoctorCalender/> */}
-    {/* <DoctorHome/> */}
+    <DoctorHome/>
     {/* <RegisterAsChemist/> */}
     {/* <RegisterAsPatient/> */}
-    <RegisterAsDoctor/>
+    {/* <RegisterAsDoctor/> */}
     
     
     </>
