@@ -5,7 +5,7 @@ import Link from 'next/link';
 import axios from 'axios';
 const RegisterAsPatient = () => {
   
-const [state,setState] = useState("");
+
 const StateData=[
   {
     value: 1,
@@ -173,52 +173,91 @@ const StateData=[
 //   };
 // }
 
-  const url="http://127.0.0.1:8000/patient/patientlogin";
-  const [data,setData]=useState({
-    patientName:"",
-    password:"",
-    dob:"",
-    bloodGroup:"",
-    address:"",
-    state:"",
-    city:"",
-    gender:"",
-    contactNo:"",
+ const [PatientName, setPatientName] = useState("")
+ const [Dob, setDob] = useState("")
+ const [Bloodgroup, setBloodgroup] = useState("")
+ const [Address, setAddress] = useState("")
+ const [State1, setState1] = useState("")
+ const [City, setCity] = useState("")
+ const [Gender, setGender] = useState("")
+ const [ContactNo, setContactNo] = useState("")
+const [Password, setPassword] = useState("")
+const [pass_error, setpass_error] = useState('');
+const [pass_error_bool, setpass_error_bool] = useState(false);
 
-  })
-  const newData = {
-    patientName: data.patientName,
-    password:data.password,
-    dob: data.dob,
-    bloodGroup: data.bloodGroup,
-    address: data.address,
-    state: data.state,
-    city: data.city,
-    gender: data.gender,
-    contactNo: data.contactNo,
 
+const PatientAPI = `http://127.0.0.1:8000/patient/patientlogin`;
+
+const passValidate = () => {
+  setTimeout(function () {
+    if (Password.length < 7) {
+      setpass_error_bool(true);
+      setpass_error('Password should be more than 8 letters');
+    } else {
+      setpass_error_bool(false);
+      setpass_error('');
+    }
+  }, 100000);
+};
+const FetchApi = (method, url, params, TokenValue) => {
+  return new Promise((resolve, reject) => {
+    if (TokenValue) {
+      axios({
+        method: method,
+        url: url,
+        data: params,
+        headers: {
+          Authorization: 'Token ' + TokenValue,
+        },
+        responseType: 'json',
+      })
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    } else {
+      axios({
+        method: method,
+        url: url,
+        data: params,
+        responseType: 'json',
+      })
+        .then((res) => resolve(res))
+        .catch((err) => reject(err));
+    }
+  });
+};
+
+
+
+function submit1() {
+  if (Password.length > 7) {
+    // console.log('Submitting form...');
+    FetchApi(
+      'POST',
+      PatientAPI,
+      {
+        patientName: PatientName,
+        dob: Dob,
+        bloodGroup: Bloodgroup,
+        address: Address,
+        state: State1,
+        city: City,
+        gender: Gender,
+        contactNo: ContactNo,
+        password: Password,
+  
+      },
+      null
+    )
   }
-  async function submit(e){
-    e.preventDefault();
-    try{
-      const res = await axios.post(url,
-          JSON.stringify(newData),{
-            headers: {
-              'Content-Type' : 'application/json',
-              "Accept":"application/json"
-            }
-          }
-      );
-
-    }catch(error){
-  }  
 }
-  function handle(e){
-    const newdata={...data}
-    newdata[e.target.id]=e.target.value
-    setData(newdata)
-    console.log(newdata)
-  }
+
+
+
+
+
+
+
+console.log(Dob)
 
   return (
     <div>
@@ -234,13 +273,13 @@ const StateData=[
             <form method='post' onSubmit={(e)=>submit(e)} id="myForm">
 
               <label htmlFor="patientName">Patient Name</label>
-              <input type="text" id='patientName' onChange={(e) => handle(e)} value={data.patientName} placeholder='Enter your name' />
+              <input type="text" id='patientName' onChange={(e) => setPatientName(e.target.value)} placeholder='Enter your name' />
 
               <label htmlFor="password">User Password</label>
-              <input type="text" id='password' onChange={(e) => handle(e)} value={data.password} placeholder='Enter your password' />
+              <input type="text" id='password' onChange={(e) => setPassword(e.target.value)} placeholder='Enter your password' />
 
               <label htmlFor="gender">Gender</label>
-              <select id="gender" onChange={(e) => handle(e)} value={data.gender}>
+              <select id="gender" onChange={(e) => setGender(e.target.value)}>
                 <option value="choose">Choose your gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
@@ -249,12 +288,12 @@ const StateData=[
               </select>
 
               <label htmlFor="dob">Date of Birth</label>
-              <input type="date" id='dob' onChange={(e) => handle(e)} value={data.dob} placeholder='Enter your age' />
+              <input type="date" id='dob' onChange={(e) => setDob(e.target.value)} placeholder='Enter your age' />
               {/* <label htmlFor="bloodGroup">Blood Group</label>
               <input type="text" id='bloodGroup' onChange={(e) => handle(e)} value={data.bloodGroup} placeholder='Enter your blood Group' /> */}
 
               <label htmlFor="bloodGroup">Blood Group</label>
-              <select type="text" id='bloodGroup' onChange={(e) => handle(e)} value={data.bloodGroup} >
+              <select type="text" id='bloodGroup' onChange={(e) => setBloodgroup(e.target.value)} >
                 <option value="choose">Choose your blood group</option>
                 <option value="A+">A+</option>
                 <option value="A-">A-</option>
@@ -267,7 +306,7 @@ const StateData=[
               </select>
 
               <label htmlFor="contactNo">Contact Number</label>
-              <input type="number" id='contactNo' onChange={(e) => handle(e)} value={data.contactNo} placeholder='Enter your contact no.' />
+              <input type="number" id='contactNo' onChange={(e) => setContactNo(e.target.value)} placeholder='Enter your contact no.' />
 
 
              
@@ -279,22 +318,24 @@ const StateData=[
             <form method='post' id="myForm" onSubmit={(e)=>submit(e)}>
              
               <label htmlFor="address">Address</label>
-              <input type="address" id='address' onChange={(e) => handle(e)} value={data.address} placeholder='Enter your address' />
+              <input type="address" id='address' onChange={(e) => setAddress(e.target.value)} placeholder='Enter your address' />
 
               <label htmlFor="state">State</label>
               {/* <select options={StateData} id='state' onChange={(e) => handle(e)} value={data.state} /> */}
-              <input type='text' id='state' onChange={(e) => handle(e)} value={data.state} placeholder='Enter your state'></input>
+              <input type='text' id='state' onChange={(e) => setState1(e.target.value)} placeholder='Enter your state'></input>
               
 
               <label htmlFor="city">City</label>
-              <input type='text' id='city' onChange={(e) => handle(e)} value={data.city} placeholder='Enter your city'></input>
+              <input type='text' id='city' onChange={(e) => setCity(e.target.value)} placeholder='Enter your city'></input>
 
               {/* <label htmlFor="problem">Any previous medical problems</label>
               <textarea type='textarea' cols='true' id='problems' placeholder='Enter previous medical history'></textarea> */}
 {/* 
               <label htmlFor="upi">Enter your UPI ID</label>
               <input type='text' id='upi' placeholder='UPI Id'></input> */}
-              <button className='btn-submit' type='submit' onClick={handle}>Submit</button>
+              <button className='btn-submit' type='submit'  onClick={() => {
+                submit1();
+              }}>Submit</button>
               </form>
 
 

@@ -6,6 +6,7 @@ import Navbar from "../components/navbar/Navbar"
 
 
 
+
 function login() {
   return (
     <div className="loginContainer">
@@ -22,7 +23,7 @@ function login() {
         </div>
       </div>
     </div>
-    // <DoctorHome/>
+    // <RegisterAsPatient/>
   );
 }
 
