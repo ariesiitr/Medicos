@@ -46,18 +46,7 @@ const DoctorHome = () => {
   }
 
   
-  // const [Data,setData]=useState([]);
-
-  // async function GetData(){
-  //   let Response = await axios.get(
-  //     "http://127.0.0.1:8000/doctor/doctorAppointDetails"
-  //   );
-  //   return Response;
-  // }
-  // GetData().then((Response) => {
-  //   setData(Response.data.items)
-  //   .catch(error.response.data)
-  // });
+  
  
   return (
     <>
@@ -70,7 +59,7 @@ const DoctorHome = () => {
         <VerticalNavbarDashboard/>
         
       </div>
-      <div className="d_main-right">
+          <div className="d_main-right">
         <div className="doctorintro" id='doctorintro'>
           <div className="intro">
             <div className='doctor_name_logo'>
@@ -121,86 +110,75 @@ const DoctorHome = () => {
               <img src="/Sort.png" alt="" />
             </div>
           </div>
-        <div className="content-tabs">
+          <div className="content-tabs">
 
           
           <div className={toggleState === 1 ? "appointments_patient_info active-appointments_patient_info " : "appointments_patient_info"}>
 
-            
-            {/* {Data &&
-              Data.map(({appointmentDate,appointmentTime,uniqueId,DocUniqueId}) => {  */}
+           
               
-              return (
-                  <>
                   <div className="briefInfo">
 
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
-                          <div className="appointment_date">
-                          <div>{appointmentDate}</div>
-                          {/* <div>23</div> */}
-
+                      <div className="appointment_date">
+                          <div>23</div>
                           </div>
                           <div className="appointment_month_day">
-                            {/* <div>{appointment_month},</div> */}
-                            {/* <div>{appointment_day}</div> */}
-                            <div>Feb,</div>
-                            <div>Monday</div>
-
+                          
+                          <div>Feb,</div>
+                          <div>Monday</div>
+                          
+                          </div>
+                          
                         </div>
-
-                      </div>
+                      
                       <div className="appointment_time">
-                        <div>{appointmentTime}</div>
-                        {/* <div>9:00 pm- 10:00 pm</div> */}
+                        
+                        <div>9:00 pm- 10:00 pm</div>
 
                       </div>
                         
-                      </div>
+                    </div>
                       <hr/>
                       <div className="patient_name_and_id">
                           <div className="appointment_patient_name">
                             <img src="/Right_button.png" alt="" />
-                            {/* <div>{appointment_patientName}</div> */}
+                            
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
-                            <div style={{color:"#737E87"}}>{uniqueId}</div>
-                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
-                            {/* <div>{appoitment_patient_basic_info}</div> */}
-                            {/* <div style={{color:"#737E87"}}>#089996</div> */}
-                            {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
+                           
+                            <div style={{color:"#737E87"}}>#089996</div>
+                            <div style={{color:'#5D9EE3'}}>Monthly checkup</div>
 
                           </div>
                       </div>
-                  </div>
+                </div>
                   <div className="detailedInfo">
                     <button id='btn-appointment' className='details'>Details</button>
                   </div>
                   
 
-                  </>
+                  
 
-                 )
-               {/* }) */}
+                
+                
 
-             {/* } */}
+            
             </div>
           </div>
           
           <div className={toggleState === 2 ? "appointments_patient_info active-appointments_patient_info " : "appointments_patient_info"}>
-          {/* {Data &&
-              Data.map(({appointmentDate,appointmentTime,uniqueId,DocUniqueId}) => {  */}
-              return (
-                  <>
+          
                   <div className="briefInfo">
 
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
                           <div className="appointment_date">
-                          <div>{appointmentDate}</div>
-                          {/* <div>23</div> */}
-
+                          
+                          {/*<div>{appointmentDate}</div> */}
+                          <div>23</div>
                           </div>
                           <div className="appointment_month_day">
                             {/* <div>{appointment_month},</div> */}
@@ -212,9 +190,9 @@ const DoctorHome = () => {
 
                       </div>
                       <div className="appointment_time">
-                        <div>{appointmentTime}</div>
-                        {/* <div>9:00 pm- 10:00 pm</div> */}
-
+                        
+                        {/* <div>{appointmentTime}</div> */}
+                        <div>9:00 pm- 10:00 pm</div>
                       </div>
                         
                       </div>
@@ -226,10 +204,12 @@ const DoctorHome = () => {
                             <div>Shagun Sinha</div>
                           </div>
                           <div className="appoitnment_patient_id_basic">
-                            <div style={{color:"#737E87"}}>{uniqueId}</div>
-                            <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
-                            {/* <div style={{color:"#737E87"}}>#089996</div> */}
-                            {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
+                            
+                           
+                            {/*<div style={{color:"#737E87"}}>{uniqueId}</div> */}
+                            {/* <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
+                            <div style={{color:"#737E87"}}>#089996</div>
+                            <div style={{color:'#5D9EE3'}}>Monthly checkup</div>
 
                           </div>
                       </div>
@@ -240,19 +220,18 @@ const DoctorHome = () => {
                     <button id='btn-appointment' className='deny' onClick={() => denying(1)}>Deny</button>
                   </div>
 
-                  </>
+               
+              
 
-                )
-              {/* }) */}
-
-            {/* } */}
-            </div>
-
+             
+          </div>
           </div>
         </div>
-     </div>
+        
+      </div>
+     
     
-    
+   
     </>
   )
 }

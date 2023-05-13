@@ -17,13 +17,15 @@ import RegisterAsDoctor from '../components/RegisterPage/RegisterAsDoctor'
 export default function Home() {
   return (
     <>
-    {/* <RegisterAs/> */}
-    {/* <DoctorCalender/> */}
-    <DoctorHome/>
-    {/* <RegisterAsChemist/> */}
+    
+    {/* <DoctorCalender/>*/} 
+   
+    {/*  <DoctorHome/> */}
+   {/* <RegisterAsDoctor/> */}
     {/* <RegisterAsPatient/> */}
     {/* <RegisterAsDoctor/> */}
     
+    // <RegisterAsChemist/>
     
     </>
   )
