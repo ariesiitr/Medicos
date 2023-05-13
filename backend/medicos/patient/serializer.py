@@ -9,7 +9,7 @@ from clinic.models import Clinic
 class PatientSerializer(serializers.ModelSerializer):
     class Meta :
         model = Patient
-        exclude = ['created', 'updated','uniqueId']
+        exclude = ['created', 'updated','uniqueId','authToken']
 
 class PatientDetailsSerializer(serializers.ModelSerializer):
    class Meta :

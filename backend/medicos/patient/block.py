@@ -1,26 +1,9 @@
-from django.db import models
-
-
-class BlockMail(models.Model):
-   blockmail=models.CharField( db_index=True, max_length=100, unique=True, verbose_name="Email")
-   user = models.CharField(default="",max_length=100)
-   class Meta:
-        """
-        Meta class for BlockMail
-        """
-        verbose_name_plural = 'BlockMail'
-
-   def __str__(self):
-        return self.blockmail
-
-class BlockNumber(models.Model):
-   blocknumber=models.CharField( db_index=True, max_length=100, unique=True, verbose_name="Number")
-   user = models.CharField(default="",max_length=100)
-   class Meta:
-        """
-        Meta class for BlockNumber
-        """
-        verbose_name_plural = 'BlockNumber'
-
-   def __str__(self):
-        return self.blocknumber
+from patient.models import BlockMail
+from patient.models import BlockNumber
+def block_mail(mail,number):
+    
+    if (BlockMail.objects.filter(blockmail=mail).exists()) or (BlockNumber.objects.filter(blocknumber=number).exists()) :
+        return True
+         
+    else:
+        return False

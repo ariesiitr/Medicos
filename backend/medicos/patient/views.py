@@ -5,7 +5,8 @@ from rest_framework import status
 from django.db import Error
 from utils.auth import auth
 from Doctor.models import DocAppointments
-from .models import PatientDetails,BlockMail
+from .models import PatientDetails
+from .block import block_mail
 from Doctor.serializer import DocAppointmentsSerializer
 from rest_framework.views import APIView
 import pyotp
@@ -100,10 +101,11 @@ class OtpView(APIView):
 
         totp = pyotp.TOTP('base32secret3232')
         otp = totp.now()
-        mail = request.data.get('email', None)
-        if (BlockMail(mail,'')):
+        print("x",otp)
+        mail = request.data.get('Email', None)
+        if (block_mail(mail,'')):
               return Response({'error_msg': 'Blocked Credentials'}) 
-        personi = person.objects.filter(email=mail)
+        personi = person.objects.filter(Email=mail)
 
         if len(personi) == 0:
             return Response({"error": "email not registered"}, status=400)
@@ -129,7 +131,7 @@ def OtpSignupView(request):
         totp = pyotp.TOTP('base32secret3232')
         otp = totp.now()
     
-        if BlockMail(email,''):
+        if block_mail(email,''):
             return Response('Blocked Credentials')  
         if person.objects.filter(email=email).exists():
             personi = person.objects.get(email=email)
@@ -198,7 +200,7 @@ def OTPSignupVerify(request):
         otp = data.get('otp', None)
         email = data.get('email', None)
 
-        if BlockMail(email,''):
+        if block_mail(email,''):
             return Response({'error': 'Unauthorized'},status=status.HTTP_401_UNAUTHORIZED)  
         else :
          if not otp:
