@@ -1,12 +1,12 @@
 import React , {useState}from 'react'
-import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNavbarDashboard'
+import NavbarDashboard from '../../Navbar/NavbarDashboard'
+import VerticalNav from '../../Navbar/VerticalNav'
 import Link from 'next/link'
 import Calendar from 'react-calendar';
 
 
 
-const DoctorCalender = (props) => {
+const Calender = (props) => {
   const [date,setDate] = useState(new Date());
   return (
     <>
@@ -16,7 +16,7 @@ const DoctorCalender = (props) => {
 
     <div className="d_main">
       <div className="d_main-left">
-        <VerticalNavbarDashboard/>
+        <VerticalNav/>
       </div>
     <div className="d_main-right">
       <h1 className='calendar_heading'>Calendar</h1>
@@ -35,4 +35,4 @@ const DoctorCalender = (props) => {
   )
 }
 
-export default DoctorCalender
+export default Calender

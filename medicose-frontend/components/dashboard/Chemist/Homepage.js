@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNav'
+import VerticalNavbarDashboard from '../Navbar/VerticalNavbarDashboard'
 
 const ChemistHome = () => {
   const [toggleState,setToggleState] = useState(1);

@@ -80,14 +80,25 @@
     
    
   }
- 
-  .column1, .column2{
+
+
+  
+  .column1{
+
     width: 30.5rem;
     display: flex;
     flex-direction: column;
     
   }
+
  
+
+  .column2{
+    width: 30.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
   input ,textarea,select, option{
     border: 0.063rem solid rgb(217, 195, 227);
     outline: none;
@@ -98,6 +109,7 @@
     font-family: THICCCBOI
     
   }   
+
   .form{
     font-weight: 500;
     font-size: 1.375rem;

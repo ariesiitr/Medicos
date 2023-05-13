@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import DoctorHome from '../DoctorDashboard/DoctorHome'
+import DoctorHome from '../dashboard/Doctor/Homepage'
 
-const VerticalNavbarDashboard = () => {
+const VerticalNav = () => {
   return (
     <>
         <div className="d_main-left">
@@ -56,5 +56,5 @@ const VerticalNavbarDashboard = () => {
   )
 }
 
-export default VerticalNavbarDashboard
+export default VerticalNav
 
