@@ -137,7 +137,7 @@ const DoctorHome = () => {
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
                           <div className="appointment_date">
-                          <div>{appointmentDate}</div>
+                          {/* <div>{appointmentDate}</div> */}
                           {/* <div>23</div> */}
 
                           </div>
@@ -198,7 +198,7 @@ const DoctorHome = () => {
                     <div className="patient_date_day_and_time">
                       <div className="appointment_date_day">
                           <div className="appointment_date">
-                          <div>{appointmentDate}</div>
+                          {/* <div>{appointmentDate}</div> */}
                           {/* <div>23</div> */}
 
                           </div>
