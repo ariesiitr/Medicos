@@ -5,6 +5,7 @@ from rest_framework import status
 from django.db import Error
 from .models import Doctor, DocAppointments
 from patient.models import Patient
+from clinic.models import Clinic
 from utils.auth import auth
 
 @api_view(('GET','POST'))
@@ -12,7 +13,7 @@ def Signup(request):
      if request.method =='POST':
       data={}
       contactNo = request.data.get('contactNo')
-      if Doctor.objects.filter(contactNo=contactNo).exists() or Patient.objects.filter(contactNo=contactNo).exists() :
+      if Doctor.objects.filter(contactNo=contactNo).exists() or Patient.objects.filter(contactNo=contactNo).exists() or Clinic.objects.filter(contactNo=contactNo).exists()  :
           return Response({"contactNo": "contactNo already registered"}, status=status.HTTP_400_BAD_REQUEST)
        
       try: 
@@ -30,7 +31,6 @@ def Signup(request):
           return Response(data={"success":"data submitted"}, status=status.HTTP_200_OK) 
         
       except Error as e:
-         print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
         
 @api_view(('GET','POST'))
@@ -52,19 +52,11 @@ def appointmentsByPatient(request):
          print(e)
          return Response({"Faliure": "failure"}, status=status.HTTP_400_BAD_REQUEST)
       
+     
 @api_view(('GET','POST'))
 def DocappointmentsDetails(request):
-      if request.method =='GET':
-          AuthToken = request.headers['Authorization']
-          # .split('')[1]
-          user = auth(AuthToken) 
-          if user == None:
-           return Response({"error": "Invalid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)    
-
-          else :
-              appointmentsDetails= DocAppointments.objects.all().filter(DocUniqueId=user.docUniqueId)
+          if request.method=='GET':
+              appointmentsDetails = DocAppointments.objects.all()
               serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
               data = serializer.data
-              return Response({"data": data}, status=status.HTTP_400_BAD_REQUEST)
-
-              
+              return Response({"data": data}, status=status.HTTP_200_OK)

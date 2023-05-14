@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'patient.apps.PatientConfig',
     'order.apps.OrderConfig',
     'corsheaders',
+   
     
 
 ]
