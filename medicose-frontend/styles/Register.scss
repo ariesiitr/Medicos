@@ -1,5 +1,6 @@
 .main{
     background-color:#F3f3f8 ;
+    min-height: 110vh;
     height:auto;
     height:89.2vh;
     overflow:auto;  
@@ -174,13 +175,14 @@
       margin-left: 2rem;
       margin-right: 2rem;
       margin-top: 5.313rem;
-      column-gap: 7rem
+      column-gap: 7rem;
     } 
   }
 
   @media screen and (max-width:721px) {
     .main{
-      height: 90vh;
+      min-height: 110vh;
+      height: auto;
     }
     .column{
       display: flex;

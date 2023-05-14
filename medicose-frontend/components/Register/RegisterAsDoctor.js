@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import NavbarRegister from '../Navbar/NavbarRegister'
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
-import alert from 'react-alert'
+// import alert from 'react-alert'
 
 
 
