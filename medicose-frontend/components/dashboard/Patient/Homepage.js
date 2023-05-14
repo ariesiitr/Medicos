@@ -39,15 +39,7 @@ function PatientHomepage() {
 					</div>
 				</div>
 				<div className="patientAppointment">
-					<div
-						style={{
-							width: '90%',
-							height: '5rem',
-							display: 'flex',
-							gap: '2.25rem',
-							borderBottom: '2px solid #737E87',
-						}}
-					>
+					<div className="pageIdBtn">
 						<button className="appointmentsText" onClick={(e) => setpageId(1)}>
 							Appointments
 						</button>
