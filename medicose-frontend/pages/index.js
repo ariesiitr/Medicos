@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from './App';
 <link
 	rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -6,6 +7,7 @@ import React, { Component } from 'react';
 	crossorigin="anonymous"
 	referrerpolicy="no-referrer"
 />;
+
 
 export default function Home() {
 	return (
