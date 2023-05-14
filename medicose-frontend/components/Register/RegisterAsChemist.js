@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/NavbarRegister'
 import axios from 'axios';
 import { Authenticate } from '../utils';
 import { useRouter } from 'next/router';

@@ -18,7 +18,7 @@ const RegisterAsDoctor= () => {
   const[contactNo,setContactNo]=useState("")
   const[address,setAddress]=useState("")
   const[availableDays,setAvailableDays]=useState("")
-  const[appointmentstartTime,setAppointmentstartTime]=useState("");const[]=useState("")
+  const[appointmentstartTime,setAppointmentstartTime]=useState("");
   const[appointmentendTime,setAppointmentendTime]=useState("")
   const[appointmentFees,setAppointmentFees]=useState("")
   const[upiId,setUpiId]=useState("")

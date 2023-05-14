@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/NavbarRegister'
 import StateDropdown from './StateDropdown'
 import Link from 'next/link';
 import axios from 'axios';

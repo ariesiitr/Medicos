@@ -1,8 +1,8 @@
 import React from "react";
-import Logindesign from "../components/Logindesign";
+import Logindesign from "../components/Login/Logindesign";
 import Image from "next/image";
-import Loginform from "../components/Forms";
-import Navbar from "../components/navbar/Navbar"
+import Loginform from "../components/Login/Forms";
+import MobNavbar from "../components/navbar/MobNavbar"
 
 
 
@@ -14,7 +14,7 @@ function login() {
         <Logindesign />
       </div>
       <div>
-      <Navbar />
+      {/* <MobNavbar /> */}
       <div className="loginFormContainer">
         <div className="okGestureIcon">
           <Image src="/healthy.png" width={95} height={111} />
