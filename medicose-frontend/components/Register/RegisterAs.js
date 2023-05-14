@@ -85,7 +85,7 @@ const RegisterAs = (props) => {
             <Link legacyBehavior href='./RegisterAsPatient'> 
             
 
-            <div className="container" id="container1">
+            <div className="container" id="container1" onClick={<RegisterAsDoctor/>}>
                 <img src="/Patient.png" id="patient" alt=""/>
                 <p id="para1">As a Patient</p>
             </div>

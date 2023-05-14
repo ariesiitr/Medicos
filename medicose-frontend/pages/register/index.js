@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Logindesign from '../components/Logindesign';
+import Logindesign from '../../components/Login/Logindesign';
 import Image from 'next/image';
-import { Signupform, Otpform } from '../components/Forms';
-import Navbar from '../../components/navbar/Navbar';
+import { Signupform, Otpform } from '../../components/Login/Forms';
+import MobNavbar from '../../components/navbar/MobNavbar';
 
 function register() {
 	const [renderId, setrenderId] = useState(0);
@@ -15,7 +15,7 @@ function register() {
 			<div className="loginDesignContainer">
 				<Logindesign />
 			</div>
-			<Navbar />
+			<MobNavbar/>
 			<div className="loginFormContainer">
 				<div className="okGestureIcon">
 					<Image src="/healthy.png" width={95} height={111} />

@@ -59,16 +59,22 @@
     width: 76.75rem;
     border-radius: 0.313rem;
     font-weight: 700;
-    margin-top: 2.313rem;
+    // margin-top: 2.313rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     
     
   }
+  .available_permission{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
   
   .available p,span{
-    
+    align-items: center;
     gap: 0.125rem;
     font-size: 1.188rem;
     letter-spacing: 0.094rem;

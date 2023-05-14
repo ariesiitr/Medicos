@@ -2345,11 +2345,7 @@ react-toastify@^9.1.2:
   dependencies:
     clsx "^1.1.1"
 
-<<<<<<< HEAD
 react-transition-group@^4.3.0, react-transition-group@^4.4.1:
-=======
-react-transition-group@^4.3.0:
->>>>>>> b77569f494a1a90a34962ca58f95effe8d2cf4ff
   version "4.4.5"
   resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
   integrity sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==

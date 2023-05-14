@@ -11,6 +11,7 @@ const ChemistHome = () => {
   }
 
   return (
+<<<<<<< HEAD
     <>
     <div className="d_upper">
         <NavbarDashboard/>
@@ -65,6 +66,9 @@ const ChemistHome = () => {
           </div>
     </div>
     </>
+=======
+    <div>Chem</div>
+>>>>>>> 4bb0a3e4d630d21c65948384ea2671bea2953ca3
   )
 }
 

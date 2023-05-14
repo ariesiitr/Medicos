@@ -23,7 +23,8 @@ function login() {
         </div>
       </div>
     </div>
-    // <RegisterAsPatient/>
+    
+    
   );
 }
 
