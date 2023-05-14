@@ -1,177 +1,170 @@
 import React,{useEffect, useState} from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/NavbarRegister'
 import StateDropdown from './StateDropdown'
 import Link from 'next/link';
 import axios from 'axios';
+import alert from 'react-alert'
 const RegisterAsPatient = () => {
   
 
 const StateData=[
   {
     value: 1,
-    label: 'Andhra Pradesh',
+    span: 'Andhra Pradesh',
   },
   {
     value: 2,
-    label: 'Arunachal Pradesh',
+    span: 'Arunachal Pradesh',
   },
   {
     value: 3,
-    label: 'Assam',
+    span: 'Assam',
   },
   {
     value: 4,
-    label: 'Bihar',
+    span: 'Bihar',
   },
   {
     value: 5,
-    label: 'Chhattisgarh',
+    span: 'Chhattisgarh',
   },
 
   {
     value: 6,
-    label: 'Goa',
+    span: 'Goa',
   },
   {
     value: 7,
-    label: 'Gujarat',
+    span: 'Gujarat',
   },
   {
     value: 8,
-    label: 'Haryana',
+    span: 'Haryana',
   },
   {
     value: 9,
-    label: 'Himachal Pradesh',
+    span: 'Himachal Pradesh',
   },
   {
     value: 10,
-    label: 'Jharkhand',
+    span: 'Jharkhand',
   },
   {
     value: 11,
-    label: 'Karnataka',
+    span: 'Karnataka',
   },
   {
     value: 12,
-    label: 'Kerala',
+    span: 'Kerala',
   },
   {
     value: 13,
-    label: 'Madhya Pradesh',
+    span: 'Madhya Pradesh',
   },
   {
     value: 14,
-    label: 'Maharashtra',
+    span: 'Maharashtra',
   },
   {
     value: 15,
-    label: 'Manipur',
+    span: 'Manipur',
   },
   {
     value: 16,
-    label: 'Meghalaya',
+    span: 'Meghalaya',
   },
   {
     value: 17,
-    label: 'Mizoram',
+    span: 'Mizoram',
   },
   {
     value: 18,
-    label: 'Nagaland',
+    span: 'Nagaland',
   },
   {
     value: 19,
-    label: 'Odisha',
+    span: 'Odisha',
   },
   {
     value: 20,
-    label: 'Puducherry',
+    span: 'Puducherry',
   },
   {
     value: 21,
-    label: 'Punjab',
+    span: 'Punjab',
   },
   {
     value: 22,
-    label: 'Rajasthan',
+    span: 'Rajasthan',
   },
   {
     value: 23,
-    label: 'Sikkim',
+    span: 'Sikkim',
   },
   {
     value: 24,
-    label: 'Tamil Nadu',
+    span: 'Tamil Nadu',
   },
   {
     value: 25,
-    label: 'Telangana',
+    span: 'Telangana',
   },
   {
     value: 26,
-    label: 'Tripura',
+    span: 'Tripura',
   },
   {
     value: 27,
-    label: 'Uttar Pradesh',
+    span: 'Uttar Pradesh',
   },
   {
     value: 28,
-    label: 'Uttarakhand',
+    span: 'Uttarakhand',
   },
   {
     value: 29,
-    label: 'West Bengal',
+    span: 'West Bengal',
   },
   {
     value: 30,
-    label: 'Delhi',
+    span: 'Delhi',
   },
   {
     value: 31,
-    label: 'Ladakh',
+    span: 'Ladakh',
   },
   {
     value: 32,
-    label: 'Jammu & Kashmir',
+    span: 'Jammu & Kashmir',
   },
 
   {
     value: 33,
-    label: 'Puducherry',
+    span: 'Puducherry',
   },
   ,
   {
     value: 34,
-    label: 'Lakshadweep',
+    span: 'Lakshadweep',
   },
   {
     value: 35,
-    label: 'Lakshadweep',
+    span: 'Lakshadweep',
   },
   {
     value: 36,
-    label: 'Chandigarh',
+    span: 'Chandigarh',
   },
   {
     value: 36,
-    label: 'Dadra and Nagar Haveli and Daman & Diu',
+    span: 'Dadra and Nagar Haveli and Daman & Diu',
   },
   {
     value: 37,
-    label: 'Andaman and Nicobar Islands',
+    span: 'Andaman and Nicobar Islands',
   },
 ];
 
-// useEffect(() => {
-//   setMobile();
-// }, []);
-// if (RenderId == 0) {
-//   const handle = (e) => {
-//     setState(e);
-//   };
-// }
 
  const [PatientName, setPatientName] = useState("")
  const [Dob, setDob] = useState("")
@@ -270,15 +263,14 @@ console.log(Dob)
          
             <div className="column1">
 
-            <form method='post' onSubmit={(e)=>submit(e)} id="myForm">
-
-              <label htmlFor="patientName">Patient Name</label>
+            
+              <span  className='form' htmlFor="patientName">Patient Name</span>
               <input type="text" id='patientName' onChange={(e) => setPatientName(e.target.value)} placeholder='Enter your name' />
 
-              <label htmlFor="password">User Password</label>
+              <span   className='form' htmlFor="password">User Password</span>
               <input type="text" id='password' onChange={(e) => setPassword(e.target.value)} placeholder='Enter your password' />
 
-              <label htmlFor="gender">Gender</label>
+              <span className='form' htmlFor="gender">Gender</span>
               <select id="gender" onChange={(e) => setGender(e.target.value)}>
                 <option value="choose">Choose your gender</option>
                 <option value="Male">Male</option>
@@ -287,12 +279,10 @@ console.log(Dob)
 
               </select>
 
-              <label htmlFor="dob">Date of Birth</label>
+              <span className='form' htmlFor="dob">Date of Birth</span>
               <input type="date" id='dob' onChange={(e) => setDob(e.target.value)} placeholder='Enter your age' />
-              {/* <label htmlFor="bloodGroup">Blood Group</label>
-              <input type="text" id='bloodGroup' onChange={(e) => handle(e)} value={data.bloodGroup} placeholder='Enter your blood Group' /> */}
-
-              <label htmlFor="bloodGroup">Blood Group</label>
+              
+              <span className='form' htmlFor="bloodGroup">Blood Group</span>
               <select type="text" id='bloodGroup' onChange={(e) => setBloodgroup(e.target.value)} >
                 <option value="choose">Choose your blood group</option>
                 <option value="A+">A+</option>
@@ -305,38 +295,33 @@ console.log(Dob)
                 <option value="AB-">AB-</option>
               </select>
 
-              <label htmlFor="contactNo">Contact Number</label>
+              <span className='form' htmlFor="contactNo">Contact Number</span>
               <input type="number" id='contactNo' onChange={(e) => setContactNo(e.target.value)} placeholder='Enter your contact no.' />
 
 
              
-            </form>
+           
               
             </div>
 
             <div className="column2">
-            <form method='post' id="myForm" onSubmit={(e)=>submit(e)}>
-             
-              <label htmlFor="address">Address</label>
+           
+              <span className='form' htmlFor="address">Address</span>
               <input type="address" id='address' onChange={(e) => setAddress(e.target.value)} placeholder='Enter your address' />
 
-              <label htmlFor="state">State</label>
+              <span className='form' htmlFor="state">State</span>
               {/* <select options={StateData} id='state' onChange={(e) => handle(e)} value={data.state} /> */}
               <input type='text' id='state' onChange={(e) => setState1(e.target.value)} placeholder='Enter your state'></input>
               
 
-              <label htmlFor="city">City</label>
+              <span className='form' htmlFor="city">City</span>
               <input type='text' id='city' onChange={(e) => setCity(e.target.value)} placeholder='Enter your city'></input>
 
-              {/* <label htmlFor="problem">Any previous medical problems</label>
-              <textarea type='textarea' cols='true' id='problems' placeholder='Enter previous medical history'></textarea> */}
-{/* 
-              <label htmlFor="upi">Enter your UPI ID</label>
-              <input type='text' id='upi' placeholder='UPI Id'></input> */}
+              
               <button className='btn-submit' type='submit'  onClick={() => {
                 submit1();
               }}>Submit</button>
-              </form>
+             
 
 
 
@@ -357,5 +342,3 @@ console.log(Dob)
     
     
     export default RegisterAsPatient
-    
-  

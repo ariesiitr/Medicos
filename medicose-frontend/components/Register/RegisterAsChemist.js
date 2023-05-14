@@ -1,9 +1,10 @@
 import React,{useState} from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../Navbar/NavbarRegister'
 import axios from 'axios';
 import { Authenticate } from '../utils';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import alert from 'react-alert'
 
 const RegisterAsChemist = () => {
 //  const url="http://127.0.0.1:8000/clinic/chemistlogin";
@@ -25,21 +26,21 @@ const [chemistName, setchemistName] = useState('');
       alert('Please enter Your Name');
       console.log('CN')
     } else if (password === '') {
-      toast.warning('Please enter Password ');
+      alert('Please enter Password ');
     } else if (Confirmpassword=== '') {
-      toast.warning('Please enter Confirm Password');
+      alert('Please enter Confirm Password');
     } else if (storeName=== '') {
-      toast.warning('Please enter your Store Name');
+      alert('Please enter your Store Name');
     } else if (shopAddress === '') {
-      toast.warning('Please enter your Store Address');
+      alert('Please enter your Store Address');
     } else if (openingTime=== '') {
-      toast.warning('Please enter opening Time of your Store');
+      alert('Please enter opening Time of your Store');
     }else if (closingTime=== '') {
-      toast.warning('Please enter closing Time of your Store');
+      alert('Please enter closing Time of your Store');
     }else if (license=== '') {
-      toast.warning('Please upload your license');
+      alert('Please upload your license');
     }else if (upiId=== '') {
-      toast.warning('Please enter your Upi Id');
+      alert('Please enter your Upi Id');
     }
      else {
       if (password?.length > 7) {

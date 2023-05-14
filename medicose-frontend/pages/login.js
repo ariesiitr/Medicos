@@ -2,8 +2,7 @@ import React from "react";
 import Logindesign from "../components/Login/Logindesign";
 import Image from "next/image";
 import Loginform from "../components/Login/Forms";
-import Navbar from "../components/navbar/Navbar"
-import DoctorHomepage from '../components/dashboard/Doctor/Homepage'
+import MobNavbar from "../components/navbar/MobNavbar"
 
 
 
@@ -15,7 +14,7 @@ function login() {
         <Logindesign />
       </div>
       <div>
-      {/* <Navbar /> */}
+      {/* <MobNavbar /> */}
       <div className="loginFormContainer">
         <div className="okGestureIcon">
           <Image src="/healthy.png" width={95} height={111} />
@@ -24,7 +23,7 @@ function login() {
         </div>
       </div>
     </div>
-    // <RegisterAsPatient/>
+    
     
   );
 }
