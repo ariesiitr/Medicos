@@ -13,7 +13,7 @@ import PatientHomepage from '../components/dashboard/Patient/Homepage';
 export default function Home() {
 	return (
 		<>
-			<PatientHomepage />
+			
 		</>
 	);
 }
