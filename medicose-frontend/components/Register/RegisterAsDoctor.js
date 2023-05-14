@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Navbar from '../Navbar/Navbar'
+import Navbar from '../navbar/Navbar'
 import MultiSelectDropdown from './MultiSelectDropdown'
 // import Axios from 'axios';
 import axios from 'axios'
