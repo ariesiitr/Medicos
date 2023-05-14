@@ -158,46 +158,6 @@ export default function Loginform() {
 	);
 }
 
-function Signupform(props) {
-	return (
-		<>
-			<div className="greet">Create your account</div>
-			<div>
-				<div className="inputLabel">Username</div>
-				<input type="text" placeholder="Enter your Name" className="Input" />
-			</div>
-			<div>
-				<div className="inputLabel">Email</div>
-				<input type="email" placeholder="Enter your Email" className="Input" />
-			</div>
-			<div>
-				<div className="inputLabel">Password</div>
-				<input
-					type="password"
-					placeholder="Enter your Password"
-					className="Input"
-				/>
-			</div>
-			<div>
-				<div className="inputLabel">Confirm Password</div>
-				<input
-					type="password"
-					placeholder="Confirm password"
-					className="Input"
-				/>
-			</div>
-			<button
-				className="btn"
-				onClick={props.NavigateToOtpform}
-				style={{
-					marginTop: '2.5rem',
-				}}
-			>
-				Signup
-			</button>
-		</>
-	);
-}
 
 function Otpform() {
 	const [isVerified, setisVerified] = useState(true);
