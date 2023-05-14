@@ -8,6 +8,7 @@ function PatientHomepage() {
 	const [pageId, setpageId] = useState(1);
 	const [Appointment, setAppointment] = useState([]);
 	const [Doctors, setDoctors] = useState([]);
+	const [Search, setSearch] = useState('');
 	console.log(Appointment);
 	// useEffect(() => {
 	// 	const response = axios.get('Appointment_API');
@@ -120,42 +121,65 @@ function PatientHomepage() {
 						)}
 						{pageId === 2 && (
 							<>
-								{Doctors.map(() => {
-									return (
-										<div className="patientProfile">
-											<div className="patientProfileDetails">
-												<Image
-													// src={profile_image? Profile_image : "/profilePic.png"}
-													src="/profilePic.png"
-													width={60}
-													height={60}
+								{Doctors.filter((Doctors) => {
+									return Search.toLowerCase() === ''
+										? Doctors
+										: Doctors.doctor_name.toLowerCase().includes(Search);
+								}).map(
+									({
+										doctor_name,
+										specification,
+										appointment_date,
+										appointment_time,
+									}) => {
+										return (
+											<>
+												<input
+													type="text"
+													value={Search}
+													onChange={(e) => setSearch(e.target.value)}
+													className="reportSearchbox"
+													style={{ marginTop: '1.5rem', marginLeft: '1.5rem' }}
+													placeholder="Search by the name of doctor"
 												/>
-												<section>
-													<div className="doctorName">doctor_name</div>
-													<div className="specification">specification</div>
-												</section>
-												<section>
-													<div
-														className="specification"
-														style={{
-															color: '#061b2d',
-															fontWeight: '600',
-														}}
-													>
-														appointment_date
+												<div className="patientProfile">
+													<div className="patientProfileDetails">
+														<Image
+															// src={profile_image? Profile_image : "/profilePic.png"}
+															src="/profilePic.png"
+															width={60}
+															height={60}
+														/>
+														<section>
+															<div className="doctorName">doctor_name</div>
+															<div className="specification">specification</div>
+														</section>
+														<section>
+															<div
+																className="specification"
+																style={{
+																	color: '#061b2d',
+																	fontWeight: '600',
+																}}
+															>
+																appointment_date
+															</div>
+															<div className="specification">
+																appointment_time
+															</div>
+														</section>
 													</div>
-													<div className="specification">appointment_time</div>
-												</section>
-											</div>
-											<button
-												className="appointmentBtn"
-												onClick={RequestAppointment}
-											>
-												Request
-											</button>
-										</div>
-									);
-								})}
+													<button
+														className="appointmentBtn"
+														onClick={RequestAppointment}
+													>
+														Request
+													</button>
+												</div>
+											</>
+										);
+									}
+								)}
 							</>
 						)}
 					</div>
