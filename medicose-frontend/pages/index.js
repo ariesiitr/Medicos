@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import DoctorHome from '../components/dashboard/Doctor/Homepage';
-import Chatpage from '../components/dashboard/Doctor/Chatpage';
-import PatientHomepage from '../components/dashboard/Patient/Homepage';
+import RegisterAs from '../components/Register/RegisterAs'
 <link
 	rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -11,19 +9,10 @@ import PatientHomepage from '../components/dashboard/Patient/Homepage';
 />;
 
 export default function Home() {
-  return (
-    <>
-    
-    {/* <DoctorCalender/>*/} 
-   
-    {/*  <DoctorHome/> */}
-   {/* <RegisterAsDoctor/> */}
-    {/* <RegisterAsPatient/> */}
-    {/* <RegisterAsDoctor/> */}
-    
-
-    
-    </>
-  )
-
+	return (
+		<>
+			
+    <RegisterAs/>
+		</>
+	);
 }

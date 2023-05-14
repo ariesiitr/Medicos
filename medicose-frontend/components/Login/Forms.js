@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 export default function Loginform() {
 
@@ -11,45 +12,40 @@ export default function Loginform() {
   const [pass_error, setpass_error] = useState('');
   const [pass_error_bool, setpass_error_bool] = useState(false);
 
- const LOGIN_API = `http://127.0.0.1:8000/login/`;
+	// console.log(Password);
+	// console.log(userName);
+	const router = useRouter();
 
-  const passValidate = () => {
-    setTimeout(function () {
-      if (Password.length < 7) {
-        setpass_error_bool(true);
-        setpass_error('Password should be more than 8 letters');
-      } else {
-        setpass_error_bool(false);
-        setpass_error('');
-      }
-    }, 100000);
-  };
-  const FetchApi = (method, url, params, TokenValue) => {
-    return new Promise((resolve, reject) => {
-      if (TokenValue) {
-        axios({
-          method: method,
-          url: url,
-          data: params,
-          headers: {
-            Authorization: 'Token ' + TokenValue,
-          },
-          responseType: 'json',
-        })
-          .then((res) => resolve(res))
-          .catch((err) => reject(err));
-      } else {
-        axios({
-          method: method,
-          url: url,
-          data: params,
-          responseType: 'json',
-        })
-          .then((res) => resolve(res))
-          .catch((err) => reject(err));
-      }
-    });
-  };
+	function submit() {
+		if (Password.length > 7) {
+		  FetchApi(
+			'POST',
+			LOGIN_API,
+			{
+			  username: userName,
+			  password: Password,
+			},
+			null
+		  )
+			.then(response => {
+			
+			  return response.text;
+			})
+			.then(data => {
+				if (data && data.success === '"Chemist login successful') {
+				  window.location.href = '/chemist-page';
+				} else if (data && data.success === 'Doctor login successful') {
+				  window.location.href = '/doctor-page';
+				} else if (data && data.success === 'Patient login successful') {
+				  window.location.href = '/patient-page';
+				} 
+			})
+			.catch(error => {
+			  console.error(error);
+			});
+		}
+	  }
+	  
 
 // console.log(Password);
 // console.log(userName);
