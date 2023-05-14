@@ -44,7 +44,7 @@
 	font-family: 'THICCCBOI';
 	font-style: normal;
 	font-weight: 500;
-	font-size: 2rem;
+	font-size: 1.65rem;
 	line-height: 2.3rem;
 	color: #ffffff;
 }
@@ -69,7 +69,7 @@
 .loginFormContainer {
 	width: 50vw;
 	display: flex;
-	min-height: 100vh;
+	min-height: 150vh;
 	height: auto;
 	flex-direction: column;
 	justify-content: center;
@@ -186,6 +186,7 @@ input[type='checkbox'] {
 	}
 	.loginFormContainer {
 		width: 100vw;
+		height: 100vh;
 	}
 	input {
 		width: 87vw;
@@ -207,8 +208,21 @@ input[type='checkbox'] {
 		width: auto;
 		max-width: none;
 	}
-  .navbarContainer {
+	.navbarContainer {
 		display: flex;
+	}
+	.Input {
+		width: 87vw;
+		max-width: none;
+	}
+	.navbarContainer {
+		width: 100vw;
+		height: 3.5rem;
+		background-color: #089996;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0rem 3rem 0rem 2rem;
 	}
 }
 @media screen and (min-width: 701px) {

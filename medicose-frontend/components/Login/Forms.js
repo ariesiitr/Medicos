@@ -74,7 +74,7 @@ export default function Loginform() {
 				<input
 					type="text"
 					placeholder="Enter your username"
-          className="Input"
+					className="Input"
 					onChange={(e) => setuserName(e.target.value)}
 				/>
 			</div>
@@ -83,7 +83,7 @@ export default function Loginform() {
 				<input
 					type="password"
 					placeholder="Enter your Password"
-          className="Input"
+					className="Input"
 					onChange={(e) => {
 						setPassword(e.target.value);
 						passValidate();
@@ -95,7 +95,9 @@ export default function Loginform() {
 					style={{
 						display: 'flex',
 						flexDirection: 'row',
-						height: '18px',
+						height: '1rem',
+						gap: '0.5rem',
+						alignItems: 'center',
 					}}
 				>
 					<input type="checkbox" className="Input" />
@@ -124,6 +126,7 @@ export default function Loginform() {
 				Login
 			</button>
 			<hr />
+			{/* 
 			<button
 				className="btn"
 				style={{
@@ -138,7 +141,7 @@ export default function Loginform() {
 					style={{ marginRight: '16px' }}
 				/>
 				Login with Google
-			</button>
+			</button> */}
 			<div>
 				<text> Don’t have an account?</text>
 				<span
