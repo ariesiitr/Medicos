@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import Navbar from '../navbar/Navbar';
-import Link from 'next/link';
+
+import React,{useState} from 'react'
+import NavbarRegister from '../Navbar/NavbarRegister'
+
 
 if (typeof window !== 'undefined') {
 	var container1 = document.querySelector('#container1');
@@ -52,11 +53,11 @@ if (typeof window !== 'undefined') {
 }
 
 const RegisterAs = (props) => {
-	return (
-		<div>
-			<div className="upper">
-				<Navbar />
-			</div>
+  return (
+    <div>
+    <div className="upper">
+    <NavbarRegister/>
+    
 
 			<div className="main">
 				<div className="heading">
@@ -89,6 +90,7 @@ const RegisterAs = (props) => {
 				</div>
 			</div>
 		</div>
+    </div>
 	);
 };
 

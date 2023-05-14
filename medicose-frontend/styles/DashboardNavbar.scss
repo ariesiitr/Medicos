@@ -16,15 +16,15 @@
   
   .d_nav-right{
     display: flex;
-    column-gap: 28px;
-    margin-right: 46px;
+    column-gap: 3.8043vh;
+    margin-right: 6.25vh ;
   }
   .search_bar{
     margin: auto;
   }
   #notification{
-    width: 24px;
-    height: 29.5px;
+    width: 1.5rem;
+    height: 1.844rem;
     margin: auto;
     justify-content: center;
   }
@@ -37,31 +37,39 @@
     height: 89vh;
   }
   .d_main-left{
-    width: 100px;
+    width: 6.25rem;
     
     
   }
   .d_vnav{
-    margin-top:55px ;
+    margin-top :3.438rem;;
     display: flex;
     flex-direction: column;
     
-    width: 97px;
+    width: 6.063rem;
   }
   .block{
     margin: auto;
-    margin-bottom: 17px;
+    margin-bottom: 1.063rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+  .block:hover{
+    background-color: #c4c9ce;
+    height: 3.438rem;
+    width: 4.125rem;
+  }
+  .block:active{
+    background-color: #089996;
+  }
   .block img{
-    height: 36px;
-    width: 37px;
+    height: 2.25rem;
+    width: 2.313rem;
   }
   .block p{
     color: #737E87;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-style: medium;
   }
   .d_upper{

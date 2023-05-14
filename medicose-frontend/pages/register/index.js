@@ -38,7 +38,6 @@ function register() {
 		} else {
 			setRenderId(2);
 		}
-		setRenderId(2);
 	}
 	const PatientLogin = () => {
 		setRenderId(3);

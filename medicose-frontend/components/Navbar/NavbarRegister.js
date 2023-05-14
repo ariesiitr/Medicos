@@ -40,8 +40,15 @@ if (typeof window !== 'undefined') {
 	}
 }
 
-const Navbar = () => {
+
+
+
+
+  
+
+const NavbarRegister = () => {
 	return (
+        <>
 		<header>
 			<nav className="nav">
 				<div className="nav-left">
@@ -54,6 +61,7 @@ const Navbar = () => {
 						</a>
 					</Link>
 				</div>
+
 
 				<div className="hamburger">
 					<span className="bar"></span>
@@ -82,7 +90,11 @@ const Navbar = () => {
 				</div>
 			</nav>
 		</header>
+        </>
 	);
 };
 
-export default Navbar;
+
+export default NavbarRegister
+
+
