@@ -4,8 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.db import Error
 from utils.auth import auth
-from Doctor.models import DocAppointments
-from .models import PatientDetails
+from .models import Patient
 from Doctor.serializer import DocAppointmentsSerializer
 
 
@@ -40,19 +39,10 @@ def Signup(request):
 @api_view(('GET','POST'))
 def appointmentsOfPatient(request):
     if request.method =='GET':
-          AuthToken = request.headers['Authorization'].split(' ')[0]
-          user = auth(AuthToken) 
-          print(AuthToken)
-          print(user)
-          if user == None:
-           return Response({"error": "Invalid Auth Token"}, status=status.HTTP_400_BAD_REQUEST)    
-
-          else :
-              print(user)
-              appointmentsDetails= DocAppointments.objects.all().filter(uniqueId=user.uniqueId)
-              serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
+              appointmentsDetails= Patient.objects.all()
+              serializer = PatientDetailsSerializer(appointmentsDetails, many=True)
               data = serializer.data
-              return Response({"data": data}, status=status.HTTP_400_BAD_REQUEST)
+              return Response({"data": data}, status=status.HTTP_200_OK)
 
 @api_view(('GET','POST'))
 def patientPastPresEntry(request):

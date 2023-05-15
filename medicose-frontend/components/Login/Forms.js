@@ -151,7 +151,7 @@ export default function Loginform() {
 						marginLeft: '10px',
 					}}
 				>
-					<Link href="/register">Create Account</Link>
+					<Link href="/RegisterAs">Create Account</Link>
 				</span>
 			</div>
 		</>
@@ -214,4 +214,4 @@ function Otpform() {
 	);
 }
 
-export { Signupform, Otpform };
+export { Otpform };
