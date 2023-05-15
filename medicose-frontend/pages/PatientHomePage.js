@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import NavbarDashboard from '../../Navbar/NavbarDashboard';
-import VerticalNav from '../../Navbar/VerticalNav'
+import NavbarDashboard from '../components/navbar/NavbarDashboard';
+import VerticalNav from '../components/navbar/VerticalNav'
 import axios from 'axios';
 
 function PatientHomepage() {
@@ -9,10 +9,9 @@ function PatientHomepage() {
 	const [Appointment, setAppointment] = useState([]);
 	const [Doctors, setDoctors] = useState([]);
 	const [Search, setSearch] = useState('');
-	
-	
-	const [data, setData] = useState(null);
-	const [users,setUsers]=useState([]);
+	console.log(Appointment);
+    const [data, setData] = useState(null);
+  const [users,setUsers]=useState([]);
 	useEffect(() => {
 		const fetchData = async () => {
 		  try {

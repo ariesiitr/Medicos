@@ -1,23 +1,13 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-import App from './App';
-=======
 import React, { Children, Component } from 'react';
 import * as ReactDOM from "react-dom";
-// import ReactDOM from "react-dom/client";
-// import {
-// 	useRouter,
-// 	createBrowserRouter,
-// 	RouterProvider,
-//   } from "react-router-dom";
-//   import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
+import LoginPage from './Login'
+import RegisterAs from './RegisterAs'
+import App from '../pages/_app';
+import Homepage from '../components/dashboard/Doctor/Homepage'
+import PatientHomepage from '../components/dashboard/Patient/Homepage'
 
-  import {
-	createBrowserRouter,
-	RouterProvider,
-  } from "react-router-dom";
 
->>>>>>> 640617f11de5c08ced13cd3f54ee3548f8ddf937
 <link
 	rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -25,12 +15,6 @@ import * as ReactDOM from "react-dom";
 	crossorigin="anonymous"
 	referrerpolicy="no-referrer"
 />;
-import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
-import login from './login';
-import RegisterAs from '../components/Register/RegisterAs'
-import App from '../pages/_app';
-import Homepage from '../components/dashboard/Doctor/Homepage'
-
 
 // if(typeof window !== "undefined"){
 // 	const router = createBrowserRouter([
@@ -55,8 +39,9 @@ export default function Home() {
 	return (
 		<>
 		{/* <RegisterAsDoctor/> */}
-		{/* <RegisterAs/> */}
-		<Homepage/>
+   <LoginPage/>
+		{/*<Homepage/> */}
+    {/*<PatientHomepage/>*/}
 		
   {/* <RouterProvider router={router} />  */}
 	

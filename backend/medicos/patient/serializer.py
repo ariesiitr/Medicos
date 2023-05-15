@@ -8,5 +8,6 @@ class PatientSerializer(serializers.ModelSerializer):
 
 class PatientDetailsSerializer(serializers.ModelSerializer):
    class Meta :
-        model = PatientDetails
+        model = Patient
         exclude = ['created','updated']
+      
