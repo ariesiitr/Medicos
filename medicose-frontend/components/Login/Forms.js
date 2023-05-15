@@ -214,4 +214,4 @@ function Otpform() {
 	);
 }
 
-export { Signupform, Otpform };
+export {Otpform}
