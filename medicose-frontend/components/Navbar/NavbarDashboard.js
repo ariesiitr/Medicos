@@ -57,7 +57,7 @@ const NavbarDashboard = () => {
                     <img src="/User_logo.png" alt="" />
                     <div className="user_name">
                         
-                        <h3>BG32A4</h3>
+                        <h3></h3>
                     </div>
             </div>
         </nav>

@@ -56,7 +56,7 @@ def appointmentsByPatient(request):
 @api_view(('GET','POST'))
 def DocappointmentsDetails(request):
           if request.method=='GET':
-              appointmentsDetails = DocAppointments.objects.all()
-              serializer = DocAppointmentsSerializer(appointmentsDetails, many=True)
+              appointmentsDetails = Doctor.objects.all()
+              serializer = DoctorSerializer(appointmentsDetails, many=True)
               data = serializer.data
               return Response({"data": data}, status=status.HTTP_200_OK)
