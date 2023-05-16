@@ -1,13 +1,13 @@
-import React,{useState} from 'react'
-import Navbar from '../Navbar/NavbarRegister'
+import React, { useState } from 'react';
+import Navbar from '../Navbar/NavbarRegister';
 import axios from 'axios';
 import { Authenticate } from '../utils';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import MobNavbar from '../navbar/MobNavbar';
 // import alert from 'react-alert'
 
 const RegisterAsChemist = () => {
-  
 	//  const url="http://127.0.0.1:8000/clinic/chemistlogin";
 	const [chemistName, setchemistName] = useState('');
 	const [password, setpassword] = useState('');
@@ -77,7 +77,7 @@ const RegisterAsChemist = () => {
 	return (
 		<div>
 			<div className="upper">
-				<Navbar />
+				{window.innerWidth < 701 ? <MobNavbar /> : <Navbar />}
 			</div>
 			<div className="main">
 				<div className="column">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Logindesign from '../../components/Login/Logindesign';
 import Image from 'next/image';
 import MobNavbar from '../../components/navbar/MobNavbar';
@@ -8,9 +8,8 @@ import RegisterAsDoctor from '../../components/register/RegisterAsDoctor';
 import RegisterAsPatient from '../../components/register/RegisterAsPatient';
 import RegisterAsChemist from '../../components/register/RegisterAsChemist';
 
-
 function register() {
-	const router = useRouter();
+	// const router = useRouter();
 	const [Username, setUsername] = useState('');
 	const [Password, setPassword] = useState('');
 	const [Email, setEmail] = useState('');
@@ -18,27 +17,28 @@ function register() {
 	const [RenderId, setRenderId] = useState(1);
 
 	function NavigateToOtpform() {
-		// useEffect(() => {
-		// 	const validateEmail = (Email) => {
-		// 		return String(Email)
-		// 			.toLowerCase()
-		// 			.match(
-		// 				/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-		// 			);
+		// if (Username.length < 7) {
+		// 	alert('username cannot be less than 7 characters');
+		// } else if (Email.length === 0) {
+		// 	alert('Email cannot be empty');
+		// } else if (Password.length < 7 || Password !== ConfirmPassword) {
+		// 	alert('please check your password');
+		// } else {
+		// 	const ValidateEmail = () => {
+		// 		const Format = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+		// 		if (!Format.test(Email)) {
+		// 			setEmail('');
+		// 			alert('invalid email');
+		// 		} else {
+		// 			setRenderId(2);
+		// 		}
 		// 	};
-		// 	setValidated(true)
-		// }, []);
-
-		if (Username.length < 7) {
-			alert('username cannot be less than 7 characters');
-		} else if (Email.length === 0) {
-			alert('Email cannot be empty');
-		} else if (Password.length < 7 || Password !== ConfirmPassword) {
-			alert('please check your password');
-		} else {
-			setRenderId(2);
-		}
+		// 	ValidateEmail()
+		// }
+		setRenderId(2);
+		
 	}
+
 	const PatientLogin = () => {
 		setRenderId(3);
 	};
@@ -72,6 +72,7 @@ function register() {
 									className="Input"
 									value={Username}
 									onChange={(e) => setUsername(e.target.value)}
+									required
 								/>
 							</div>
 							<div>
@@ -82,6 +83,7 @@ function register() {
 									className="Input"
 									value={Email}
 									onChange={(e) => setEmail(e.target.value)}
+									required
 								/>
 							</div>
 							<div>
@@ -92,6 +94,7 @@ function register() {
 									className="Input"
 									value={Password}
 									onChange={(e) => setPassword(e.target.value)}
+									required
 								/>
 							</div>
 							<div>
@@ -102,6 +105,7 @@ function register() {
 									className="Input"
 									value={ConfirmPassword}
 									onChange={(e) => setConfirmPassword(e.target.value)}
+									required
 								/>
 							</div>
 							<button

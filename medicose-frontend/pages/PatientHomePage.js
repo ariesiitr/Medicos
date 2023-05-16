@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import NavbarDashboard from '../components/navbar/NavbarDashboard';
-import VerticalNav from '../components/navbar/VerticalNav'
+// import VerticalNav from '../components/navbar/VerticalNav'
 import axios from 'axios';
 
 function PatientHomepage() {
