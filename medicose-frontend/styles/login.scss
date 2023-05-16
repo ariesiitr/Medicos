@@ -55,7 +55,6 @@
 
 // login page + Register page css properties
 
-
 .loginContainer {
 	width: 100vw;
 	height: auto;
@@ -109,34 +108,34 @@
 	border: none;
 }
 .inputLabel {
-  font-family: "THICCCBOI";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 28px;
-  color: #000000;
-  margin-bottom: 0.5rem;
-  margin-top: 0.8rem;
-  align-items: center;
+	font-family: 'THICCCBOI';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 28px;
+	color: #000000;
+	margin-bottom: 0.5rem;
+	margin-top: 0.8rem;
+	align-items: center;
 }
 .btn {
-  max-width: 30.5rem;
-  width: 40vw;
-  height: 3.7rem;
-  border-radius: 4px;
-  background: #089996;
-  font-family: "THICCCBOI";
-  color: #ffffff;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.5rem;
-  line-height: 1.35rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  cursor: pointer;
-  margin-top: 1rem;
+	max-width: 30.5rem;
+	width: 40vw;
+	height: 3.7rem;
+	border-radius: 4px;
+	background: #089996;
+	font-family: 'THICCCBOI';
+	color: #ffffff;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1.5rem;
+	line-height: 1.35rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	cursor: pointer;
+	margin-top: 1rem;
 }
 hr {
 	width: 40vw;
@@ -150,14 +149,14 @@ input[type='checkbox'] {
 	cursor: pointer;
 }
 .checkboxContainer {
-  width: 40vw;
-  max-width: 30.5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-right: 0.8rem;
-  padding-left: 5px;
-  margin-top: 12px;
+	width: 40vw;
+	max-width: 30.5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-right: 0.8rem;
+	padding-left: 5px;
+	margin-top: 12px;
 }
 .invalidOtp {
 	width: 40vw;
@@ -191,9 +190,9 @@ input[type='checkbox'] {
 	}
 	.loginFormContainer {
 		width: 100vw;
-		height: 100vh;
+		min-height: 100vh;
 	}
-	input {
+	.Input {
 		width: 87vw;
 		max-width: none;
 	}
@@ -205,7 +204,7 @@ input[type='checkbox'] {
 		width: 87vw;
 		max-width: none;
 	}
-	hr {
+	.hr {
 		width: 87vw;
 		max-width: none;
 	}
@@ -222,7 +221,7 @@ input[type='checkbox'] {
 	}
 	.navbarContainer {
 		width: 100vw;
-		height: 3.5rem;
+		height: 4.5rem;
 		background-color: #089996;
 		display: flex;
 		justify-content: space-between;
