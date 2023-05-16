@@ -1,12 +1,5 @@
-import React, { Children, Component } from 'react';
-import * as ReactDOM from "react-dom";
-import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
-import LoginPage from './Login'
-import RegisterAs from './RegisterAs'
-import App from '../pages/_app';
-import Homepage from '../components/dashboard/Doctor/Homepage'
-import PatientHomepage from '../components/dashboard/Patient/Homepage'
-
+import React from 'react';
+import LoginPage from './Login';
 
 <link
 	rel="stylesheet"
@@ -16,18 +9,10 @@ import PatientHomepage from '../components/dashboard/Patient/Homepage'
 	referrerpolicy="no-referrer"
 />;
 
-
 export default function Home() {
 	return (
 		<>
-		{/* <RegisterAsDoctor/> */}
-   <LoginPage/>
-		{/*<Homepage/> */}
-    {/*<PatientHomepage/>*/}
-		
-  {/* <RouterProvider router={router} />  */}
-	
-    </>
-  )
-
+			<LoginPage />
+		</>
+	);
 }

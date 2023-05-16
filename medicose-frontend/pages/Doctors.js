@@ -15,4 +15,4 @@ const ChemistHome = () => {
   )
 }
 
-export default ChemistHome
+export default ChemistHome;

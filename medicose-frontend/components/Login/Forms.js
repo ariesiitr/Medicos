@@ -125,7 +125,7 @@ export default function Loginform() {
 			>
 				Login
 			</button>
-			<hr />
+			<hr className='hr'/>
 			{/* 
 			<button
 				className="btn"
@@ -151,13 +151,12 @@ export default function Loginform() {
 						marginLeft: '10px',
 					}}
 				>
-					<Link href="/RegisterAs">Create Account</Link>
+					<Link href="/register">Create Account</Link>
 				</span>
 			</div>
 		</>
 	);
 }
-
 
 function Otpform() {
 	const [isVerified, setisVerified] = useState(true);
