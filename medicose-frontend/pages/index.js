@@ -1,4 +1,13 @@
-import React, { Component } from 'react';
+import React, { Children, Component } from 'react';
+import * as ReactDOM from "react-dom";
+import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
+import LoginPage from './Login'
+import RegisterAs from './RegisterAs'
+import App from '../pages/_app';
+import Homepage from '../components/dashboard/Doctor/Homepage'
+import PatientHomepage from '../components/dashboard/Patient/Homepage'
+
+
 <link
 	rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -6,18 +15,18 @@ import React, { Component } from 'react';
 	crossorigin="anonymous"
 	referrerpolicy="no-referrer"
 />;
-import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
-import login from './login';
-import RegisterAs from '../components/Register/RegisterAs'
-import App from '../pages/_app';
-import Homepage from '../components/dashboard/Doctor/Homepage'
-
 
 
 export default function Home() {
 	return (
 		<>
-		<Homepage/>
+		{/* <RegisterAsDoctor/> */}
+   <LoginPage/>
+		{/*<Homepage/> */}
+    {/*<PatientHomepage/>*/}
+		
+  {/* <RouterProvider router={router} />  */}
+	
     </>
   )
 

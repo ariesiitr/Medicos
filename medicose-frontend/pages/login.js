@@ -3,12 +3,11 @@ import Logindesign from "../components/Login/Logindesign";
 import Image from "next/image";
 import Loginform from "../components/Login/Forms";
 import MobNavbar from "../components/navbar/MobNavbar"
-import DoctorHomepage from '../components/dashboard/Doctor/Homepage'
 
 
 
 
-function login() {
+function LoginPage() {
   return (
     <div className="loginContainer">
       <div className="loginDesignContainer">
@@ -29,4 +28,4 @@ function login() {
   );
 }
 
-export default login;
+export default LoginPage;

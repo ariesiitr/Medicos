@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
-import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNavbarDashboard'
+import NavbarDashboard from '../components/navbar/NavbarDashboard'
+import VerticalNavbarDashboard from '../components/navbar/VerticalNav'
 
 const ChemistHome = () => {
   const [toggleState,setToggleState] = useState(1);
@@ -11,7 +11,7 @@ const ChemistHome = () => {
   }
 
   return (
-    <div>Chemist HomePage Under Maintenance, Please visit later.<br></br>We appreciate your patience.</div>
+    <div style={{padding:"35rem"}}>Chemist HomePage Under Maintenance, Please visit later.<br></br>We appreciate your patience.</div>
   )
 }
 
