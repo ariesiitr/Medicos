@@ -49,8 +49,8 @@ export default function Home() {
 	return (
 		<>
 		{/* <RegisterAsDoctor/> */}
-		{/* <RegisterAs/> */}
-		<Homepage/>
+		<RegisterAs/>
+		{/* <Homepage/> */}
 		
   {/* <RouterProvider router={router} />  */}
 	
