@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
-import Navbar from '../components/navbar/NavbarRegister'
-import StateDropdown from '../components/Register/StateDropdown'
+import Navbar from '../../components/navbar/NavbarRegister'
+import StateDropdown from '../../components/Register/StateDropdown'
 import Link from 'next/link';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -249,7 +249,7 @@ function submit1() {
 const router=useRouter();
 
 const NavigatePatientHomepage=()=>{
-    router.push('/PatientHomePage')
+    router.push('/dashboard/Patient/Homepage')
 }
 
 

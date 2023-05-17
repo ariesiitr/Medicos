@@ -70,3 +70,11 @@ def Login(request):
 
          # except Error as e:
         #  print(e.message)
+
+@api_view(('GET','POST'))
+def ChemistDetails(request):
+          if request.method=='GET':
+              appointmentsDetails = Clinic.objects.all()
+              serializer = ClinicSerializer(appointmentsDetails, many=True)
+              data = serializer.data
+              return Response({"data": data}, status=status.HTTP_200_OK)

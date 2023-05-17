@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import Navbar from '../components/navbar/NavbarRegister'
+import Navbar from '../../components/navbar/NavbarRegister'
 import axios from 'axios';
-import { Authenticate } from '../utils';
+import { Authenticate } from '../../utils';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 // import alert from 'react-alert'
@@ -24,7 +24,7 @@ const RegisterAsChemist = () => {
     const router= useRouter();
 
     const navigateToChemistHome=()=>{
-        router.push('/ChemistHome')
+        router.push('/dashboard/Chemist/Homepage')
     }
 	const submit = () => {
         navigateToChemistHome();

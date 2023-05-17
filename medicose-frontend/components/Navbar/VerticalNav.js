@@ -12,14 +12,14 @@ const VerticalNav = () => {
         <div className="d_main-left">
           
                   <nav className="d_vnav">
-                      <Link  legacyBehavior href="/DoctorHome">
+                      <Link  legacyBehavior href="/dashboard/Doctor/Homepage">
                       <div className="block">
                       <img src="/Home.png" alt="" />
                       <p>Home</p>
                       </div>
                        </Link>
 
-                      <Link legacyBehavior href='/DoctorCalendar'>
+                      <Link legacyBehavior href='/dashboard/Doctor/Calendar'>
                       <div className="block">
                       <img src="/Calender.png" alt="" />
                       <p>Calendar</p>
@@ -27,7 +27,7 @@ const VerticalNav = () => {
                       </Link>
 
 
-                      <Link legacyBehavior href='/DoctorChats'>
+                      <Link legacyBehavior href='/dashboard/Doctor/Chatpage'>
                       <div className="block">
                       <img src="/Chats.png" alt="" />
                       <p>Chats</p>
@@ -36,7 +36,7 @@ const VerticalNav = () => {
                       </Link>
 
 
-                      <Link legacyBehavior href='/DoctorReports'>
+                      <Link legacyBehavior href='/dashboard/Doctor/Reports'>
                       <div className="block">
                       <img src="/Reports.png" alt="" />
                       <p>Reports</p>
@@ -45,7 +45,7 @@ const VerticalNav = () => {
                       </Link>
 
 
-                      <Link legacyBehavior href='/DoctorPayments'>
+                      <Link legacyBehavior href='/dashboard/Doctor/Payment'>
                       <div className="block">
                       <img src="/Payments.png" alt="" />
                       <p>Payments</p>

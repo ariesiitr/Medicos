@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import React from 'react'
-import NavbarDashboard from '../Navbar/NavbarDashboard'
-import VerticalNavbarDashboard from '../Navbar/VerticalNav'
+import NavbarDashboard from '../../../components/navbar/NavbarDashboard'
+import VerticalNavbarDashboard from '../../../components/navbar/VerticalNav'
+import axios from 'axios'
 
 const ChemistHome = () => {
   const [toggleState,setToggleState] = useState(1);
@@ -9,6 +10,27 @@ const ChemistHome = () => {
     console.log(index)
     setToggleState(index);
   }
+  const [data, setData] = useState(null);
+  const [users,setUsers]=useState([]);
+  useEffect(() => {
+    const fetchData2 = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/clinic/chemistDetails');
+        setData(response.data);
+        if(data.length>0){
+          setUsers(data)
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  
+    fetchData2();
+  }, []);
+  console.log(data)
+
+  const chemistName = data?.data[0]?.chemistName; 
+
 
   return (
     <>
@@ -28,7 +50,7 @@ const ChemistHome = () => {
 
                 </div>
                 <div className="chemistname">
-                  <h1>Welcome, User_Name!</h1>
+                  <h1>Welcome, {chemistName}!</h1>
                   <p style={{color:"#089996",fontSize :20}}>Hope you are fit and happy!</p>
                 </div>
               </div>
@@ -48,14 +70,14 @@ const ChemistHome = () => {
                   </div>
                   <div className="userName">
                     <span style={{color:'#089996'}}>#089996</span>
-                    <h2>User_name</h2>
+                    <h2>{chemistName}</h2>
                   </div>
                     <div className="order_time">
                       <p>Ordered at 9:00am</p>
                     </div>
                 </div>
                 <div className="reports">
-                  <p>Patient_Report</p>
+                  <p><b>Patient Report</b></p>
                 </div>
               </div>
               <div className="previous_orders">

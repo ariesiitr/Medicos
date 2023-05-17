@@ -1,6 +1,6 @@
 import React, {useEffect, useState}from 'react'
-import NavbarDashboard from '../../Navbar/NavbarDashboard'
-import VerticalNav from '../../Navbar/VerticalNav'
+import NavbarDashboard from '../../../components/navbar/NavbarDashboard'
+import VerticalNav from '../../../components/navbar/VerticalNav'
 import Link from 'next/link'
 import axios from 'axios'
 
@@ -88,15 +88,7 @@ const Homepage = () => {
 
 console.log(data)
 
-const appointmentDate = data?.data[0]?.appointmentDate; 
-
-const appointmentTime = data?.data[0]?.appointmentTime;
-
-const uniqueId =data?.data[0]?.uniqueId;
-
-const DocUniqueId = data?.data[0]?.DocUniqueId;
-
-
+const doctorName = data?.data[0]?.doctorName; 
 
 
 
@@ -125,7 +117,7 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                               <img src="/User_logo.png" alt="" />
                             </div>
                             <div className="doctorname">
-                              <h1>Welcome, Dr. {DocUniqueId}!</h1>
+                              <h1>Welcome, Dr. {doctorName}!</h1>
                               <p>Your have <span style= {{color:'#089996'}}>_ appointments</span> for today</p>
                             </div>
                         </div>
@@ -188,7 +180,7 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                                     <div className="appointment_date">
 
                                     
-                                    <div>{appointmentDate}</div>
+                                    <div>{doctorName}</div>
                                     {/* <div>23</div> */}
 
                                     
@@ -205,7 +197,7 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                                 </div>
                                 <div className="appointment_time">
                                 
-                                  <div>{appointmentTime}</div>
+                                  <div>13:00-13:30</div>
                                   {/* <div>9:00 pm- 10:00 pm</div> */}
 
 
@@ -225,8 +217,8 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                                       {/* <div style={{color:"#737E87"}}>#089996</div> */}
                                       {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
 
-                                      <div style={{color:"#737E87"}}>{uniqueId}</div>
-                                      <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
+                                      <div style={{color:"#737E87"}}>135790</div>
+                                      <div style={{color:'#5D9EE3'}}>ARTQ43</div>
                                       {/* <div>{appoitment_patient_basic_info}</div> */}
                                       {/* <div style={{color:"#737E87"}}>#089996</div> */}
                                       {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
@@ -257,7 +249,7 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                                     <div className="appointment_date">
 
                                     
-                                    <div>{appointmentDate}</div>
+                                    <div>appointmentDate</div>
                                     {/* <div>23</div> */}
 
 
@@ -273,7 +265,7 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                                 </div>
                                 <div className="appointment_time">
                                 
-                                  <div>{appointmentTime}</div>
+                                  <div>appointmentTime</div>
                                   {/* <div>9:00 pm- 10:00 pm</div> */}
 
                                   {/* <div>{appointmentTime}</div> */}
@@ -294,8 +286,8 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
 
                                       
                                     
-                                      <div style={{color:"#737E87"}}>{uniqueId}</div> 
-                                       <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
+                                      <div style={{color:"#737E87"}}>uniqueId</div> 
+                                       <div style={{color:'#5D9EE3'}}>DocUniqueId</div>
                                       {/* <div style={{color:"#737E87"}}>#089996</div>
                                       <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
 

@@ -3,15 +3,7 @@ import Link from 'next/link';
 import NavItem from './NavItem';
 
 const MENU_LIST = [
-	{
-		text: 'Dashboard',
-		href: '/DoctorHome',
-	},
-	{
-		text: 'Appointments',
-		href: '/Appointments',
-	},
-	{
+{
 		text: 'Doctors',
 		href: '/Doctors',
 	},
@@ -69,7 +61,7 @@ const NavbarRegister = () => {
 					<span className="bar"></span>
 				</div>
 
-				<div className="nav__menu-list">
+				<div style={{marginLeft:"-5rem"}}className="nav__menu-list">
 					{MENU_LIST.map((menu, idx) => {
 						return (
 							<div key={menu.text} className="nav-link">
