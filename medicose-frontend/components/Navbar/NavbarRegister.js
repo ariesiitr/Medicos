@@ -9,15 +9,15 @@ const MENU_LIST = [
 	},
 	{
 		text: 'Appointments',
-		href: '/appointmentes',
+		href: '/Appointments',
 	},
 	{
 		text: 'Doctors',
-		href: '/doctors',
+		href: '/Doctors',
 	},
 	{
 		text: 'Pharmacy',
-		href: '/pharmacy',
+		href: '/Pharmacy',
 	},
 ];
 // var hamburger=null;

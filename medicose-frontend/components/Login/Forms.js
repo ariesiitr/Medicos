@@ -74,7 +74,7 @@ export default function Loginform() {
 				<input
 					type="text"
 					placeholder="Enter your username"
-          className="Input"
+					className="Input"
 					onChange={(e) => setuserName(e.target.value)}
 				/>
 			</div>
@@ -83,7 +83,7 @@ export default function Loginform() {
 				<input
 					type="password"
 					placeholder="Enter your Password"
-          className="Input"
+					className="Input"
 					onChange={(e) => {
 						setPassword(e.target.value);
 						passValidate();
@@ -95,7 +95,9 @@ export default function Loginform() {
 					style={{
 						display: 'flex',
 						flexDirection: 'row',
-						height: '18px',
+						height: '1rem',
+						gap: '0.5rem',
+						alignItems: 'center',
 					}}
 				>
 					<input type="checkbox" className="Input" />
@@ -124,6 +126,7 @@ export default function Loginform() {
 				Login
 			</button>
 			<hr />
+			{/* 
 			<button
 				className="btn"
 				style={{
@@ -138,7 +141,7 @@ export default function Loginform() {
 					style={{ marginRight: '16px' }}
 				/>
 				Login with Google
-			</button>
+			</button> */}
 			<div>
 				<text> Don’t have an account?</text>
 				<span
@@ -148,53 +151,13 @@ export default function Loginform() {
 						marginLeft: '10px',
 					}}
 				>
-					<Link href="/register">Create Account</Link>
+					<Link href="/RegisterAs">Create Account</Link>
 				</span>
 			</div>
 		</>
 	);
 }
 
-function Signupform(props) {
-	return (
-		<>
-			<div className="greet">Create your account</div>
-			<div>
-				<div className="inputLabel">Username</div>
-				<input type="text" placeholder="Enter your Name" className="Input" />
-			</div>
-			<div>
-				<div className="inputLabel">Email</div>
-				<input type="email" placeholder="Enter your Email" className="Input" />
-			</div>
-			<div>
-				<div className="inputLabel">Password</div>
-				<input
-					type="password"
-					placeholder="Enter your Password"
-					className="Input"
-				/>
-			</div>
-			<div>
-				<div className="inputLabel">Confirm Password</div>
-				<input
-					type="password"
-					placeholder="Confirm password"
-					className="Input"
-				/>
-			</div>
-			<button
-				className="btn"
-				onClick={props.NavigateToOtpform}
-				style={{
-					marginTop: '2.5rem',
-				}}
-			>
-				Signup
-			</button>
-		</>
-	);
-}
 
 function Otpform() {
 	const [isVerified, setisVerified] = useState(true);
@@ -251,4 +214,4 @@ function Otpform() {
 	);
 }
 
-export { Signupform, Otpform };
+export { Otpform };

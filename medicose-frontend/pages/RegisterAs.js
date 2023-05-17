@@ -1,6 +1,9 @@
 
 import React,{useState} from 'react'
-import NavbarRegister from '../Navbar/NavbarRegister'
+import NavbarRegister from '../components/Navbar/NavbarRegister'
+
+import { useRouter } from 'next/router';
+
 
 
 if (typeof window !== 'undefined') {
@@ -53,6 +56,26 @@ if (typeof window !== 'undefined') {
 }
 
 const RegisterAs = (props) => {
+    const router = useRouter();
+
+    const NavigateToPatientRegister = () => {
+        router.push('/RegisterAsPatient');
+      };
+
+	  const NavigateToDoctorRegister = () => {
+        router.push('/RegisterAsDoctor');
+      };
+	  const NavigateToChemistRegister = () => {
+        router.push('/RegisterAsChemist');
+      };
+
+
+
+
+
+
+
+
   return (
     <div>
     <div className="upper">
@@ -66,21 +89,21 @@ const RegisterAs = (props) => {
 
 				<div className="containers">
 
-					<button legacyBehavior onClick={props.PatientLogin} style={{border:"none"}}>
-						<div className="container" id="container1">
+					<button legacyBehavior onClick={NavigateToPatientRegister} style={{border:"none"}}>
+						<div className="container" id="container1" onClick={NavigateToPatientRegister}>
 							<img src="/Patient.png" id="patient" alt="" />
 							<p id="para1">As a Patient</p>
 						</div>
 					</button>
 
-					<button legacyBehavior onClick={props.DoctorLogin} style={{border:"none"}}>
+					<button legacyBehavior onClick={NavigateToDoctorRegister} style={{border:"none"}}>
 						<div className="container" id="container2">
 							<img src="/Doctor.png" id="doctor" alt="" />
 							<p id="para2">As a Doctor</p>
 						</div>
 					</button>
 
-					<button legacyBehavior onClick={props.ChemistLogin} style={{border:"none"}} >
+					<button legacyBehavior onClick={NavigateToChemistRegister} style={{border:"none"}} >
 						<div className="container" id="container3">
 							<img src="/Chemist.png" id="chemist" alt="" />
 							<p id="para3">As a Chemist</p>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 import { toast } from 'react-toastify';
-import NavbarRegister from '../Navbar/NavbarRegister'
+import NavbarRegister from '../components/navbar/NavbarRegister'
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
 // import alert from 'react-alert'
@@ -24,11 +24,15 @@ const RegisterAsDoctor= () => {
   const[upiId,setUpiId]=useState("")
   const[license,setLicense]=useState("")
   
- 
+  const router=useRouter();
+ const navigateToDoctorHome=()=>{
+    router.push('/DoctorHome')
+ }
+
   const Submit =() =>{
-    console.log('started')
+    navigateToDoctorHome();
     if(doctorName===''){
-      alert('Pleaase enter your name');
+      alert('Please enter your name');
       // toast.configure()
     }
     else if(speciality===''){
@@ -36,43 +40,43 @@ const RegisterAsDoctor= () => {
       // toast.configure()
     }
     else if(password ===''){
-      alert('Plese enter your password  ');
+      alert('Please enter your password  ');
       // toast.configure()
     }
     else if( clinicName===''){
-      alert('Plese enter clinic name ')
+      alert('Please enter clinic name ')
       // toast.configure()
     }
     else if(contactNo ===''){
-      alert('Plese enter your contact number  ');
+      alert('Please enter your contact number  ');
       // toast.configure()
     }
     else if(address ===''){
-      alert('Plese enter your address ')
+      alert('Please enter your address ')
       // toast.configure()
     }
     else if(availableDays ===''){
-      alert('Plese enter the days you are available  ')
+      alert('Please enter the days you are available  ')
       // toast.configure()
     }
     else if(appointmentstartTime ===''){
-      alert('Plese enter starting time  ')
+      alert('Please enter starting time  ')
       // toast.configure()
     }
     else if(appointmentendTime ===''){
-      alert('Plese enter ending time  ')
+      alert('Please enter ending time  ')
       // toast.configure()
     }
     else if(appointmentFees ===''){
-      alert('Plese enter fees  ')
+      alert('Please enter fees  ')
       // toast.configure()
     }
     else if(upiId ===''){
-      alert('Plese enter your UPI Id  ')
+      alert('Please enter your UPI Id  ')
       // toast.configure()
     }
     else if(license===''){
-      alert('Plese upload your license ')
+      alert('Please upload your license ')
       // toast.configure()
     }
     else {
@@ -95,7 +99,6 @@ const RegisterAsDoctor= () => {
         .then(res => {
           if(res.status === 201){
             console.log(res.data)
-            router.push('/')
 
           }
           

@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import Navbar from '../Navbar/NavbarRegister'
+import Navbar from '../components/navbar/NavbarRegister'
 import axios from 'axios';
 import { Authenticate } from '../utils';
 import { useRouter } from 'next/router';
@@ -20,7 +20,14 @@ const RegisterAsChemist = () => {
 	const [license, setlicense] = useState('');
 	const [upiId, setupiId] = useState('');
 
+
+    const router= useRouter();
+
+    const navigateToChemistHome=()=>{
+        router.push('/ChemistHome')
+    }
 	const submit = () => {
+        navigateToChemistHome();
 		console.log('started');
 		if (chemistName === '') {
 			alert('Please enter Your Name');

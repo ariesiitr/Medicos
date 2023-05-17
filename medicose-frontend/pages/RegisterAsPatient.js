@@ -1,9 +1,10 @@
 import React,{useEffect, useState} from 'react'
-import Navbar from '../Navbar/NavbarRegister'
-import StateDropdown from './StateDropdown'
+import Navbar from '../components/Navbar/NavbarRegister'
+import StateDropdown from '../components/Register/StateDropdown'
 import Link from 'next/link';
 import axios from 'axios';
-
+import { useRouter } from 'next/router';
+// import alert from 'react-alert'
 const RegisterAsPatient = () => {
   
 
@@ -224,6 +225,7 @@ const FetchApi = (method, url, params, TokenValue) => {
 function submit1() {
   if (Password.length > 7) {
     // console.log('Submitting form...');
+    NavigatePatientHomepage();
     FetchApi(
       'POST',
       PatientAPI,
@@ -244,7 +246,11 @@ function submit1() {
   }
 }
 
+const router=useRouter();
 
+const NavigatePatientHomepage=()=>{
+    router.push('/PatientHomePage')
+}
 
 
 
@@ -318,7 +324,8 @@ console.log(Dob)
               <input type='text' id='city' onChange={(e) => setCity(e.target.value)} placeholder='Enter your city'></input>
 
               
-              <button className='btn-submit' type='submit'  onClick={() => {
+              <button className='btn-submit' type='submit' onClick={() => {
+                
                 submit1();
               }}>Submit</button>
              

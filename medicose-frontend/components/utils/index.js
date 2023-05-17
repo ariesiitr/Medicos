@@ -1,5 +1,6 @@
 export const Authenticate = (name, id, authToken) => {
     if (typeof window === 'undefined') return null;
+   
   
     localStorage.setItem('name', name);
     localStorage.setItem('id', id);

@@ -7,7 +7,7 @@ import MobNavbar from "../components/navbar/MobNavbar"
 
 
 
-function login() {
+function LoginPage() {
   return (
     <div className="loginContainer">
       <div className="loginDesignContainer">
@@ -28,4 +28,4 @@ function login() {
   );
 }
 
-export default login;
+export default LoginPage;
