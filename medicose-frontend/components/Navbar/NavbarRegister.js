@@ -3,15 +3,7 @@ import Link from 'next/link';
 import NavItem from './NavItem';
 
 const MENU_LIST = [
-	{
-		text: 'Dashboard',
-		href: '/DoctorHome',
-	},
-	{
-		text: 'Appointments',
-		href: '/Appointments',
-	},
-	{
+{
 		text: 'Doctors',
 		href: '/Doctors',
 	},

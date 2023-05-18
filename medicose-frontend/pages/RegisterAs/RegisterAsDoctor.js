@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Select from 'react-select';
 import { toast } from 'react-toastify';
-import NavbarRegister from '../components/navbar/NavbarRegister'
+import NavbarRegister from '../../components/navbar/NavbarRegister'
 import axios from 'axios'
 import 'react-toastify/dist/ReactToastify.css';
 // import alert from 'react-alert'
@@ -26,7 +26,7 @@ const RegisterAsDoctor= () => {
   
   const router=useRouter();
  const navigateToDoctorHome=()=>{
-    router.push('/DoctorHome')
+    router.push('/dashboard/Doctor/Homepage')
  }
 
   const Submit =() =>{

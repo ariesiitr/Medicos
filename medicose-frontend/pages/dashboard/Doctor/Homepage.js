@@ -1,7 +1,6 @@
 import React, {useEffect, useState}from 'react'
-
-import NavbarDashboard from '../../Navbar/NavbarDashboard'
-import VerticalNav from '../../Navbar/VerticalNav'
+import NavbarDashboard from '../../../components/navbar/NavbarDashboard'
+import VerticalNav from '../../../components/navbar/VerticalNav'
 import Link from 'next/link'
 import axios from 'axios'
 
@@ -42,7 +41,7 @@ const Homepage = () => {
   // const [pageId,setpageId] =useState(1);
   const [Appointment,setAppointment] = useState([]);
   const [toggleTab,setToggleTab] = useState(1);
-  
+  // const Appointment.length =2;
   console.log(Appointment)
 
   const [data, setData] = useState(null);
@@ -99,6 +98,7 @@ const BookAppointment = () => {
   const Btn = document.querySelector('.appointmentBtn');
 		Btn.disabled = true;
 }
+const doctorName = data?.data[0]?.doctorName; 
 
 
 
@@ -128,6 +128,7 @@ const BookAppointment = () => {
                             </div>
                             <div className="doctorname">
                               <h1>Welcome, Dr. Shagun!</h1>
+                              {/* <h1>Welcome, Dr. {doctorName}!</h1> */}
                               <p>Your have <span style= {{color:'#089996'}}>_ appointments</span> for today</p>
                             </div>
                         </div>
@@ -176,17 +177,50 @@ const BookAppointment = () => {
                     
               
                 
-              {/* <div className="content-tabs"> */}
+          
                     
                     
                   {toggleTab === 1 && (
                       <>
-                          {Appointment.length === 0 ? (
+                          {Appointment.length !== 0 ? (
                             <div className="noAppointment">
                               You don't haave any appointments for today
                             </div>
                           ):(
-                            Appointment.map(
+                            <div className="patientAppointmentInfo">
+                                    <div className="briefInfo">
+
+                                      <div className="patientAppointment_date_time">
+                                              <div className="patientAppointment_date">
+                                                <div>25 March 2023</div>
+                                                  {/* <div>{appointmentDate}</div> */}
+                                                  
+                                              </div>
+                                              <div className="patientAppointment_time">
+                                                <div>3:00-4:00</div>
+                                                    {/* <div>{appointmentTime}</div> */}
+                                              </div>
+                                                  
+                                      </div>             
+                                      <hr/>
+                                      <div className="patientAppointment_name_and_id">
+                                                <div className="patientAppointment_name">
+                                                      <img src="/Right_button.png" alt="" />
+                                                      <div>Patient Name</div>
+                                                </div>
+                                                <div className="patientAppointment_uniqueId">
+                                                      {/* <div style={{color:"#737E87"}}>{uniqueId}</div> */}
+                                                      <div style={{color:"#737E87"}}>#061b2d</div>
+                                                      {/* <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
+                                                </div>
+                                      </div>
+                                      </div>
+                                      <div className="detailedInfo">
+                                              <button id='btn-appointment' className='details'>Details</button>
+                                      </div>
+
+                                  </div>
+                            /*Appointment.map(
                               ({
                                 id,
                                 uniqueId,
@@ -200,13 +234,14 @@ const BookAppointment = () => {
 
                                       <div className="patientAppointment_date_time">
                                               <div className="patientAppointment_date">
+                                                <div>25 March 2023</div>
                                                   <div>{appointmentDate}</div>
                                               </div>
                                               <div className="appointment_time">
                                                     <div>{appointmentTime}</div>
                                               </div>
                                                   
-                                      </div>
+                                      </div>             
                                       <hr/>
                                       <div className="patientAppointment_name_and_id">
                                                 <div className="patientAppointment_name">
@@ -226,7 +261,7 @@ const BookAppointment = () => {
                                   </div>
                                 )
                               }
-                            )
+                            )*/
                           )}
                       </>
                     )}
@@ -282,7 +317,7 @@ const BookAppointment = () => {
                           )}
                       </>
                     )}
-              {/* </div> */}
+             
           </div>
 
       </div>
@@ -303,7 +338,6 @@ const BookAppointment = () => {
 
 
 export default Homepage
-
             
 
 
@@ -551,6 +585,8 @@ export default Homepage
                                     
 //                                     <div>{appointmentDate}</div>
 //                                     {/* <div>23</div> */}
+                                    
+                                    {/* <div>23</div> */}
 
                                     
 
@@ -566,8 +602,8 @@ export default Homepage
 //                                 </div>
 //                                 <div className="appointment_time">
                                 
-//                                   <div>{appointmentTime}</div>
-//                                   {/* <div>9:00 pm- 10:00 pm</div> */}
+                                  // <div>13:00-13:30</div>
+                                  {/* <div>9:00 pm- 10:00 pm</div> */}
 
 
 //                                 </div>
@@ -586,11 +622,11 @@ export default Homepage
 //                                       {/* <div style={{color:"#737E87"}}>#089996</div> */}
 //                                       {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
 
-//                                       <div style={{color:"#737E87"}}>{uniqueId}</div>
-//                                       <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
-//                                       {/* <div>{appoitment_patient_basic_info}</div> */}
-//                                       {/* <div style={{color:"#737E87"}}>#089996</div> */}
-//                                       {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
+                                      // <div style={{color:"#737E87"}}>135790</div>
+                                      // <div style={{color:'#5D9EE3'}}>ARTQ43</div>
+                                      {/* <div>{appoitment_patient_basic_info}</div> */}
+                                      {/* <div style={{color:"#737E87"}}>#089996</div> */}
+                                      {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
 
 
 //                                     </div>
@@ -620,6 +656,8 @@ export default Homepage
                                     
 //                                     <div>{appointmentDate}</div>
 //                                     {/* <div>23</div> */}
+                                    // <div>appointmentDate</div>
+                                    {/* <div>23</div> */}
 
 
 //                                     </div>
@@ -634,8 +672,8 @@ export default Homepage
 //                                 </div>
 //                                 <div className="appointment_time">
                                 
-//                                   <div>{appointmentTime}</div>
-//                                   {/* <div>9:00 pm- 10:00 pm</div> */}
+                                  // <div>appointmentTime</div>
+                                  {/* <div>9:00 pm- 10:00 pm</div> */}
 
 //                                   {/* <div>{appointmentTime}</div> */}
 //                                   {/* <div>9:00 pm- 10:00 pm</div> */}
@@ -655,10 +693,10 @@ export default Homepage
 
                                       
                                     
-//                                       <div style={{color:"#737E87"}}>{uniqueId}</div> 
-//                                        <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
-//                                       {/* <div style={{color:"#737E87"}}>#089996</div>
-//                                       <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
+                                      // <div style={{color:"#737E87"}}>uniqueId</div> 
+                                      //  <div style={{color:'#5D9EE3'}}>DocUniqueId</div>
+                                      {/* <div style={{color:"#737E87"}}>#089996</div>
+                                      <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
 
 //                                       {/* <div style={{color:"#737E87"}}>{uniqueId}</div>
 //                                       <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}

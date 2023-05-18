@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+
 
 export default function Loginform() {
 	const [userName, setuserName] = useState('');
 	const [Password, setPassword] = useState('');
 	const [pass_error, setpass_error] = useState('');
+	const [Error, setError] = useState("")
 	const [pass_error_bool, setpass_error_bool] = useState(false);
 
 	const LOGIN_API = `http://127.0.0.1:8000/login/`;
@@ -22,49 +25,49 @@ export default function Loginform() {
 			}
 		}, 100000);
 	};
-	const FetchApi = (method, url, params, TokenValue) => {
-		return new Promise((resolve, reject) => {
-			if (TokenValue) {
-				axios({
-					method: method,
-					url: url,
-					data: params,
-					headers: {
-						Authorization: 'Token ' + TokenValue,
-					},
-					responseType: 'json',
-				})
-					.then((res) => resolve(res))
-					.catch((err) => reject(err));
-			} else {
-				axios({
-					method: method,
-					url: url,
-					data: params,
-					responseType: 'json',
-				})
-					.then((res) => resolve(res))
-					.catch((err) => reject(err));
-			}
-		});
-	};
-
-	// console.log(Password);
-	// console.log(userName);
-
-	function submit() {
+	const router = useRouter();
+	const submit = () => {
 		if (Password.length > 7) {
-			FetchApi(
-				'POST',
-				LOGIN_API,
-				{
-					username: userName,
-					password: Password,
-				},
-				null
-			);
+		  FetchApi('POST', LOGIN_API, { username: userName, password:Password })
+			.then(data => {
+			  if (data.success === 'Doctor login successful') {
+				// Redirect to the doctor dashboard page
+				router.push('/dashboard/Doctor/Homepage');
+			  } 
+			  if (data.success === 'Patient login successful') {
+				// Redirect to the doctor dashboard page
+				router.push('/dashboard/Patient/Homepage');
+			  } 
+			  if (data.success === 'Chemist login successful') {
+				// Redirect to the doctor dashboard page
+				router.push('/dashboard/Chemist/Homepage');
+			  } 
+			  
+			  else {
+				setError('Login unsuccessful');
+			  }
+			})
+			.catch(error => {
+			  setError('Error occurred during login');
+			  console.error('Error:', error);
+			});
+		} else {
+		  setError('Password should be more than 8 characters');
 		}
-	}
+	  };
+	
+	  const FetchApi = (method, url, params) => {
+		return new Promise((resolve, reject) => {
+		  axios({
+			method: method,
+			url: url,
+			data: params,
+			responseType: 'json',
+		  })
+			.then(res => resolve(res.data))
+			.catch(err => reject(err));
+		});
+	  };
 
 	return (
 		<>
@@ -151,7 +154,7 @@ export default function Loginform() {
 						marginLeft: '10px',
 					}}
 				>
-					<Link href="/RegisterAs">Create Account</Link>
+					<Link href="/RegisterAs/RegisterAs">Create Account</Link>
 				</span>
 			</div>
 		</>

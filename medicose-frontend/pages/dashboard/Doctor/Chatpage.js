@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import NavbarDashboard from "../../Navbar/NavbarDashboard"
+import NavbarDashboard from '../../../components/navbar/NavbarDashboard'
+
 
 function Chatpage() {
   return (

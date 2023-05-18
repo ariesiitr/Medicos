@@ -38,11 +38,11 @@ if(typeof window !== "undefined"){
 
 const Homepage = () => {
   
-  const [toggleState,setToggleState] = useState(1);
-  const toggleTab = (index) => {
-    console.log(index)
-    setToggleState(index);
-  }
+  // const [pageId,setpageId] =useState(1);
+  const [Appointment,setAppointment] = useState([]);
+  const [toggleTab,setToggleTab] = useState(1);
+  // const Appointment.length =2;
+  console.log(Appointment)
 
   const [data, setData] = useState(null);
   // const [users,setUsers]=useState([]);
@@ -71,7 +71,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/doctor/doctorAppointDetails');
+        const response = await axios.get(' http://127.0.0.1:8000/doctor/doctorAppointDetails');
         setData(response.data);
         if(data.length>0){
           setUsers(data)
@@ -81,25 +81,30 @@ const Homepage = () => {
       }
     };
   
-    fetchData();
+    // fetchData();
   }, []);
   
 
 
 console.log(data)
 
+// const appointmentDate = data?.data[0]?.appointmentDate; 
+// const appointmentTime = data?.data[0]?.appointmentTime;
+// const uniqueId =data?.data[0]?.uniqueId;
+// const DocUniqueId = data?.data[0]?.DocUniqueId;
+// const doctorName = data?.data[0]?.doctorName;
+
+const BookAppointment = () => {
+  const Btn = document.querySelector('.appointmentBtn');
+		Btn.disabled = true;
+}
 const doctorName = data?.data[0]?.doctorName; 
-// const doctorName = data?.data[0]?.doctorName; 
-const appointmentDate = data?.data[0]?.appointmentDate; 
-const appointmentTime = data?.data[0]?.appointmentTime; 
-const uniqueId = data?.data[0]?.uniqueId; 
-const DocUniqueId = data?.data[0]?.DocUniqueId; 
 
 
 
  return(
-    <div>
-      <div className="d_upper">
+    <>      
+    <div className="d_upper">
         <NavbarDashboard/>
       </div>
 
@@ -122,7 +127,8 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                               <img src="/User_logo.png" alt="" />
                             </div>
                             <div className="doctorname">
-                              <h1>Welcome, Dr. {doctorName}!</h1>
+                              <h1>Welcome, Dr. Shagun!</h1>
+                              {/* <h1>Welcome, Dr. {doctorName}!</h1> */}
                               <p>Your have <span style= {{color:'#089996'}}>_ appointments</span> for today</p>
                             </div>
                         </div>
@@ -131,7 +137,7 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                             <p>Working Hours</p>
                           </div>
                     </div>
-                      <div id="available">
+                      <div className="available">
                         <div className='available_permission'>
 
                       <img id='right_button' src="/Right_button.png" alt="" />
@@ -151,9 +157,9 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                       
                   <div className="appointnments_requests">
                     <div className="home_heading">
-                    <h1 className={toggleState === 1 ? "tabs active-tabs":"tabs"} onClick ={() => toggleTab(1)}>My appointments</h1>
+                    <button className= 'pageindex1' onClick ={(e) => setToggleTab(1)}>My appointments</button>
 
-                    <h1 className={toggleState === 2 ? "tabs active-tabs":"tabs"} onClick ={() => toggleTab(2)}>Requests</h1>
+                    <button className='pageindex2' onClick ={(e) => setToggleTab(2)}>Requests</button>
 
                     </div>
                     <hr style={{margin :'28px'}}/>
@@ -171,219 +177,164 @@ const DocUniqueId = data?.data[0]?.DocUniqueId;
                     
               
                 
-              <div className="content-tabs">
-
+          
                     
-                    <div className={toggleState === 1 ? "appointments_patient_info active-appointments_patient_info " : "appointments_patient_info"}>
-
                     
-                        
-                      <div className="briefInfo">
+                  {toggleTab === 1 && (
+                      <>
+                          {Appointment.length !== 0 ? (
+                            <div className="noAppointment">
+                              You don't haave any appointments for today
+                            </div>
+                          ):(
+                            <div className="patientAppointmentInfo">
+                                    <div className="briefInfo">
 
-                      <div className="patient_date_day_and_time">
-                                <div className="appointment_date_day">
-                                    <div className="appointment_date">
-
-                                    
-                                    {/* <div>{doctorName}</div> */}
-                                    <div>{appointmentDate}</div>
-                                    {/* <div>23</div> */}
-
-                                    
-
-                                    </div>
-                                    <div className="appointment_month_day">
-                                      {/* <div>{appointment_month},</div> */}
-                                      {/* <div>{appointment_day}</div> */}
-                                      {/* <div>Feb,</div> */}
-                                      {/* <div>Monday</div> */}
+                                      <div className="patientAppointment_date_time">
+                                              <div className="patientAppointment_date">
+                                                <div>25 March 2023</div>
+                                                  {/* <div>{appointmentDate}</div> */}
+                                                  
+                                              </div>
+                                              <div className="patientAppointment_time">
+                                                <div>3:00-4:00</div>
+                                                    {/* <div>{appointmentTime}</div> */}
+                                              </div>
+                                                  
+                                      </div>             
+                                      <hr/>
+                                      <div className="patientAppointment_name_and_id">
+                                                <div className="patientAppointment_name">
+                                                      <img src="/Right_button.png" alt="" />
+                                                      <div>Patient Name</div>
+                                                </div>
+                                                <div className="patientAppointment_uniqueId">
+                                                      {/* <div style={{color:"#737E87"}}>{uniqueId}</div> */}
+                                                      <div style={{color:"#737E87"}}>#061b2d</div>
+                                                      {/* <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
+                                                </div>
+                                      </div>
+                                      </div>
+                                      <div className="detailedInfo">
+                                              <button id='btn-appointment' className='details'>Details</button>
+                                      </div>
 
                                   </div>
+                            /*Appointment.map(
+                              ({
+                                id,
+                                uniqueId,
+                                DocUniqueId,
+                                appointmentTime,
+                                appointmentDate
+                              }) => {
+                                return (
+                                  <div className="patientAppointmentInfo" key={id}>
+                                    <div className="briefInfo">
 
-                                </div>
-                                <div className="appointment_time">
-                                
-                                  {/* <div>13:00-13:30</div> */}
-                                  {/* <div>9:00 pm- 10:00 pm</div> */}
-                                  <div>{appointmentTime}</div>
-                                  
-
-
-                                </div>
-                                  
-                              </div>
-                                <hr/>
-                                <div className="patient_name_and_id">
-                                    <div className="appointment_patient_name">
-                                      <img src="/Right_button.png" alt="" />
-                                      
-                                      <div>Patient Name</div>
-                                    </div>
-                                    <div className="appoitnment_patient_id_basic">
-
-                                    
-                                      {/* <div style={{color:"#737E87"}}>#089996</div> */}
-                                      {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
-
-                                      <div style={{color:"#737E87"}}>135790</div>
-                                      <div style={{color:'#5D9EE3'}}>ARTQ43</div>
-                                      {/* <div>{appoitment_patient_basic_info}</div> */}
-                                      {/* <div style={{color:"#737E87"}}>#089996</div> */}
-                                      {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
-
-
-                                    </div>
-                                </div>
-                      </div>
-                          <div className="detailedInfo">
-                              <button id='btn-appointment' className='details'>Details</button>
-                          </div>
-                            
-
-                            
-
-                          
-                          
-
-                      
-                    </div>
-                    
-                    <div className={toggleState === 2 ? "appointments_patient_info active-appointments_patient_info " : "appointments_patient_info"}>
-                    
-                            <div className="briefInfo">
-
-                              <div className="patient_date_day_and_time">
-                                <div className="appointment_date_day">
-                                    <div className="appointment_date">
-
-                                    
-                                    <div>appointmentDate</div>
-                                    {/* <div>23</div> */}
-
-
-                                    </div>
-                                    <div className="appointment_month_day">
-                                      {/* <div>{appointment_month},</div> */}
-                                      {/* <div>{appointment_day}</div> */}
-                                      <div>Feb,</div>
-                                      <div>Monday</div>
+                                      <div className="patientAppointment_date_time">
+                                              <div className="patientAppointment_date">
+                                                <div>25 March 2023</div>
+                                                  <div>{appointmentDate}</div>
+                                              </div>
+                                              <div className="appointment_time">
+                                                    <div>{appointmentTime}</div>
+                                              </div>
+                                                  
+                                      </div>             
+                                      <hr/>
+                                      <div className="patientAppointment_name_and_id">
+                                                <div className="patientAppointment_name">
+                                                      <img src="/Right_button.png" alt="" />
+                                                      <div>Patient Name</div>
+                                                </div>
+                                                <div className="patientAppointment_uniqueId">
+                                                      <div style={{color:"#737E87"}}>{uniqueId}</div>
+                                                      <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
+                                                </div>
+                                      </div>
+                                      </div>
+                                      <div className="detailedInfo">
+                                              <button id='btn-appointment' className='details'>Details</button>
+                                      </div>
 
                                   </div>
-
-                                </div>
-                                <div className="appointment_time">
-                                
-                                  <div>appointmentTime</div>
-                                  {/* <div>9:00 pm- 10:00 pm</div> */}
-
-                                  {/* <div>{appointmentTime}</div> */}
-                                  {/* <div>9:00 pm- 10:00 pm</div> */}
-
-
-                                </div>
-                                  
-                              </div>
-                                <hr/>
-                              <div className="patient_name_and_id">
-                                    <div className="appointment_patient_name">
-                                      <img src="/Right_button.png" alt="" />
-                                      {/* <div>{appointment_patientName}</div> */}
-                                      <div>Patient Name</div>
-                                    </div>
-                                    <div className="appoitnment_patient_id_basic">
-
-                                      
-                                    
-                                      <div style={{color:"#737E87"}}>uniqueId</div> 
-                                       <div style={{color:'#5D9EE3'}}>DocUniqueId</div>
-                                      {/* <div style={{color:"#737E87"}}>#089996</div>
-                                      <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
-
-                                      {/* <div style={{color:"#737E87"}}>{uniqueId}</div>
-                                      <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div> */}
-                                      {/* <div style={{color:"#737E87"}}>#089996</div> */}
-                                      {/* <div style={{color:'#5D9EE3'}}>Monthly checkup</div> */}
-
-
-                                    </div>
-                                </div>
-                          </div>
-                            
-                            <div className="accept_deny">
-                              <button id='btn-appointment' className='accept' onClick ={() => acceptance(1)}>Accept</button>
-                              <button id='btn-appointment' className='deny' onClick={() => denying(1)}>Deny</button>
+                                )
+                              }
+                            )*/
+                          )}
+                      </>
+                    )}
+                  {toggleTab === 2 && (
+                      <>
+                          {Appointment.length === 0 ? (
+                            <div className="noAppointmentRequest">
+                              You don't haave any anymore requests for today
                             </div>
+                          ):(
+                            Appointment.map(
+                              ({
+                                id,
+                                uniqueId,
+                                DocUniqueId,
+                                appointmentTime,
+                                appointmentDate
+                              }) => {
+                                return (
+                                  <div className="patientAppointmentInfo" key={id}>
+                                    <div className="briefInfo">
 
-                        
-                            </div>
-                  </div>  
+                                      <div className="patientAppointment_date_time">
+                                              <div className="patientAppointment_date">
+                                                  <div>{appointmentDate}</div>
+                                              </div>
+                                              <div className="appointment_time">
+                                                    <div>{appointmentTime}</div>
+                                              </div>
+                                                  
+                                      </div>
+                                      <hr/>
+                                      <div className="patientAppointment_name_and_id">
+                                                <div className="patientAppointment_name">
+                                                      <img src="/Right_button.png" alt="" />
+                                                      <div>Patient Name</div>
+                                                </div>
+                                                <div className="patientAppointment_uniqueId">
+                                                      <div style={{color:"#737E87"}}>{uniqueId}</div>
+                                                      <div style={{color:'#5D9EE3'}}>{DocUniqueId}</div>
+                                                </div>
+                                      </div>
+                                      </div>
+                                      <div className="accept_deny_info">
+                                              <button id='btn-appointment' className='accept'>Accept</button>
+                                              <button id='btn-appointment' className='deny'>Accept</button>
+                                      </div>
 
+                                  </div>
+                                )
+                              }
+                            )
+                          )}
+                      </>
+                    )}
+             
+          </div>
 
-
-            </div>
-
-
-
-
-
-            </div>
       </div>
-    
+     </>    
+    );
+    }      
 
-  )
-}
+
+
+          
+
+
+
+
+
+        
+
+
 
 export default Homepage
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-  

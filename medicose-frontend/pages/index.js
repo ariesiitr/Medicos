@@ -2,10 +2,10 @@ import React, { Children, Component } from 'react';
 import * as ReactDOM from "react-dom";
 import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
 import LoginPage from './Login'
-import RegisterAs from './RegisterAs'
-import App from '../pages/_app';
-import Homepage from '../components/dashboard/Doctor/Homepage'
-import PatientHomepage from '../components/dashboard/Patient/Homepage'
+// import RegisterAs from './RegisterAs'
+// import App from '../pages/_app';
+
+// import PatientHomepage from '../components/dashboard/Patient/Homepage'
 
 
 <link
@@ -24,7 +24,7 @@ export default function Home() {
 	return (
 		<>
 		
-<Homepage/>
+{/* <HomePage/> */}
 
 	
     </>

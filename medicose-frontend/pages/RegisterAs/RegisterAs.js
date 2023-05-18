@@ -1,7 +1,6 @@
 
 import React,{useState} from 'react'
-import NavbarRegister from '../components/Navbar/NavbarRegister'
-
+import NavbarRegister from '../../components/navbar/NavbarRegister'
 import { useRouter } from 'next/router';
 
 
@@ -59,14 +58,14 @@ const RegisterAs = (props) => {
     const router = useRouter();
 
     const NavigateToPatientRegister = () => {
-        router.push('/RegisterAsPatient');
+        router.push('/RegisterAs/RegisterAsPatient');
       };
 
 	  const NavigateToDoctorRegister = () => {
-        router.push('/RegisterAsDoctor');
+        router.push('/RegisterAs/RegisterAsDoctor');
       };
 	  const NavigateToChemistRegister = () => {
-        router.push('/RegisterAsChemist');
+        router.push('/RegisterAs/RegisterAsChemist');
       };
 
 

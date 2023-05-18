@@ -3,7 +3,7 @@ import Logindesign from '../../components/Login/Logindesign';
 import Image from 'next/image';
 import MobNavbar from '../../components/navbar/MobNavbar';
 import { useRouter } from 'next/router';
-import RegisterAs from '../../components/register/RegisterAs';
+import RegisterAs from '../../pages/RegisterAs/RegisterAs';
 import RegisterAsDoctor from '../../components/register/RegisterAsDoctor';
 import RegisterAsPatient from '../../components/register/RegisterAsPatient';
 import RegisterAsChemist from '../../components/register/RegisterAsChemist';
