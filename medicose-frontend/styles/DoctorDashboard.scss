@@ -71,6 +71,7 @@
     flex-direction: row;
     gap: 10px;
     align-items: center;
+    // background-color: #9ed5d5;
   }
   
   .available p,span{
@@ -115,7 +116,8 @@
     gap: 1.875rem;
     margin-top: 2.5rem;
   }
-  .home_heading h1{
+  .home_heading button{
+    border: none;
     font-family: THICCCBOI;
     font-weight: 700;
     font-size: 2rem;
@@ -146,22 +148,24 @@
     
   }
 
+  
   .calendar_heading{
     font-family: THICCCBOI;
     margin: 2rem;
     font-weight: 700;
     letter-spacing: 0.25rem;
   }
+  // Doctor Home page css
 
-  .appointments_patient_info{
+  .patientAppointmentInfo{
     background-color: white;
     height: 6.75rem;
     width: 79.75rem;
     margin: 2rem;
-    // display: flex;
-    // flex-direction: row;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    display: none;
+    // display: none;
     padding: 1.5rem;
     position: relative;
   }
@@ -171,36 +175,31 @@
     flex-direction: row;
     gap: 1.25rem;
   }
-  .patient_date_day_and_time{
+  .patientAppointment_date_time{
     display: flex;
     flex-direction: column;
     gap: 0.313rem;
     color: #5E5E5E;
   }
-  .appointment_date_day{
+  .patientAppointment_date{
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 0.625rem;
-  }
-  .appointment_date{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
   }
-   .appointment_month_day{
-    font-size: 0.875rem;
-    font-weight: 550;
-   }
-   .appointment_time{
-    font-size: 0.875rem;
+   .patientAppointment_time{
+    font-size: 1.1rem;
     font-weight: 600;
+    letter-spacing: 2px;
    }
-  .patient_name_and_id{
+  .patientAppointment_name_and_id{
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
   }
-  .appointment_patient_name{
+  .patientAppointment_name{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -208,11 +207,9 @@
     font-size: 1.625rem;
     font-weight: 600;
   }
-  .appoitnment_patient_id_basic{
-    display: flex;
-    flex-direction: row;
-    gap: 1.875rem;
-    align-items: center;
+  .patientAppointment_uniqueId{
+    font-weight: 600;
+    margin-left: 52px;
   }
 
   .detailedInfo, .accept_deny{

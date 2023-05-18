@@ -4,7 +4,7 @@ import RegisterAsDoctor from '../components/Register/RegisterAsDoctor'
 import LoginPage from './Login'
 // import RegisterAs from './RegisterAs'
 // import App from '../pages/_app';
-// import Homepage from '../components/dashboard/Doctor/Homepage'
+
 // import PatientHomepage from '../components/dashboard/Patient/Homepage'
 
 
@@ -16,34 +16,16 @@ import LoginPage from './Login'
 	referrerpolicy="no-referrer"
 />;
 
-// if(typeof window !== "undefined"){
-// 	const router = createBrowserRouter([
-// 		{
-// 			path: '/',
-// 			element : <App />,
-// 			Children:[
-// 				{
-// 					path: '/RegisterAsDoctor',
-// 					element: <RegisterAsDoctor/>
 
-// 				}
-// 			]
-// 		}
-// 	])
-
-// }
 
 
 
 export default function Home() {
 	return (
 		<>
-		{/* <RegisterAsDoctor/> */}
-   <LoginPage/>
-		{/*<Homepage/> */}
-    {/*<PatientHomepage/>*/}
 		
-  {/* <RouterProvider router={router} />  */}
+{/* <HomePage/> */}
+
 	
     </>
   )

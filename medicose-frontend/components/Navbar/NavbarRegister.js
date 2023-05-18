@@ -61,7 +61,7 @@ const NavbarRegister = () => {
 					<span className="bar"></span>
 				</div>
 
-				<div style={{marginLeft:"-5rem"}}className="nav__menu-list">
+				<div className="nav__menu-list">
 					{MENU_LIST.map((menu, idx) => {
 						return (
 							<div key={menu.text} className="nav-link">

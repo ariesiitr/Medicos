@@ -223,27 +223,68 @@ const FetchApi = (method, url, params, TokenValue) => {
 
 
 function submit1() {
-  if (Password.length > 7) {
-    // console.log('Submitting form...');
-    NavigatePatientHomepage();
-    FetchApi(
-      'POST',
-      PatientAPI,
-      {
-        patientName: PatientName,
-        dob: Dob,
-        bloodGroup: Bloodgroup,
-        address: Address,
-        state: State1,
-        city: City,
-        gender: Gender,
-        contactNo: ContactNo,
-        password: Password,
-  
-      },
-      null
-    )
+  if(PatientName===''){
+    alert('Please enter your name');
+    // toast.configure()
   }
+  else if(Password ===''){
+    alert('Please enter your password  ');
+    // toast.configure()
+  }
+  else if(Bloodgroup===''){
+    alert('Please enter clinic name ')
+    // toast.configure()
+  }
+  else if(ContactNo ===''){
+    alert('Please enter your contact number  ');
+    // toast.configure()
+  }
+  else if(Address ===''){
+    alert('Please enter your address ')
+    // toast.configure()
+  }
+  else if(City ===''){
+    alert('Please enter the days you are available  ')
+    // toast.configure()
+  }
+  else if(Gender ===''){
+    alert('Please enter starting time  ')
+    // toast.configure()
+  }
+  else if(State1 ===''){
+    alert('Please enter ending time  ')
+    // toast.configure()
+  }
+  else if(Dob ===''){
+    alert('Please enter ending time  ')
+    // toast.configure()
+  }
+  else{
+    if (Password.length > 7) {
+      // console.log('Submitting form...');
+      NavigatePatientHomepage();
+      FetchApi(
+        'POST',
+        PatientAPI,
+        {
+          patientName: PatientName,
+          dob: Dob,
+          bloodGroup: Bloodgroup,
+          address: Address,
+          state: State1,
+          city: City,
+          gender: Gender,
+          contactNo: ContactNo,
+          password: Password,
+    
+        },
+        null
+      )
+    }
+
+  }
+ 
+  
 }
 
 const router=useRouter();
@@ -324,7 +365,7 @@ console.log(Dob)
               <input type='text' id='city' onChange={(e) => setCity(e.target.value)} placeholder='Enter your city'></input>
 
               
-              <button className='btn-submit' type='submit'  onClick={() => {
+              <button className='btn-submit' type='submit' onClick={() => {
                 
                 submit1();
               }}>Submit</button>

@@ -3,7 +3,7 @@ import Navbar from '../Navbar/NavbarRegister'
 import StateDropdown from './StateDropdown'
 import Link from 'next/link';
 import axios from 'axios';
-// import alert from 'react-alert'
+
 const RegisterAsPatient = () => {
   
 

@@ -1,6 +1,6 @@
 
 import React,{useState} from 'react'
-import NavbarRegister from '../Navbar/NavbarRegister'
+import NavbarRegister from '../navbar/NavbarRegister'
 
 
 if (typeof window !== 'undefined') {

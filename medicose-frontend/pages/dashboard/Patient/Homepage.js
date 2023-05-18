@@ -10,6 +10,14 @@ function PatientHomepage() {
 	const [Doctors, setDoctors] = useState([]);
 	const [Search, setSearch] = useState('');
 	console.log(Appointment);
+	// useEffect(() => {
+	// 	const response = axios.get('http://127.0.0.1:8000/admin/patient/patientdetails');
+	// 	setAppointment(response.data);
+	// }, []);
+	// useEffect(() => {
+	// 	const res = axios.get('ListOfDoctors_API');
+	// 	setDoctors(res.data);
+	// }, []);
     const [data, setData] = useState(null);
   const [users,setUsers]=useState([]);
 	useEffect(() => {
@@ -47,7 +55,7 @@ const patientName = data?.data[0]?.patientName;
 							height={72}
 						/>
 						{/* <div>{patient_name}</div> */}
-						<div className="patientName">{patientName}</div>
+						<div className="patientName">patient_name</div>
 					</div>
 				</div>
 				<div className="patientAppointment">
@@ -120,6 +128,7 @@ const patientName = data?.data[0]?.patientName;
 					)}
 					{pageId === 2 && (
 						<>
+						<div>this is22</div>
 							{Doctors.filter((Doctors) => {
 								return Search.toLowerCase() === ''
 									? Doctors

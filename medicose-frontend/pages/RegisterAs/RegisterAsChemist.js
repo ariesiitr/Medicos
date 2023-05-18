@@ -126,7 +126,7 @@ const RegisterAsChemist = () => {
 							placeholder="Enter the name of your store"
 						/>
 
-						<span>Address</span>
+						<span className="registerform_label">Address</span>
 						<input
 							type="address"
 							className="shopAddress"
@@ -135,7 +135,7 @@ const RegisterAsChemist = () => {
 							placeholder="Enter your address"
 						/>
 
-						<span htmlFor="openingTime">Opens at</span>
+						<span className="registerform_label" htmlFor="openingTime">Opens at</span>
 						<input
 							type="time"
 							className="openingTime"
@@ -144,7 +144,7 @@ const RegisterAsChemist = () => {
 							placeholder="Choose opening time"
 						></input>
 
-						<span htmlFor="closingTime">Closes at</span>
+						<span className="registerform_label" htmlFor="closingTime">Closes at</span>
 						<input
 							type="time"
 							className="closingTime"
@@ -155,7 +155,7 @@ const RegisterAsChemist = () => {
 					</div>
 
 					<div className="column2">
-						<span htmlFor="contactNo">Contact Number</span>
+						<span className="registerform_label" htmlFor="contactNo">Contact Number</span>
 						<input
 							type="number"
 							className="contactNo"
@@ -164,7 +164,7 @@ const RegisterAsChemist = () => {
 							placeholder="Enter your contact no."
 						/>
 
-						<span>Enter your UPI ID</span>
+						<span className="registerform_label">Enter your UPI ID</span>
 						<input
 							type="text"
 							className="upiId"
@@ -173,7 +173,7 @@ const RegisterAsChemist = () => {
 							placeholder="UPI Id               @ okhdfcbank"
 						></input>
 
-						<span>Upload your license:</span>
+						<span className="registerform_label">Upload your license:</span>
 						<input
 							type="file"
 							className="license"
