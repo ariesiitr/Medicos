@@ -31,6 +31,7 @@ Priyanshu Gupta
 1) Collect data from people about what all things they expect for a one to one interaction with a doctor and chemist
 2) Make appropriate APIs
 3) Make a next and django based web app
+4) designs for the web app - https://www.behance.net/gallery/171126515/Medicos-Appointment-booking-made-easy-UX-case-study/modules/965648159
 
 # Solution
 ## 1) Streamline Appointment Management: 
