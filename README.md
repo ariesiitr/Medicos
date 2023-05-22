@@ -11,16 +11,18 @@ Pranav Arya
 
 Sarthak Gupta
 
+Dev Shrivastav
+
 ## Contributors
-Vinay Sisodia 
-
-Divyanshu Dev
-
 Ishika
 
 Karishma Divya
 
 Shagun Sinha
+
+Vinay Sisodia
+
+Divyanshu Dev
 
 Priyanshu Gupta
 
