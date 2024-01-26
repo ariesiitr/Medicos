@@ -16,7 +16,7 @@ Dev Shrivastav
 ## Contributors
 Ishika
 
-Karishma Divya
+Divya Raj
 
 Shagun Sinha
 
